@@ -1,0 +1,13 @@
+{
+  "name": "trailtracer",
+  "version": "0.0.1",
+  "description": "A website for bikers to pin and share their favorite trails and points of interest.",
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" "
+  },
+  "author": "Buğra Aras",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
