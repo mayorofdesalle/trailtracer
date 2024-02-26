@@ -1,7 +1,14 @@
 import styled from 'styled-components';
-import Button from '../defaults/Button';
-import Container from '../defaults/Container';
-import { translateWobble, rotateAngle } from '../../misc/Anims';
+
+import Button from '@components/ui/Button';
+import Container from '@components/ui/Container';
+import Text from '@components/ui/Text';
+import {
+    translateWobble,
+    rotateL2R,
+    fadeIn,
+    rotateInFB
+} from '@components/misc/Anims';
 
 const StartButtonContainer = styled(Container)`
     grid-area: StartButton;
@@ -9,15 +16,14 @@ const StartButtonContainer = styled(Container)`
     justify-content: center;
     perspective: 500px;
     transform: rotatex(10deg);
-    animation: ${rotateAngle} 7s linear infinite;
+    animation: ${rotateInFB} 1s ease-in-out, ${rotateL2R} 7s linear infinite;
+    animation-delay: 0s, 1s;
 `;
 
 const StyledStartButton = styled(Button)`
     width: 100%;
     height: 100%;
     outline: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
-    font-size: ${({ theme }) => theme.fontSizes.small};
-    font-weight: ${({ theme }) => theme.fontWeights.xBold};
     perspective: 500px;
     transform-style: preserve-3d;
 
@@ -27,7 +33,7 @@ const StyledStartButton = styled(Button)`
         top: 0;
         left: 0;
         display: block;
-        content: "";
+        content: '';
         width: 100%;
         height: 100%;
         opacity: 0;
@@ -58,12 +64,23 @@ const StyledStartButton = styled(Button)`
         --z: -0.06;
         animation: ${translateWobble} 2.2s ease forwards;
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
+        font-size: ${({ theme }) => theme.fontSizes.small};
+    }
+`;
+
+const StartButtonCTA = styled(Text)`
+    text-align: center;
+    animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const StartButton = () => {
     return (
         <StartButtonContainer>
-            <StyledStartButton>GET STARTED — IT&apos;S FREE!</StyledStartButton>
+            <StyledStartButton>
+                <StartButtonCTA $heading>GET STARTED — IT&apos;S FREE!</StartButtonCTA>
+            </StyledStartButton>
         </StartButtonContainer>
     );
 };

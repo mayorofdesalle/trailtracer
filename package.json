@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "description": "A website for bikers to pin and share their favorite trails and points of interest.",
   "scripts": {
-    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" "
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" ",
+    "build": ""
   },
   "author": "Buğra Aras",
-  "license": "ISC",
+  "license": "GGPL",
   "devDependencies": {
+    "@biomejs/biome": "1.5.3",
     "concurrently": "^8.2.2"
   }
 }
