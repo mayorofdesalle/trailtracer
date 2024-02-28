@@ -7,7 +7,7 @@ import arrowUpRightImg from '@assets/images/arrowUpRight.svg';
 import arrowUpImg from '@assets/images/arrowUp.svg';
 import useWindowSize from '@hooks/useWindowSize';
 
-import Text, { Undr } from '@components/ui/Text';
+import Text, { Prim, Sec } from '@components/ui/Text';
 import Vector from '@components/ui/Vector';
 import { convertRemToPixels } from '@utils/screenMath';
 
@@ -40,18 +40,17 @@ const Bento = ({ children }) => {
 
             <HeroDescriptionBox $gridArea='HeroDescriptionBox'>
                 <Text $heading $color={theme.colors.text}>
-                    <Undr $color={theme.colors.secondary} $style='double'>COLLABORATE WITH RIDERS LIKE YOU</Undr>
-                    <br /><Undr $color={theme.colors.secondary} $style='double'>AND PLAN YOUR NEXT TRAIL!</Undr>
+                    <Sec>COLLABORATE</Sec> WITH RIDERS LIKE YOU <Sec>AND PLAN</Sec> <Prim>YOUR NEXT TRAIL!</Prim>
                 </Text>
             </HeroDescriptionBox>
 
             <ActionBox $gridArea='ActionBox1' $color={theme.colors.primary}>
-                <Vector id='L' $image={width > mediumBreakpoint ? arrowUpRightImg : arrowUpImg} $color={theme.colors.background} $height='7svh' $width='8svh' $position='top' />
-                <Text $heading $ratio={width > mediumBreakpoint ? '0.88' : '0.77'}>NAVIGATE TO LEARN MORE</Text>
+                <Vector id='L' $image={width > mediumBreakpoint ? arrowUpRightImg : arrowUpImg} $color={theme.colors.background} $height='7svh' $width='7svh' $position='top' />
+                <Text>NAVIGATE TO LEARN MORE</Text>
             </ActionBox>
 
             <ActionBox $gridArea='ActionBox2' $color={theme.colors.secondary} >
-                <Text $heading $ratio={width > mediumBreakpoint ? '0.88' : '0.55'} $color={theme.colors.primary}>OR START YOUR JOURNEY NOW</Text>
+                <Text $color={theme.colors.primary}>OR START YOUR JOURNEY NOW</Text>
                 <Vector id='R' $image={arrowLeftImg} $color={theme.colors.primary} $height={'4svh'} $width={'8svh'} $position='bottom' />
             </ActionBox>
 

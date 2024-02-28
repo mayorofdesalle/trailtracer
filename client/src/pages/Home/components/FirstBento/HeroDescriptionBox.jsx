@@ -12,7 +12,7 @@ import { pseudoBentoArrowTop } from '../mixins';
  * This is a styled bento box that is used to contain the hero description.
  **/
 const HeroDescriptionBox = styled(BentoBox)`
-    outline: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
+    border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
     animation: ${rotateInFB} 1s ease-in-out;
 
     --arrowColor: ${({ theme }) => theme.colors.primary};

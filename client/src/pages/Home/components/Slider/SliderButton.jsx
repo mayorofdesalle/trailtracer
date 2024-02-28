@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Button from '@components/ui/Button';
+import Icon from '@components/ui/Icon';
 import { fadeIn } from '@components/misc/anims';
 
 /**
@@ -23,31 +24,32 @@ const findClosestPage = (pagePositions, position) => {
 };
 
 /**
- * function handleStop(button, pagePositions, setCurrentPage)
- * @param {Object} button - The button that was dragged
- * @param {Array} pagePositions - The positions of the pages
- * @param {Function} setCurrentPage - The function to set the current page
- * @returns {undefined}
+ * function mapPositionToPage(position, sliderWidth, wrapperWidth)
+ * @param {Number} position - The current position of the button
+ * @param {Number} sliderWidth - The width of the Slider
+ * @param {Number} wrapperWidth - The width of the ScrollWrapper
+ * @returns {Number} The position of the page
  * @description
- * This function is called when the button is released. It calculates the closest page to the current position and sets the current page to that page.
- * This is used to snap the button to the closest page.
+ * This function maps the position of the button to the position of the page.
+ * (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+ * 3 * wrapperWidth for 4 bentos since the scroll is set from the left.
  **/
-const handleStop = (button, pagePositions, setCurrentPage) => {
-    setCurrentPage(findClosestPage(pagePositions, button.x));
+const mapPositionToPage = (position, sliderWidth, wrapperWidth) => {
+    return (position - 3 * sliderWidth / 8) * (3 * wrapperWidth) / (6 * sliderWidth / 8) + (3 * wrapperWidth);
 };
 
 /**
- * The ButtonBase component
+ * ButtonBase
  * @description
- * This component is a styled Button component creating the base for the Draggable SliderButton that is used to slide between pages.
+ * This component is a styled Button component creating the base for the SliderButton.
  **/
 const ButtonBase = styled(Button)`
     position: absolute;
     display: flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 3rem;
-    padding: 1rem;
+    height: max(1.5rem, 3svh);
+    width: max(3rem, 3svw);
+    padding: 0;
+    fill: ${({ theme }) => theme.colors.text};
     background-color: ${({ theme }) => theme.colors.secondary};
     cursor: move;
     touch-action: pan-y;
@@ -55,44 +57,64 @@ const ButtonBase = styled(Button)`
     transition: 300ms ease-in-out;
     animation: ${fadeIn} 1s ease-in-out;
 
-    &:hover > #leftArrow {
-        transform: translateX(-0.25rem);
+    & > #arrow-left-fill {
+        transform: translateX(0.3rem);
+        transition: 200ms ease-in-out;
     }
 
-    &:hover > #rightArrow {
-        transform: translateX(0.25rem);
+    & > #arrow-right-fill {
+        transform: translateX(-0.3rem);
+        transition: 200ms ease-in-out;
+    }
+
+    &:hover > #arrow-left-fill {
+        transform: translateX(0.1rem);
+    }
+
+    &:hover > #arrow-right-fill {
+        transform: translateX(-0.1rem);
     }
 `;
 
 /**
- * The SliderButton component
+ * SliderButton
  * @param {Number} width - The width of the slider
  * @description
  * This component is a draggable button that is used to slide between pages.
  * It uses the Draggable component from react-draggable to create the button.
  * The button is snapped to the closest page when released.
  **/
-const SliderButton = ({ width }) => {
-    const pagePositions = [-3 * width / 8, -width / 8, width / 8, 3 * width / 8];
+const SliderButton = ({ wrapperWidth, sliderWidth, setPageScroll }) => {
+    const pagePositions = [-3 * sliderWidth / 8, -sliderWidth / 8, sliderWidth / 8, 3 * sliderWidth / 8];
     const [currentPage, setCurrentPage] = useState(0);
-    const nodeRef = useRef();
+    const button = useRef();
 
     return (
         <Draggable
             defaultClassNameDragging='isDragging'
             position={{ x: pagePositions[currentPage], y: 0 }}
-            nodeRef={nodeRef}
+            nodeRef={button}
             axis='x'
             bounds='parent'
-            onStop={(e, button) => handleStop(button, pagePositions, setCurrentPage)}
+            onStop={(e, button) => {
+                const closestPage = findClosestPage(pagePositions, button.x);
+                setCurrentPage(closestPage);
+                setPageScroll(mapPositionToPage(pagePositions[closestPage], sliderWidth, wrapperWidth));
+            }}
+            onDrag={(e, button) => setPageScroll(mapPositionToPage(button.x, sliderWidth, wrapperWidth))}
         >
-            <ButtonBase ref={nodeRef} />
+            <ButtonBase ref={button}>
+                <Icon name='arrow-left-fill' height={4} width={4} />
+                <Icon name='arrow-right-fill' height={4} width={4} />
+            </ButtonBase>
         </Draggable>
     );
 };
 
 SliderButton.propTypes = {
-    width: PropTypes.number.isRequired
+    wrapperWidth: PropTypes.number,
+    sliderWidth: PropTypes.number.isRequired,
+    setPageScroll: PropTypes.func.isRequired,
 };
 
 export default SliderButton;

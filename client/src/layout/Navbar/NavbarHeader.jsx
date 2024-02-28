@@ -10,9 +10,9 @@ import { glassMorph } from '@components/misc/mixins';
 const NavbarHeader = styled.header`
     position: absolute;
     display: inline-flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    vertical-align: middle;;
     height: 4svh;
     width: calc(100% - 2rem - 4px);
     top: calc(1rem + 2px);

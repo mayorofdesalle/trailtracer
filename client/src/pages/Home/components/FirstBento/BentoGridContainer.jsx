@@ -8,12 +8,11 @@ import Container from '@components/ui/Container';
  * This is a styled container that is used to contain the grid layout of the first bento.
  **/
 const BentoGridContainer = styled(Container)`
+    flex: 0 0 auto;
     display: grid;
-    height: 100svh;
-    width: 100svw;
-    padding: calc(7rem + 2px) calc(3rem + 2px) calc(3rem + 2px);
-    grid-template-columns: 4fr 2fr 4fr 2fr 4fr;
-    grid-template-rows: 1fr 2fr 2fr 1.5fr 0.5fr 2fr;
+    padding: 6rem 2rem 2rem;
+    grid-template-columns: 3.5fr 1fr 3fr 1fr 3.5fr;
+    grid-template-rows: 4fr 2fr 1fr 2fr 1fr 2fr;
     grid-gap: 2rem;
     grid-template-areas:
         'NewsImageBox   HeroImageBox            HeroImageBox            HeroImageBox            PopularBox'
@@ -25,9 +24,9 @@ const BentoGridContainer = styled(Container)`
 
     /* Medium screens and downwards */
     @media screen and (max-width: ${({ theme }) => theme.breakpoints.large}) {
-        padding: calc(6rem + 2px) calc(2rem + 2px) calc(2rem + 2px);
+        padding: 5rem 1rem 1rem;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 9fr 2fr 1fr 4fr;
+        grid-template-rows: 4fr 3fr 1fr 4fr;
         grid-gap: 1rem;
         grid-template-areas:
             'HeroImageBox           HeroImageBox            HeroImageBox'

@@ -11,8 +11,8 @@ const SignInButton = styled(Button)`
     color: ${({ theme }) => theme.colors.background};
     background-color: ${({ theme }) => theme.colors.primary};
     height: 1.5rem;
-    width: 6rem;
-    padding: 0 0.25rem 0 0;
+    width: 6.5rem;
+    padding: 0;
     backdrop-filter: none;
 
     &:active {

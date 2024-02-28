@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import styled, { css } from 'styled-components';
 
 // Constants
-const HEADING_MULTIPLIER = 1.23;
+const HEADING_MULTIPLIER = 1.35;
 
 /**
  * function adjustFontSize({sizeNames, breakpoints, fontSizes}, $heading, $ratio)
@@ -42,13 +42,13 @@ const adjustFontSize = ({ sizeNames, breakpoints, fontSizes }, $heading, $ratio)
  * @param {String} $color - The color of the text
  * @param {Boolean} $heading - If the text is a heading or not
  * @description
- * This is a styled span that is used to display text. It is used to create a more visually appealing text component.
+ * This is a styled div that is used to display text. It is used to create a more visually appealing text component.
  **/
-const Text = styled.span`
+const Text = styled.div`
     text-decoration: none;
-    border-radius: 0;
     text-align: center;
     vertical-align: middle;
+    border-radius: 0;
     font-family: ${({ theme, $heading }) => $heading ? theme.fonts.heading : theme.fonts.text};
     font-weight: ${({ theme, $heading }) => $heading ? theme.fontWeights.bold : theme.fontWeights.regular};
     color: ${({ $color }) => $color};

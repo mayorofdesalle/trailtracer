@@ -8,9 +8,7 @@ import { scaleOnHover, glassMorph } from '../misc/mixins';
  * This is a button component that can be used throughout the application. It is styled to be glassy and responsive.
  **/
 const Button = styled.button`
-    position: relative;
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
     align-items: center;
     justify-content: space-around;
     border: none;

@@ -1,25 +1,28 @@
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const useResize = ({ ref }) => {
-    const [elementSize, setElementSize] = useState({
-        width: 0,
-        height: 0
+const useResize = (elementRef) => {
+    const [size, setSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
     });
 
-    useLayoutEffect(() => {
+    useEffect(() => {
+        const targetElement = elementRef?.current;
+        if (!targetElement) return;
+
         const resizeObserver = new ResizeObserver((e) => {
-            setElementSize({
+            setSize({
                 width: e[0].contentRect.width,
                 height: e[0].contentRect.height
             });
         });
 
-        resizeObserver.observe(ref.current);
+        resizeObserver.observe(targetElement);
 
         return () => resizeObserver.disconnect();
-    }, [ref]);
+    }, [elementRef]);
 
-    return { ref, elementSize };
+    return size;
 };
 
 export default useResize;

@@ -1,29 +1,53 @@
-import styled from 'styled-components';
+import { useContext, useMemo } from 'react';
+import styled, { useTheme } from 'styled-components';
 
+import useWindowSize from '@hooks/useWindowSize';
 import Button from '@components/ui/Button';
-import Container from '@components/ui/Container';
 import Text from '@components/ui/Text';
-import {
-    translateWobble,
-    rotateL2R,
-    fadeIn,
-    rotateInFB
-} from '@components/misc/Anims';
+import { translateWobble, fadeIn } from '@components/misc/Anims';
+import PageContext from '@context/PageContext';
+import { convertRemToPixels } from '@utils/screenMath';
 
-const StartButtonContainer = styled(Container)`
-    grid-area: StartButton;
-    align-items: center;
-    justify-content: center;
-    perspective: 500px;
-    transform: rotatex(10deg);
-    animation: ${rotateInFB} 1s ease-in-out, ${rotateL2R} 7s linear infinite;
-    animation-delay: 0s, 1s;
-`;
+import StartButtonContainer from './StartButtonContainer';
 
-const StyledStartButton = styled(Button)`
+/**
+ * function calculateSizeAndPosition(pageSize)
+ * @param {Object} pageSize - The object containing width and height of the page.
+ * @returns {Object} The object containing width and height of the button.
+ * @description
+ * This function calculates the size of the button based on the page size so it can fit in with the rest of the bento grid.
+**/
+const calculateSizeAndPosition = (pageSize, isScreenLarge) => {
+    let height;
+    let width;
+    let bottom;
+
+    if (isScreenLarge) {
+        const gridVerticalFR = (pageSize.height - convertRemToPixels(21.5)) / 12;
+        const gridHorizontalFR = (pageSize.width - convertRemToPixels(14)) / 12;
+        height = 2 * gridVerticalFR;
+        width = 3 * gridHorizontalFR;
+        bottom = convertRemToPixels(3);
+    } else {
+        const gridVerticalFR = (pageSize.height - convertRemToPixels(11)) / 12;
+        const gridHorizontalFR = (pageSize.width - convertRemToPixels(6)) / 3;
+        height = 4 * gridVerticalFR;
+        width = gridHorizontalFR;
+        bottom = convertRemToPixels(2);
+    }
+
+    return { height, width, bottom };
+};
+
+/**
+ * ButtonBase
+ * @description
+ * This is a styled Button component creating the base for the StartButton.
+ */
+const ButtonBase = styled(Button)`
     width: 100%;
     height: 100%;
-    outline: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
+    border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
     perspective: 500px;
     transform-style: preserve-3d;
 
@@ -65,22 +89,31 @@ const StyledStartButton = styled(Button)`
         animation: ${translateWobble} 2.2s ease forwards;
     }
 
+    & > ${Text} {
+        animation: ${fadeIn} 1s ease-in-out;
+    }
+
     @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
         font-size: ${({ theme }) => theme.fontSizes.small};
     }
 `;
 
-const StartButtonCTA = styled(Text)`
-    text-align: center;
-    animation: ${fadeIn} 1s ease-in-out;
-`;
-
+/**
+ * StartButton
+ * @description
+ * This is a function component that acts as a CTA to get started using the website.
+ */
 const StartButton = () => {
+    const largeBreakpoint = convertRemToPixels(useTheme().breakpoints.large.slice(0, -3));
+    const windowWidth = useWindowSize().width;
+    const pageSize = useContext(PageContext).size;
+    const { height, width, bottom } = useMemo(() => calculateSizeAndPosition(pageSize, (windowWidth > largeBreakpoint)), [pageSize, windowWidth, largeBreakpoint]);
+
     return (
-        <StartButtonContainer>
-            <StyledStartButton>
-                <StartButtonCTA $heading>GET STARTED — IT&apos;S FREE!</StartButtonCTA>
-            </StyledStartButton>
+        <StartButtonContainer $height={height} $width={width} $bottom={bottom}>
+            <ButtonBase>
+                <Text $heading>GET STARTED — IT&apos;S FREE!</Text>
+            </ButtonBase>
         </StartButtonContainer>
     );
 };

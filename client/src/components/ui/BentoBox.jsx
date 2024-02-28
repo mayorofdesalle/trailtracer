@@ -10,7 +10,7 @@ import Container from './Container';
  **/
 const BentoBox = styled(Container)`
     grid-area: ${({ $gridArea }) => $gridArea};
-    padding: 1rem;
+    padding: 0.5rem;
 `;
 
 export default BentoBox;

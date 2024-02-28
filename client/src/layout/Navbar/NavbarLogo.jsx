@@ -12,11 +12,11 @@ import { scaleOnHover } from '@components/misc/Mixins';
 const NavbarLogo = styled(Link)`
     display: inline-block;
     height: 1.5rem;
-    width: 6.5rem;
+    width: 6rem;
     background-color: ${({ theme }) => theme.colors.primary};
     -webkit-mask-image: url(${logoImg});
     mask-image: url(${logoImg});
-    mask-size: 6.5rem;
+    mask-size: 6rem;
     mask-repeat: no-repeat;
     transition: 200ms ease-in-out;
 

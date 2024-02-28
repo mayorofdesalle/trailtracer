@@ -7,14 +7,14 @@ import { convertRemToPixels } from '@utils/screenMath';
  * Icon
  * @param {String} name - The name of the icon to display
  * @param {String} color - The color of the icon
- * @param {Number} size - The size of the icon
+ * @param {Number} height - The height of the icon
+ * @param {Number} width - The width of the icon
  * @description
- * This is a reusable component that displays an icon from the icons.svg bundle.
+ * This is component that displays an icon from the icons.svg bundle.
  **/
-const Icon = ({ name, color, size }) => {
-    const sizeInPıxels = convertRemToPixels(size);
+const Icon = ({ name, color, height, width }) => {
     return (
-        <svg fill={color} width={sizeInPıxels} height={sizeInPıxels}>
+        <svg id={name} fill={color} width={convertRemToPixels(width)} height={convertRemToPixels(height)}>
             <title>{name}</title>
             <use xlinkHref={`${Icons}#${name}`} />
         </svg>
@@ -24,7 +24,8 @@ const Icon = ({ name, color, size }) => {
 Icon.propTypes = {
     name: PropTypes.string.isRequired,
     color: PropTypes.string,
-    size: PropTypes.number
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired
 };
 
 export default Icon;
