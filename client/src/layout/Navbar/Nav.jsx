@@ -5,23 +5,24 @@ import { glassMorph } from '@components/misc/mixins';
 /**
  * NavbarHeader
  * @description
- * This is a styled header that is used to contain the navbar.
+ * This is a styled nav.
  **/
-const NavbarHeader = styled.header`
-    position: absolute;
+const Nav = styled.nav`
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    vertical-align: middle;;
+    vertical-align: middle;
     height: 4svh;
-    width: calc(100% - 2rem - 4px);
-    top: calc(1rem + 2px);
-    left: calc(1rem + 2px);
+    width: 100%;
     padding: 2rem;
     border-radius: 10px;
-    z-index: 9999;
-    
+    z-index: 999;
+
     ${glassMorph}
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.large}) {
+        padding: 2rem 1rem;
+    }
 `;
 
-export default NavbarHeader;
+export default Nav;

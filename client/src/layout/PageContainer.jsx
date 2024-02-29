@@ -10,39 +10,26 @@ import Navbar from './Navbar/Navbar';
 import Background from './Background/Background';
 
 /**
- * ContentContainer
+ * ContentWrapper
  * @description
- * This is a styled container that is used to contain the content of the page (within the border).
+ * This is a styled container that is used to contain the content of the page.
  **/
-const ContentContainer = styled(Container)`
+const ContentWrapper = styled(Container)`
 	position: relative;
 	height: 100svh;
 	width: 100svw;
 	max-width: 160rem;
-	
-	// Border
-	&::before {
-		content: '';
-		pointer-events: none;
-		box-sizing: border-box;
-		position: absolute;
-		--margin: 1rem;
-		top: var(--margin);
-		left: var(--margin);
-		height: calc(100% - 2 * var(--margin));
-		width: calc(100% - 2 * var(--margin));
-		border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
-		border-radius: 10px;
-		z-index: 9999;
-	}
 `;
 
-const OverflowMasker = styled(Container)`
+const ContentContainer = styled(Container)`
+	box-sizing: content-box;
+	flex-direction: column;
 	--margin: 1rem;
 	top: var(--margin);
 	left: var(--margin);
 	height: calc(100% - 2 * var(--margin));
 	width: calc(100% - 2 * var(--margin));
+	border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
 	overflow: hidden;
 `;
 
@@ -59,14 +46,14 @@ const PageContainer = ({ children }) => {
 	return (
 		<Container>
 			<Background />
-			<ContentContainer ref={contentContainer}>
-				<OverflowMasker>
+			<ContentWrapper>
+				<ContentContainer ref={contentContainer}>
+					<Navbar />
 					<PageContext.Provider value={{ size }}>
-						<Navbar />
 						{children}
 					</PageContext.Provider>
-				</OverflowMasker>
-			</ContentContainer>
+				</ContentContainer>
+			</ContentWrapper>
 		</Container>
 	);
 };

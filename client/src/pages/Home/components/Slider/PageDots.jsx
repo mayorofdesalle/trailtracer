@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styled from 'styled-components';
 
 import Container from '@components/ui/Container';
@@ -21,10 +22,10 @@ const PageDot = styled(Container)`
  * @description
  * This is a function component that is used to contain all the page dots.
  **/
-const PageDots = () => {
+const PageDots = memo(() => {
     return [...Array(4).keys()].map((key) => (
-        <li key={key}><PageDot /></li>
+        <PageDot key={key} />
     ));
-};
+});
 
 export default PageDots;

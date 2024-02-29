@@ -13,8 +13,6 @@ import { keyframes } from 'styled-components';
 export const rotateL2R = keyframes`
     0% {
         transform: rotateY(0deg) rotateX(10deg);
-        -webkit-animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
-        animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
     }
 
     25% {
@@ -23,8 +21,6 @@ export const rotateL2R = keyframes`
 
     50% {
         transform: rotateY(0deg) rotateX(10deg);
-        -webkit-animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
-        animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
     }
 
     75% {

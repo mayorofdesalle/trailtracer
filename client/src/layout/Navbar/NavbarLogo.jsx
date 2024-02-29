@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import logoImg from '@assets/images/logo.svg';
+import getImageUrl from '@utils/getImageUrl';
 import { scaleOnHover } from '@components/misc/Mixins';
 
 /**
@@ -14,8 +14,8 @@ const NavbarLogo = styled(Link)`
     height: 1.5rem;
     width: 6rem;
     background-color: ${({ theme }) => theme.colors.primary};
-    -webkit-mask-image: url(${logoImg});
-    mask-image: url(${logoImg});
+    -webkit-mask-image: url(${getImageUrl('logo')});
+    mask-image: url(${getImageUrl('logo')});
     mask-size: 6rem;
     mask-repeat: no-repeat;
     transition: 200ms ease-in-out;

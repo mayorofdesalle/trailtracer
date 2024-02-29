@@ -1,5 +1,7 @@
+import { memo } from 'react';
 import styled from 'styled-components';
 
+import Container from '@components/ui/Container';
 import { glassMorph } from '@components/misc/mixins';
 import { rotateInFB } from '@components/misc/anims';
 
@@ -7,19 +9,18 @@ import { rotateInFB } from '@components/misc/anims';
  * SliderButtonContainer
  * @param {Number} $height - The height of the container.
  * @param {Number} $width - The width of the container.
- * @param {Number} $bottom - The bottom position of the container.
+ * @param {Number} $top - The top position of the container.
  * @description
- * This is a styled unordered list that is used to contain the page dots and the SliderButton.
+ * This is a styled container that is used to contain the page dots and the SliderButton.
  **/
-const SliderButtonContainer = styled.ul`
+const SliderButtonContainer = memo(styled(Container)`
     position: absolute;
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
-    bottom: ${({ $bottom }) => $bottom}px;
+    top: ${({ $top }) => $top}px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    list-style-type: none;
     border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
     border-radius: 10px;
     animation: ${rotateInFB} 1s ease-in-out;
@@ -34,6 +35,6 @@ const SliderButtonContainer = styled.ul`
     }
 
     ${glassMorph}
-`;
+`);
 
 export default SliderButtonContainer;

@@ -1,43 +1,11 @@
-import { useContext, useMemo } from 'react';
-import styled, { useTheme } from 'styled-components';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 
-import useWindowSize from '@hooks/useWindowSize';
 import Button from '@components/ui/Button';
 import Text from '@components/ui/Text';
 import { translateWobble, fadeIn } from '@components/misc/Anims';
-import PageContext from '@context/PageContext';
-import { convertRemToPixels } from '@utils/screenMath';
 
 import StartButtonContainer from './StartButtonContainer';
-
-/**
- * function calculateSizeAndPosition(pageSize)
- * @param {Object} pageSize - The object containing width and height of the page.
- * @returns {Object} The object containing width and height of the button.
- * @description
- * This function calculates the size of the button based on the page size so it can fit in with the rest of the bento grid.
-**/
-const calculateSizeAndPosition = (pageSize, isScreenLarge) => {
-    let height;
-    let width;
-    let bottom;
-
-    if (isScreenLarge) {
-        const gridVerticalFR = (pageSize.height - convertRemToPixels(21.5)) / 12;
-        const gridHorizontalFR = (pageSize.width - convertRemToPixels(14)) / 12;
-        height = 2 * gridVerticalFR;
-        width = 3 * gridHorizontalFR;
-        bottom = convertRemToPixels(3);
-    } else {
-        const gridVerticalFR = (pageSize.height - convertRemToPixels(11)) / 12;
-        const gridHorizontalFR = (pageSize.width - convertRemToPixels(6)) / 3;
-        height = 4 * gridVerticalFR;
-        width = gridHorizontalFR;
-        bottom = convertRemToPixels(2);
-    }
-
-    return { height, width, bottom };
-};
 
 /**
  * ButtonBase
@@ -104,13 +72,11 @@ const ButtonBase = styled(Button)`
  * This is a function component that acts as a CTA to get started using the website.
  */
 const StartButton = () => {
-    const largeBreakpoint = convertRemToPixels(useTheme().breakpoints.large.slice(0, -3));
-    const windowWidth = useWindowSize().width;
-    const pageSize = useContext(PageContext).size;
-    const { height, width, bottom } = useMemo(() => calculateSizeAndPosition(pageSize, (windowWidth > largeBreakpoint)), [pageSize, windowWidth, largeBreakpoint]);
+    const size = useSelector((state) => state.gridPlaceholder.StartButton);
 
     return (
-        <StartButtonContainer $height={height} $width={width} $bottom={bottom}>
+        size &&
+        <StartButtonContainer $height={size.height} $width={size.width} $top={size.offsetTop}>
             <ButtonBase>
                 <Text $heading>GET STARTED — IT&apos;S FREE!</Text>
             </ButtonBase>

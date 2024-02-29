@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { PropTypes } from 'prop-types';
 
-import { hexToRgba } from '@utils/colors';
+import { hexToRgba } from '@utils/conversions';
 
 /**
  * Theme

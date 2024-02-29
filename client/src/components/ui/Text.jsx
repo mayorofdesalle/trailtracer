@@ -51,6 +51,7 @@ const Text = styled.div`
     border-radius: 0;
     font-family: ${({ theme, $heading }) => $heading ? theme.fonts.heading : theme.fonts.text};
     font-weight: ${({ theme, $heading }) => $heading ? theme.fontWeights.bold : theme.fontWeights.regular};
+    font-display: fallback;
     color: ${({ $color }) => $color};
     ${({ theme, $heading, $ratio }) => useMemo(() => adjustFontSize(theme, $heading, $ratio), [theme, $heading, $ratio])};
 `;

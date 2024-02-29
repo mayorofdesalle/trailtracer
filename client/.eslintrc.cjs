@@ -19,5 +19,6 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/no-unknown-property': [0, { 'ignore': ['args, fragmentShader, vertexShader, uniforms'] }],
+    'react/display-name': 'off'
   },
 }

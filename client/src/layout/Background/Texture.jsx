@@ -1,9 +1,10 @@
 import { Canvas } from '@react-three/fiber';
 
-import TextureMesh from './TextureMesh';
+import ShaderMaterial from './ShaderMaterial';
 
 // GL settings
 const GL = {
+	powerPreference: 'low-power',
 	preserveDrawingBuffer: true,
 	premultipliedAlpha: false,
 	transparent: true,
@@ -12,14 +13,15 @@ const GL = {
 /**
  * Texture
  * @description
- * This is the Texture component that is used to render the TextureMesh component.
- * It uses the Canvas component from the @react-three/fiber package to render the TextureMesh component.
- * It also sets the GL settings for the Canvas component.
+ * This component uses the Canvas component from the @react-three/fiber package to render the mesh.
  **/
 const Texture = () => {
 	return (
 		<Canvas gl={GL} frameloop='demand'>
-			<TextureMesh />
+			<mesh>
+				<planeGeometry args={[24, 24]} />
+				<ShaderMaterial />
+			</mesh>
 		</Canvas>
 	);
 };

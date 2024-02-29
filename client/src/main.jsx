@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import GlobalStyle from './components/style/GlobalStyle';
-import Theme from './components/style/Theme';
-import Home from './pages/Home/Home';
+import { Provider } from 'react-redux';
+
+import GlobalStyle from '@components/style/GlobalStyle';
+import Theme from '@components/style/Theme';
+import Home from '@pages/Home/Home';
+
+import store from './app/store';
 
 /**
  * Router
@@ -24,9 +28,11 @@ const router = createBrowserRouter([
  **/
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<Theme>
-			<GlobalStyle />
-			<RouterProvider router={router} />
-		</Theme>
+		<Provider store={store}>
+			<Theme>
+				<GlobalStyle />
+				<RouterProvider router={router} />
+			</Theme>
+		</Provider>
 	</React.StrictMode>,
 );

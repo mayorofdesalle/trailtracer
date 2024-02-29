@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 import Icons from '@assets/icons.svg';
-import { convertRemToPixels } from '@utils/screenMath';
+import { remToPx } from '@utils/conversions';
 
 /**
  * Icon
@@ -14,9 +14,9 @@ import { convertRemToPixels } from '@utils/screenMath';
  **/
 const Icon = ({ name, color, height, width }) => {
     return (
-        <svg id={name} fill={color} width={convertRemToPixels(width)} height={convertRemToPixels(height)}>
+        <svg id={name} fill={color} width={remToPx(width)} height={remToPx(height)}>
             <title>{name}</title>
-            <use xlinkHref={`${Icons}#${name}`} />
+            <use href={`${Icons}#${name}`} />
         </svg>
     );
 };

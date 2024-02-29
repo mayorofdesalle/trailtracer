@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 
 const useResize = (elementRef) => {
     const [size, setSize] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: 0,
+        height: 0,
+        offsetTop: 0
     });
 
     useEffect(() => {
@@ -12,8 +13,9 @@ const useResize = (elementRef) => {
 
         const resizeObserver = new ResizeObserver((e) => {
             setSize({
-                width: e[0].contentRect.width,
-                height: e[0].contentRect.height
+                width: e[0].borderBoxSize[0].inlineSize,
+                height: e[0].borderBoxSize[0].blockSize,
+                offsetTop: e[0].target.offsetTop
             });
         });
 

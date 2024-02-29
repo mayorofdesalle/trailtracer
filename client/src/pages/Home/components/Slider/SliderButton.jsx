@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Draggable from 'react-draggable';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { modify } from '@features/background/backgroundSlice';
 import Button from '@components/ui/Button';
 import Icon from '@components/ui/Icon';
 import { fadeIn } from '@components/misc/anims';
@@ -38,6 +40,28 @@ const mapPositionToPage = (position, sliderWidth, wrapperWidth) => {
     return (position - 3 * sliderWidth / 8) * (3 * wrapperWidth) / (6 * sliderWidth / 8) + (3 * wrapperWidth);
 };
 
+const adjustBackground = (position, pagePosition, dispatch) => {
+    const transitionTime = 300; // milliseconds
+    const distance = pagePosition - position;
+
+    const easeInOutSine = (t) => {
+        return -(Math.cos(Math.PI * t) - 1) / 2;
+    };
+
+    const adjust = (repeats = transitionTime) => {
+        if (repeats > 0) {
+            const animTime = easeInOutSine(repeats / transitionTime);
+
+            const delta = distance * animTime / transitionTime;
+
+            dispatch(modify({ layers: 0, distortion: 0.001 * delta, slope: 0.001 * delta, jitter: 0.001 * delta }));
+            setTimeout(() => adjust(repeats - 1), 1);
+        }
+    };
+
+    adjust();
+};
+
 /**
  * ButtonBase
  * @description
@@ -46,8 +70,8 @@ const mapPositionToPage = (position, sliderWidth, wrapperWidth) => {
 const ButtonBase = styled(Button)`
     position: absolute;
     display: flex;
-    height: max(1.5rem, 3svh);
-    width: max(3rem, 3svw);
+    height: 60%;
+    width: 15%;
     padding: 0;
     fill: ${({ theme }) => theme.colors.text};
     background-color: ${({ theme }) => theme.colors.secondary};
@@ -88,6 +112,7 @@ const SliderButton = ({ wrapperWidth, sliderWidth, setPageScroll }) => {
     const pagePositions = [-3 * sliderWidth / 8, -sliderWidth / 8, sliderWidth / 8, 3 * sliderWidth / 8];
     const [currentPage, setCurrentPage] = useState(0);
     const button = useRef();
+    const dispatch = useDispatch();
 
     return (
         <Draggable
@@ -100,8 +125,12 @@ const SliderButton = ({ wrapperWidth, sliderWidth, setPageScroll }) => {
                 const closestPage = findClosestPage(pagePositions, button.x);
                 setCurrentPage(closestPage);
                 setPageScroll(mapPositionToPage(pagePositions[closestPage], sliderWidth, wrapperWidth));
+                adjustBackground(button.x, pagePositions[closestPage], dispatch);
             }}
-            onDrag={(e, button) => setPageScroll(mapPositionToPage(button.x, sliderWidth, wrapperWidth))}
+            onDrag={(e, button) => {
+                setPageScroll(mapPositionToPage(button.x, sliderWidth, wrapperWidth));
+                dispatch(modify({ layers: 0, distortion: 0.001 * button.deltaX, slope: 0.001 * button.deltaX, jitter: 0.001 * button.deltaX }));
+            }}
         >
             <ButtonBase ref={button}>
                 <Icon name='arrow-left-fill' height={4} width={4} />

@@ -1,23 +1,39 @@
+import { useRef } from 'react';
 import styled from 'styled-components';
 
+import useHover from '@hooks/useHover';
 import Button from '@components/ui/Button';
+import Icon from '@components/ui/Icon';
 
 /**
- * SignInButton
+ * ButtonBase
  * @description
- * This is a styled button that is used to sign in.
+ * This component creates the base of the SignInButton.
  **/
-const SignInButton = styled(Button)`
+const ButtonBase = styled(Button)`
     color: ${({ theme }) => theme.colors.background};
     background-color: ${({ theme }) => theme.colors.primary};
-    height: 1.5rem;
-    width: 6.5rem;
-    padding: 0;
+    padding: 0 1rem;
     backdrop-filter: none;
 
     &:active {
         background-color: ${({ theme }) => theme.colors.secondary};
     }
+
+    & > svg {
+        transition: 10s;
+    }
 `;
+
+const SignInButton = () => {
+    const signInButton = useRef();
+    const isHovered = useHover(signInButton);
+
+    return (
+        <ButtonBase ref={signInButton}>
+            <Icon name={isHovered ? 'user-fill' : 'user-line'} width={1.5} height={1.5} />
+        </ButtonBase>
+    );
+};
 
 export default SignInButton;
