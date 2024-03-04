@@ -44,6 +44,8 @@ This is a website for bikers to share, to collaborate on, and to plan trails and
 <!-- ROADMAP -->
 ## Roadmap
 
+- [ ] Stories
+- [ ] Tests
 - [ ] User
     - [ ] Signup
     - [ ] Login 
