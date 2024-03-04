@@ -2,8 +2,6 @@
 
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![Protonmail][proton-shield]][proton-url]
 
 <br />
 <div>
@@ -69,8 +67,10 @@ Distributed under the GNU General Public License v3.0. See `LICENSE.txt` for mor
 
 <!-- CONTACT -->
 ## Contact
+Buğra Aras
 
-Buğra Aras - bugra.aras@proton.me
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Protonmail][proton-shield]][proton-url]
 
 <p>(<a href='#readme-top'>back to top</a>)</p>
 
