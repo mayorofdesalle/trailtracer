@@ -1,10 +1,7 @@
-import { useRef } from 'react';
 import styled from 'styled-components';
 import { PropTypes } from 'prop-types';
 
 import Container from '@components/ui/Container';
-import useResize from '@hooks/useResize';
-import PageContext from '@context/PageContext';
 
 import Navbar from './Navbar/Navbar';
 import Background from './Background/Background';
@@ -40,18 +37,13 @@ const ContentContainer = styled(Container)`
  * It also provides the size of the page to its children.
  **/
 const PageContainer = ({ children }) => {
-	const contentContainer = useRef();
-	const size = useResize(contentContainer);
-
 	return (
 		<Container>
 			<Background />
 			<ContentWrapper>
-				<ContentContainer ref={contentContainer}>
+				<ContentContainer>
 					<Navbar />
-					<PageContext.Provider value={{ size }}>
-						{children}
-					</PageContext.Provider>
+					{children}
 				</ContentContainer>
 			</ContentWrapper>
 		</Container>

@@ -15,7 +15,8 @@ const useResize = (elementRef) => {
             setSize({
                 width: e[0].borderBoxSize[0].inlineSize,
                 height: e[0].borderBoxSize[0].blockSize,
-                offsetTop: e[0].target.offsetTop
+                offsetTop: e[0].target.offsetTop,
+                offsetLeft: e[0].target.offsetLeft
             });
         });
 

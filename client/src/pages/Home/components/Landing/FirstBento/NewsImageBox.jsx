@@ -12,7 +12,6 @@ const NewsImageBox = styled(BentoBox)`
     background-color: ${({ theme }) => theme.colors.primary};
     overflow: hidden;
     animation: ${rotateInFT} 1s ease-in-out;
-    z-index: -1;
 `;
 
 export default NewsImageBox;

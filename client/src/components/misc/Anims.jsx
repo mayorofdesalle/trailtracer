@@ -8,32 +8,6 @@ import { keyframes } from 'styled-components';
 
 /**
  * @description
- * Rotates the element from left to right.
- **/
-export const rotateL2R = keyframes`
-    0% {
-        transform: rotateY(0deg) rotateX(10deg);
-    }
-
-    25% {
-        transform: rotateY(20deg) rotateX(10deg);
-    }
-
-    50% {
-        transform: rotateY(0deg) rotateX(10deg);
-    }
-
-    75% {
-        transform: rotateY(-20deg) rotateX(10deg);
-    }
-
-    100% {
-        transform: rotateY(0deg) rotateX(10deg);
-    }
-`;
-
-/**
- * @description
  * Creates a wobble effect on the element.
  **/
 export const translateWobble = keyframes`

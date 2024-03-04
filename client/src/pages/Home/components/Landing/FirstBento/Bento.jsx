@@ -2,7 +2,6 @@ import { useTheme } from 'styled-components';
 
 import bikerImg from '@assets/images/biker.svg';
 import useWindowSize from '@hooks/useWindowSize';
-
 import Text, { Prim, Sec } from '@components/ui/Text';
 import Vector from '@components/ui/Vector';
 import { remToPx } from '@utils/conversions';
@@ -26,11 +25,10 @@ import PopularBox from './PopularBox';
  **/
 const Bento = () => {
     const theme = useTheme();
-    const mediumBreakpoint = remToPx(theme.breakpoints.large.slice(0, -3));
     const { width } = useWindowSize();
-
+    const mediumBreakpoint = remToPx(theme.breakpoints.large.slice(0, -3));
     return (
-        <BentoGridContainer >
+        <BentoGridContainer>
             <HeroImageBox $gridArea='HeroImageBox'>
                 <img src={bikerImg} alt='A biker on an enduro motorcycle' />
             </HeroImageBox>
@@ -55,14 +53,13 @@ const Bento = () => {
                 <>
                     <NewsImageBox $gridArea='NewsImageBox' />
                     <NewsBox $gridArea='NewsBox' />
-                    <PopularBox $gridArea='PopularBox' />
                     <TopTrailBox $gridArea='TopTrailBox' />
+                    <PopularBox $gridArea='PopularBox' />
                 </>
             )}
 
             <GridPlaceholder gridArea='Slider' />
             <GridPlaceholder gridArea='StartButton' />
-
         </BentoGridContainer>
     );
 };

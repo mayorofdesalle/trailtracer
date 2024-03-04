@@ -1,6 +1,6 @@
 import PageContainer from '@layout/PageContainer';
 
-import Bentos from './components/Bentos';
+import Landing from './components/Landing/Landing';
 
 /**
  * Home
@@ -10,7 +10,7 @@ import Bentos from './components/Bentos';
 const Home = () => {
 	return (
 		<PageContainer>
-			<Bentos />
+			<Landing />
 		</PageContainer>
 	);
 };

@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 // Home Page Mixins
 
 const pseudoBentoArrowBase = css`
-        --size: 3rem;
+        --size: max(3svh, 3svw);
         position: absolute;
         display: block;
         content: '';
@@ -12,10 +12,6 @@ const pseudoBentoArrowBase = css`
         left: calc(50% - var(--size) / 2);
         border-left: calc(var(--size) * 3 / 5) solid transparent;
         border-right: calc(var(--size) * 3 / 5) solid transparent;
-
-        @media all and (max-width: ${({ theme }) => theme.breakpoints.medium}) {
-            --size: 1.5rem;
-        }
 `;
 
 /**

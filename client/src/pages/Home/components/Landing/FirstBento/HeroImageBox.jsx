@@ -14,9 +14,9 @@ const HeroImageBox = styled(BentoBox)`
     animation: ${rotateInFT} 1s ease-in-out;
 
     & > * {
-        --h: 80svh;
+        --h: min(80svh, 80svw);
         height: var(--h);
-        transform: translate(2rem, 8rem);
+        transform: translate(calc(var(--h)/16), calc(var(--h)/8));
         animation: ${scaleDown} 1s ease-in-out;
     }
 `;

@@ -14,7 +14,7 @@ const BackgroundContainer = memo(styled(Container)`
     width: 100svw;
     border-radius: 0;
     background-color: ${({ theme }) => theme.colors.background};
-    z-index: -9999;
+    z-index: -999;
 `);
 
 export default BackgroundContainer;

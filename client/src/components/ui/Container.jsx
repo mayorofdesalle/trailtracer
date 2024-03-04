@@ -11,7 +11,7 @@ const Container = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 1rem;
 `;
 
 export default Container;

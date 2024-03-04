@@ -12,7 +12,7 @@ const Button = styled.button`
     align-items: center;
     justify-content: space-around;
     border: none;
-    border-radius: 5px;
+    border-radius: 1rem;
     padding: 1rem;
     color: ${({ theme }) => theme.colors.text};
     text-transform: uppercase;

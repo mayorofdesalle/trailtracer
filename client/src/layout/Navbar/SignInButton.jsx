@@ -13,6 +13,7 @@ import Icon from '@components/ui/Icon';
 const ButtonBase = styled(Button)`
     color: ${({ theme }) => theme.colors.background};
     background-color: ${({ theme }) => theme.colors.primary};
+    border-radius: 0.5rem;
     padding: 0 1rem;
     backdrop-filter: none;
 

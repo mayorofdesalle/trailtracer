@@ -15,7 +15,7 @@ const Nav = styled.nav`
     height: 4svh;
     width: 100%;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 1rem;
     z-index: 999;
 
     ${glassMorph}

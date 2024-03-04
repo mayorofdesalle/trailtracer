@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
@@ -13,6 +14,7 @@ import StartButtonContainer from './StartButtonContainer';
  * This is a styled Button component creating the base for the StartButton.
  */
 const ButtonBase = styled(Button)`
+    will-change: transform;
     width: 100%;
     height: 100%;
     border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
@@ -20,7 +22,6 @@ const ButtonBase = styled(Button)`
     transform-style: preserve-3d;
 
     &::before, &::after {
-        --z: 0px;
         position: absolute;
         top: 0;
         left: 0;
@@ -29,10 +30,9 @@ const ButtonBase = styled(Button)`
         width: 100%;
         height: 100%;
         opacity: 0;
-        mix-blend-mode: color;
+        mix-blend-mode: soft-light;
         border-radius: inherit;
         transform-style: preserve-3d;
-        transform: translate3d(calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
     }
 
     &:before {
@@ -71,9 +71,8 @@ const ButtonBase = styled(Button)`
  * @description
  * This is a function component that acts as a CTA to get started using the website.
  */
-const StartButton = () => {
+const StartButton = memo(() => {
     const size = useSelector((state) => state.gridPlaceholder.StartButton);
-
     return (
         size &&
         <StartButtonContainer $height={size.height} $width={size.width} $top={size.offsetTop}>
@@ -82,6 +81,6 @@ const StartButton = () => {
             </ButtonBase>
         </StartButtonContainer>
     );
-};
+});
 
 export default StartButton;

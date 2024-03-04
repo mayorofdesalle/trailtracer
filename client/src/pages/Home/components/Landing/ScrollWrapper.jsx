@@ -4,15 +4,14 @@ import Container from '@components/ui/Container';
 
 const ScrollWrapper = styled(Container)`
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow-x: hidden;
     align-items: start;
     justify-content: start;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
     &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
+        display:none;
     }
 `;
 

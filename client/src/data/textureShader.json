@@ -1,7 +1,7 @@
 {
 	"uniforms": {
 		"u_scale": 0.7,
-		"u_layers": 7,
+		"u_layers": 2,
 		"u_distortion": 7,
 		"u_thickness": 0.0007,
 		"u_slope": 43,

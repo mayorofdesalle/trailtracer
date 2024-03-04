@@ -11,7 +11,6 @@ import { rotateInFT } from '@components/misc/anims';
 const TopTrailBox = styled(BentoBox)`
     background-color: ${({ theme }) => theme.colors.primary};
     animation: ${rotateInFT} 1s ease-in-out;
-    z-index: -1;
 `;
 
 export default TopTrailBox;

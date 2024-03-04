@@ -26,5 +26,6 @@ export const scaleOnHover = css`
  **/
 export const glassMorph = css`
     background-color: ${({ theme }) => theme.colors.backgroundTransparent};
+    --webkit-backdrop-filter: blur(0.25rem);
     backdrop-filter: blur(0.25rem);
 `;

@@ -1,13 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 
+import useResize from '@hooks/useResize';
+
 import Slider from './Slider/Slider';
 import StartButton from './StartButton/StartButton';
 import ScrollWrapper from './ScrollWrapper';
 import FirstBento from './FirstBento/Bento';
+import SecondBento from './SecondBento/Bento';
+import ThirdBento from './ThirdBento/Bento';
+import FourthBento from './FourthBento/Bento';
 
-const Bentos = () => {
+const Landing = () => {
     const scrollWrapper = useRef();
-    const [pageScroll, setPageScroll] = useState(0);
+    const pageWidth = useResize(scrollWrapper).width;
+    const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
         // This is a workaround for the scroll behaviour when dragging the Slider.
@@ -16,21 +22,21 @@ const Bentos = () => {
         if (document.body.getElementsByClassName('isDragging').length > 0) {
             scrollBehaviour = 'auto';
         }
-        scrollWrapper.current?.scrollTo({ left: pageScroll, behavior: scrollBehaviour });
-    }, [pageScroll]);
+        scrollWrapper.current?.scrollTo({ left: scrollPosition, behavior: scrollBehaviour });
+    }, [scrollPosition]);
 
     return (
         <>
             <ScrollWrapper ref={scrollWrapper}>
                 <FirstBento />
-                <FirstBento />
-                <FirstBento />
-                <FirstBento />
+                <SecondBento />
+                <ThirdBento />
+                <FourthBento />
             </ScrollWrapper>
-            <Slider wrapperWidth={scrollWrapper.current?.getBoundingClientRect().width} setPageScroll={setPageScroll} />
+            <Slider fullPageWidth={pageWidth} setScrollPosition={setScrollPosition} />
             <StartButton />
         </>
     );
 };
 
-export default Bentos;
+export default Landing;
