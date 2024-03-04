@@ -1,10 +1,10 @@
 {
   "name": "trailtracer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A website for bikers to pin and share their favorite trails and points of interest.",
   "scripts": {
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" ",
-    "build": ""
+    "storybook": "cd client && npm run storybook"
   },
   "author": "Buğra Aras",
   "license": "GGPL",
