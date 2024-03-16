@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Container from '@components/ui/Container';
 import { glassMorph } from '@components/misc/mixins';
-import { rotateInFB } from '@components/misc/anims';
+import { fadeIn } from '@components/misc/anims';
 
 /**
  * SliderButtonContainer
@@ -22,8 +22,10 @@ const SliderButtonContainer = memo(styled(Container)`
     justify-content: space-around;
     align-items: center;
     border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
-    border-radius: 10px;
-    animation: ${rotateInFB} 1s ease-in-out;
+
+    & > * {
+        animation: ${fadeIn} 1s ease-in-out;
+    }
 
     & > .isDragging {
         background-color: ${({ theme }) => theme.colors.primary};

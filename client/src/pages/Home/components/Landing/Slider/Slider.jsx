@@ -4,13 +4,13 @@ import { useState, useCallback, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { modify } from '@features/background/backgroundSlice';
+import { modify } from '@features/backgroundSlice';
 
 import SliderButtonContainer from './SliderButtonContainer';
 import Pagination from './Pagination';
 import SliderButton from './SliderButton';
 
-const BACKGROUND_EFFECTOR = 0.001;
+const BACKGROUND_EFFECTOR = 0.0007;
 
 /**
  * function getDotPosition(activePage, width)
@@ -56,37 +56,6 @@ const mapSliderToPage = (position, sliderWidth, fullPageWidth) => {
 };
 
 /**
- * function adjustBackground(position, dotPosition, dispatch)
- * @param {Number}
- * @param {Number}
- * @param {Function}
- * @description
- * This function adjusts the background uniforms based on the distance that will be traveled by the button.
- * It uses an easing function to create a smooth transition.
- */
-const adjustBackground = (position, dotPosition, dispatch) => {
-    const transitionTime = 300; // milliseconds
-    const distance = dotPosition - position;
-
-    const easeInOutSine = (t) => {
-        return -(Math.cos(Math.PI * t) - 1) / 2;
-    };
-
-    const adjust = (repeats = transitionTime) => {
-        if (repeats > 0) {
-            const animTime = easeInOutSine(repeats / transitionTime);
-
-            const delta = distance * animTime / transitionTime;
-
-            dispatch(modify({ distortion: BACKGROUND_EFFECTOR * delta, slope: BACKGROUND_EFFECTOR * delta, jitter: BACKGROUND_EFFECTOR * delta }));
-            setTimeout(() => adjust(repeats - 1), 1);
-        }
-    };
-
-    adjust();
-};
-
-/**
  * Slider
  * @param {Number} fullPageWidth - The width of the ScrollWrapper.
  * @param {Function} setPageScroll - The function to set the page scroll state.
@@ -96,9 +65,17 @@ const adjustBackground = (position, dotPosition, dispatch) => {
  **/
 const Slider = ({ fullPageWidth, setScrollPosition }) => {
     const dispatch = useDispatch();
-    const [activePage, setActivePage] = useState(0);
+
+    const [activePage, setActivePage] = useState(sessionStorage.getItem('LandingActivePage') || 0);
     const size = useSelector((state) => state.gridPlaceholder.Slider);
     const dotPositions = useMemo(() => [0, 1, 2, 3].map((i) => getDotPosition(i, size?.width)), [size?.width]);
+
+    const handleActivePage = useCallback((page, distance) => {
+        setScrollPosition(mapSliderToPage(getDotPosition(page, size.width), size.width, fullPageWidth));
+        dispatch(modify({ animate: true, distortion: BACKGROUND_EFFECTOR * distance, slope: BACKGROUND_EFFECTOR * distance, jitter: BACKGROUND_EFFECTOR * distance }));
+        setActivePage(page);
+        sessionStorage.setItem('LandingActivePage', page);
+    }, [setScrollPosition, size, fullPageWidth, dispatch]);
 
     /**
      * function onDrag(e, button)
@@ -125,10 +102,9 @@ const Slider = ({ fullPageWidth, setScrollPosition }) => {
      **/
     const onStop = useCallback((e, button) => {
         const closestDot = findClosestDot(dotPositions, button.x);
-        setScrollPosition(mapSliderToPage(getDotPosition(closestDot, size.width), size.width, fullPageWidth));
-        adjustBackground(button.x, getDotPosition(closestDot, size.width), dispatch);
-        setActivePage(closestDot);
-    }, [size, fullPageWidth, dotPositions, setScrollPosition, dispatch]);
+        const distance = getDotPosition(closestDot, size.width) - button.x;
+        handleActivePage(closestDot, distance);
+    }, [size, dotPositions, handleActivePage]);
 
     /**
      * function onClick(i)
@@ -138,10 +114,9 @@ const Slider = ({ fullPageWidth, setScrollPosition }) => {
      * It sets the active page to the clicked page.
      */
     const onClick = useCallback((i) => {
-        setScrollPosition(mapSliderToPage(getDotPosition(i, size.width), size.width, fullPageWidth));
-        adjustBackground(getDotPosition(activePage, size.width), getDotPosition(i, size?.width), dispatch);
-        setActivePage(i);
-    }, [size, fullPageWidth, activePage, setScrollPosition, dispatch]);
+        const distance = getDotPosition(i, size?.width) - getDotPosition(activePage, size.width);
+        handleActivePage(i, distance);
+    }, [size, activePage, handleActivePage]);
 
     return (
         size &&

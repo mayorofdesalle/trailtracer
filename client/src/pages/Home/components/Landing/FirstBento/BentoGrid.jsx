@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
-import Container from '@components/ui/Container';
+import Grid from '@components/ui/Bento/Grid';
 
 /**
- * BentoGridContainer
+ * BentoGrid
  * @description
- * This is a styled container that is used to contain the grid layout of the first bento.
+ * This is a styled container that is used to provide the grid layout of the bento.
  **/
-const BentoGridContainer = styled(Container)`
+const BentoGrid = styled(Grid)`
     flex: 0 0 auto;
-    display: grid;
-    padding: 2rem;
     grid-template-columns: 3.5fr 1fr 3fr 1fr 3.5fr;
     grid-template-rows: 4fr 2fr 1fr 2fr 1fr 2fr;
-    grid-gap: 2rem;
     grid-template-areas:
         'NewsImageBox   HeroImageBox            HeroImageBox            HeroImageBox            PopularBox'
         'NewsImageBox   HeroImageBox            HeroImageBox            HeroImageBox            PopularBox'
@@ -21,13 +18,10 @@ const BentoGridContainer = styled(Container)`
         'NewsBox        HeroDescriptionBox      HeroDescriptionBox      HeroDescriptionBox      TopTrailBox'
         'NewsBox        ActionBox1              Slider                  ActionBox2              TopTrailBox'
         'NewsBox        ActionBox1              StartButton             ActionBox2              TopTrailBox';
-
-    /* Medium screens and downwards */
-    @media screen and (max-width: ${({ theme }) => theme.breakpoints.large}) {
-        padding: 1rem;
+    
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) or (max-aspect-ratio: 1) {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 4fr 3fr 1fr 4fr;
-        grid-gap: 1rem;
+        grid-template-rows: 6fr 2fr 1fr 3fr;
         grid-template-areas:
             'HeroImageBox           HeroImageBox            HeroImageBox'
             'HeroDescriptionBox     HeroDescriptionBox      HeroDescriptionBox'
@@ -36,4 +30,4 @@ const BentoGridContainer = styled(Container)`
     }
 `;
 
-export default BentoGridContainer;
+export default BentoGrid;

@@ -2,12 +2,13 @@ import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { set } from '@features/gridPlaceholder/gridPlaceholderSlice';
+import { set } from '@features/gridPlaceholderSlice';
 import useResize from '@hooks/useResize';
-import BentoBox from '@components/ui/BentoBox';
+import BentoBox from '@components/ui/Bento/Box';
 import styled from 'styled-components';
 
 const GridPlaceholderInner = styled(BentoBox)`
+    grid-area: ${({ $gridArea }) => $gridArea};
     box-shadow: none;
 `;
 

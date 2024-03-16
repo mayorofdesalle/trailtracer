@@ -5,7 +5,6 @@ const StyledTooltip = styled(Tooltip).attrs(
     { className: 'tooltip', classNameArrow: 'arrow' })`
 
     &.tooltip {
-        font-size: ${({ theme }) => theme.fontSizes.large};
         font-weight: ${({ theme }) => theme.fontWeights.xBold};
         color: ${({ theme }) => theme.colors.text};
         background-color: ${({ theme }) => theme.colors.secondary};

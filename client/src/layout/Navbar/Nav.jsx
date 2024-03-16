@@ -12,15 +12,16 @@ const Nav = styled.nav`
     justify-content: space-between;
     align-items: center;
     vertical-align: middle;
-    height: 4svh;
+    height: clamp(2rem, min(4svw, 4svh), 6rem);
     width: 100%;
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: max(0.5svh, 0.5svw, 0.5rem);
     z-index: 999;
 
     ${glassMorph}
+    border: none;
 
-    @media screen and (max-width: ${({ theme }) => theme.breakpoints.large}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
         padding: 2rem 1rem;
     }
 `;

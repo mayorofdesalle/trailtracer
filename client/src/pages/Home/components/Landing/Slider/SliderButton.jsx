@@ -5,26 +5,24 @@ import PropTypes from 'prop-types';
 
 import Button from '@components/ui/Button';
 import Icon from '@components/ui/Icon';
-import { fadeIn } from '@components/misc/anims';
 
 /**
- * InnerSliderButton
+ * SliderButtonInner
  * @description
  * This component is a styled Button component creating the base for the SliderButton.
  **/
-const InnerSliderButton = styled(Button)`
+const SliderButtonInner = styled(Button)`
     position: absolute;
     display: flex;
     height: 60%;
     width: 15%;
     padding: 0;
-    fill: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.text};
     background-color: ${({ theme }) => theme.colors.secondary};
     cursor: move;
     touch-action: pan-y;
     z-index: 1;
-    transition: 300ms ease-in-out;
-    animation: ${fadeIn} 1s ease-in-out;
+    transition: 200ms ease-in-out;
 
     & > #arrow-left-fill {
         transform: translateX(0.3rem);
@@ -36,11 +34,11 @@ const InnerSliderButton = styled(Button)`
         transition: 200ms ease-in-out;
     }
 
-    &:hover > #arrow-left-fill {
+    &:hover > #arrow-left-fill, &.isDragging > #arrow-left-fill {
         transform: translateX(0.1rem);
     }
 
-    &:hover > #arrow-right-fill {
+    &:hover > #arrow-right-fill, &.isDragging > #arrow-right-fill {
         transform: translateX(-0.1rem);
     }
 `;
@@ -66,10 +64,10 @@ const SliderButton = ({ onDrag, onStop, position }) => {
             onDrag={(e, button) => onDrag(e, button)}
             onStop={(e, button) => onStop(e, button)}
         >
-            <InnerSliderButton ref={button}>
+            <SliderButtonInner ref={button}>
                 <Icon name='arrow-left-fill' height={4} width={4} />
                 <Icon name='arrow-right-fill' height={4} width={4} />
-            </InnerSliderButton>
+            </SliderButtonInner>
         </Draggable>
     );
 };

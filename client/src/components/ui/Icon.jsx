@@ -1,7 +1,13 @@
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Icons from '@assets/icons.svg';
-import { remToPx } from '@utils/conversions';
+
+const IconSvg = styled.svg`
+    --size: calc(clamp(1rem, min(2.5svw, 2.5svh), 3rem));
+    height: var(--size);
+    width: var(--size);
+`;
 
 /**
  * Icon
@@ -12,20 +18,18 @@ import { remToPx } from '@utils/conversions';
  * @description
  * This is component that displays an icon from the icons.svg bundle.
  **/
-const Icon = ({ name, color, height, width }) => {
+const Icon = ({ name, color }) => {
     return (
-        <svg id={name} fill={color} width={remToPx(width)} height={remToPx(height)}>
+        <IconSvg id={name} fill={color || 'currentColor'} style={{ pointerEvents: 'none' }}>
             <title>{name}</title>
             <use href={`${Icons}#${name}`} />
-        </svg>
+        </IconSvg>
     );
 };
 
 Icon.propTypes = {
     name: PropTypes.string.isRequired,
     color: PropTypes.string,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired
 };
 
 export default Icon;

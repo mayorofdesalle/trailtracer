@@ -4,22 +4,24 @@ import styled from 'styled-components';
 
 import Button from '@components/ui/Button';
 import Text from '@components/ui/Text';
+import { glassMorph } from '@components/misc/Mixins';
 import { translateWobble, fadeIn } from '@components/misc/Anims';
 
 import StartButtonContainer from './StartButtonContainer';
 
 /**
- * ButtonBase
+ * StartButtonInner
  * @description
  * This is a styled Button component creating the base for the StartButton.
  */
-const ButtonBase = styled(Button)`
+const StartButtonInner = styled(Button)`
     will-change: transform;
     width: 100%;
     height: 100%;
     border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
-    perspective: 500px;
-    transform-style: preserve-3d;
+    color: ${({ theme }) => theme.colors.text};
+
+    ${glassMorph}
 
     &::before, &::after {
         position: absolute;
@@ -60,10 +62,6 @@ const ButtonBase = styled(Button)`
     & > ${Text} {
         animation: ${fadeIn} 1s ease-in-out;
     }
-
-    @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
-        font-size: ${({ theme }) => theme.fontSizes.small};
-    }
 `;
 
 /**
@@ -73,12 +71,13 @@ const ButtonBase = styled(Button)`
  */
 const StartButton = memo(() => {
     const size = useSelector((state) => state.gridPlaceholder.StartButton);
+
     return (
         size &&
         <StartButtonContainer $height={size.height} $width={size.width} $top={size.offsetTop}>
-            <ButtonBase>
+            <StartButtonInner>
                 <Text $heading>GET STARTED — IT&apos;S FREE!</Text>
-            </ButtonBase>
+            </StartButtonInner>
         </StartButtonContainer>
     );
 });

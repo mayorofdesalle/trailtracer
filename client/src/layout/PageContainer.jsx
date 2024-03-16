@@ -1,10 +1,16 @@
-import styled from 'styled-components';
-import { PropTypes } from 'prop-types';
+import { useState, useEffect } from 'react';
+import { useLocation, Outlet } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import styled, { useTheme } from 'styled-components';
 
+import useWindowSize from '@hooks/useWindowSize';
+import { randomize } from '@features/backgroundSlice';
 import Container from '@components/ui/Container';
+import { remToPx } from '@utils/conversions';
 
 import Navbar from './Navbar/Navbar';
 import Background from './Background/Background';
+import DisplayWarning from './DisplayWarning';
 
 /**
  * ContentWrapper
@@ -15,7 +21,6 @@ const ContentWrapper = styled(Container)`
 	position: relative;
 	height: 100svh;
 	width: 100svw;
-	max-width: 160rem;
 `;
 
 const ContentContainer = styled(Container)`
@@ -36,22 +41,40 @@ const ContentContainer = styled(Container)`
  * This is a styled container that is used to contain the whole page.
  * It also provides the size of the page to its children.
  **/
-const PageContainer = ({ children }) => {
+const PageContainer = () => {
+	const dispatch = useDispatch();
+
+	const theme = useTheme();
+	const mediumBreakpoint = remToPx(theme.breakpoints.medium.slice(0, -3));
+
+	const [previousLocation, setPreviousLocation] = useState('');
+	const location = useLocation();
+
+	const { height, width } = useWindowSize();
+	const aspectRatio = width / height;
+
+	useEffect(() => {
+		if (location.pathname !== previousLocation) {
+			setPreviousLocation(location.pathname);
+			dispatch(randomize());
+		}
+	}, [previousLocation, location, dispatch]);
+
 	return (
 		<Container>
 			<Background />
 			<ContentWrapper>
 				<ContentContainer>
-					<Navbar />
-					{children}
+					{height < mediumBreakpoint && aspectRatio > 1.25 ? <DisplayWarning /> :
+						<>
+							<Navbar />
+							<Outlet />
+						</>
+					}
 				</ContentContainer>
 			</ContentWrapper>
 		</Container>
 	);
-};
-
-PageContainer.propTypes = {
-	children: PropTypes.node,
 };
 
 export default PageContainer;

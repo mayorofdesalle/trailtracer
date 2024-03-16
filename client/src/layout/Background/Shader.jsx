@@ -1,9 +1,10 @@
 import { useRef, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import * as THREE from 'three';
 import { useFrame, invalidate } from '@react-three/fiber';
 
 import textureShader from '@data/textureShader';
+import { set } from '@features/backgroundSlice';
 
 /**
  * Shader
@@ -13,6 +14,7 @@ import textureShader from '@data/textureShader';
  */
 const Shader = () => {
     const material = useRef();
+    const dispatch = useDispatch();
 
     const uniforms = useMemo(() => ({
         u_scale: { value: textureShader.uniforms.u_scale },
@@ -29,13 +31,21 @@ const Shader = () => {
     const fragmentShader = useMemo(() => textureShader.fragmentShader, []);
     const vertexShader = useMemo(() => textureShader.vertexShader, []);
 
-    const { distortion, slope, jitter } = useSelector((state) => state.background);
+    const { animate, distortion, slope, jitter } = useSelector((state) => state.background);
+    const speed = animate ? 1 : 100;
 
-    useFrame(() => {
+    useFrame((state, delta) => {
+        const dt = 1 - Math.exp(-speed * (delta > 0.1 ? 0.001 : delta));
+
         if (material.current) {
-            material.current.uniforms.u_distortion.value = THREE.MathUtils.lerp(material.current.uniforms.u_distortion.value, distortion, 1);
-            material.current.uniforms.u_slope.value = THREE.MathUtils.lerp(material.current.uniforms.u_slope.value, slope, 1);
-            material.current.uniforms.u_jitter.value = THREE.MathUtils.lerp(material.current.uniforms.u_jitter.value, jitter, 1);
+            material.current.uniforms.u_distortion.value = THREE.MathUtils.lerp(material.current.uniforms.u_distortion.value, distortion, dt);
+            material.current.uniforms.u_slope.value = THREE.MathUtils.lerp(material.current.uniforms.u_slope.value, slope, dt);
+            material.current.uniforms.u_jitter.value = THREE.MathUtils.lerp(material.current.uniforms.u_jitter.value, jitter, dt);
+        }
+
+        if (animate) {
+            if (material.current.uniforms.u_distortion.value.toFixed(3) === distortion.toFixed(3)) dispatch(set({ animate: false }));
+            else invalidate();
         }
     });
 

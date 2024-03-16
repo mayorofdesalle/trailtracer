@@ -1,5 +1,3 @@
-import PageContainer from '@layout/PageContainer';
-
 import Landing from './components/Landing/Landing';
 
 /**
@@ -9,9 +7,7 @@ import Landing from './components/Landing/Landing';
  **/
 const Home = () => {
 	return (
-		<PageContainer>
-			<Landing />
-		</PageContainer>
+		<Landing />
 	);
 };
 

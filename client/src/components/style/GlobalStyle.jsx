@@ -10,7 +10,8 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        
+        outline: none;
+        border: none;
         -webkit-user-drag: none;
         user-select: none;
         -moz-user-select: none;

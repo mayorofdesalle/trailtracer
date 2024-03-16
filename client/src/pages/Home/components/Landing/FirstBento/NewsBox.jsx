@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-import BentoBox from '@components/ui/BentoBox';
-import { glassMorph } from '@components/misc/mixins';
-import { rotateInFB } from '@components/misc/anims';
-
-import { pseudoBentoArrowTop } from '../mixins';
+import BentoBox from '@components/ui/Bento/Box';
+import { pseudoBentoArrowTop } from '@components/misc/mixins';
+import { slideFromBottom } from '@components/misc/anims';
 
 /**
  * NewsBox
@@ -12,13 +10,14 @@ import { pseudoBentoArrowTop } from '../mixins';
  * This is a styled bento box that is used to contain the news content.
  **/
 const NewsBox = styled(BentoBox)`
-    border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
-    animation: ${rotateInFB} 1s ease-in-out;
-
+    grid-area: NewsBox;
+    
     --arrowColor: ${({ theme }) => theme.colors.secondary};
     ${pseudoBentoArrowTop}
 
-    ${glassMorph}
+    &::before {
+        animation: ${slideFromBottom} 1s ease-in-out;
+    }
 `;
 
 export default NewsBox;

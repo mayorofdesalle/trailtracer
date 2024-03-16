@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
-import Container from '@components/ui/Container';
+import Grid from '@components/ui/Bento/Grid';
 
 /**
- * BentoGridContainer
+ * BentoGrid
  * @description
- * This is a styled container that is used to contain the grid layout of the first bento.
+ * This is a styled container that is used to provide the grid layout of the bento.
  **/
-const BentoGridContainer = styled(Container)`
+const BentoGrid = styled(Grid)`
     flex: 0 0 auto;
-    display: grid;
-    padding: 2rem;
     grid-template-columns: 3fr 1.5fr 3fr 1.5fr 3fr;
     grid-template-rows: 1fr 3fr 1fr 4fr 1fr 2fr;
-    grid-gap: 2rem;
     grid-template-areas:
         'Box1   Box1    Box2        Box2    Box2'
         'Box1   Box1    Box2        Box2    Box2'
@@ -22,12 +19,9 @@ const BentoGridContainer = styled(Container)`
         'Box4   Box3    Slider      Box5    Box5'
         'Box4   Box3    StartButton Box5    Box5';
 
-    /* Medium screens and downwards */
-    @media screen and (max-width: ${({ theme }) => theme.breakpoints.large}) {
-        padding: 1rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) or (max-aspect-ratio: 1) {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 4fr 3fr 1fr 4fr;
-        grid-gap: 1rem;
+        grid-template-rows: 6fr 2fr 1fr 3fr;
         grid-template-areas:
             'Box4   Box2        Box2'
             'Box4   Box3        Box3'
@@ -36,4 +30,4 @@ const BentoGridContainer = styled(Container)`
     }
 `;
 
-export default BentoGridContainer;
+export default BentoGrid;

@@ -1,40 +1,40 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import useHover from '@hooks/useHover';
 import Button from '@components/ui/Button';
 import Icon from '@components/ui/Icon';
 
 /**
- * ButtonBase
+ * SignInButtonInner
  * @description
  * This component creates the base of the SignInButton.
  **/
-const ButtonBase = styled(Button)`
-    color: ${({ theme }) => theme.colors.background};
-    background-color: ${({ theme }) => theme.colors.primary};
-    border-radius: 0.5rem;
-    padding: 0 1rem;
+const SignInButtonInner = styled(Button)`
+    padding: 0;
+    width: 3rem;
+    height: clamp(1.5rem, min(3svw, 3svh), 2rem);
     backdrop-filter: none;
 
     &:active {
         background-color: ${({ theme }) => theme.colors.secondary};
     }
-
-    & > svg {
-        transition: 10s;
-    }
 `;
 
-const SignInButton = () => {
+const SignInButton = ({ onClick }) => {
     const signInButton = useRef();
     const isHovered = useHover(signInButton);
 
     return (
-        <ButtonBase ref={signInButton}>
-            <Icon name={isHovered ? 'user-fill' : 'user-line'} width={1.5} height={1.5} />
-        </ButtonBase>
+        <SignInButtonInner ref={signInButton} onClick={onClick}>
+            <Icon name={isHovered ? 'user-fill' : 'user-line'} />
+        </SignInButtonInner>
     );
+};
+
+SignInButton.propTypes = {
+    onClick: PropTypes.func.isRequired,
 };
 
 export default SignInButton;

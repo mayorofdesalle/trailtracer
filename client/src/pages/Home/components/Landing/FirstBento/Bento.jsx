@@ -7,7 +7,7 @@ import Vector from '@components/ui/Vector';
 import { remToPx } from '@utils/conversions';
 
 import GridPlaceholder from '../GridPlaceholder';
-import BentoGridContainer from './BentoGridContainer';
+import BentoGrid from './BentoGrid';
 import HeroImageBox from './HeroImageBox';
 import HeroDescriptionBox from './HeroDescriptionBox';
 import ActionBox from './ActionBox';
@@ -19,28 +19,28 @@ import PopularBox from './PopularBox';
 /**
  * Bento
  * @description
- * This component represents the main buildign block of the Home page.
- * It displays a grid layout with various sections including a hero image, description, action boxes, slider, and buttons.
- * The component is responsive and adjusts its layout based on the window size.
+ * This is the first bento of the landing page.
  **/
 const Bento = () => {
     const theme = useTheme();
-    const { width } = useWindowSize();
-    const mediumBreakpoint = remToPx(theme.breakpoints.large.slice(0, -3));
+    const { height, width } = useWindowSize();
+    const largeBreakpoint = remToPx(theme.breakpoints.large.slice(0, -3));
+    const aspectRatio = width / height;
+
     return (
-        <BentoGridContainer>
-            <HeroImageBox $gridArea='HeroImageBox'>
+        <BentoGrid>
+            <HeroImageBox $color={theme.colors.secondary}>
                 <img src={bikerImg} alt='A biker on an enduro motorcycle' />
             </HeroImageBox>
 
-            <HeroDescriptionBox $gridArea='HeroDescriptionBox'>
+            <HeroDescriptionBox $glass>
                 <Text $heading $color={theme.colors.text}>
                     <Sec>COLLABORATE</Sec> WITH RIDERS LIKE YOU <Sec>AND PLAN</Sec> <Prim>YOUR NEXT TRAIL!</Prim>
                 </Text>
             </HeroDescriptionBox>
 
             <ActionBox $gridArea='ActionBox1' $color={theme.colors.primary}>
-                <Vector id='L' $name={width > mediumBreakpoint ? 'arrowUpRight' : 'arrowUp'} $color={theme.colors.background} $height='7svh' $width='7svh' $position='top' />
+                <Vector id='L' $name={width > largeBreakpoint ? 'arrowUpRight' : 'arrowUp'} $color={theme.colors.background} $height='7svh' $width='7svh' $position='top' />
                 <Text>NAVIGATE TO LEARN MORE</Text>
             </ActionBox>
 
@@ -49,18 +49,18 @@ const Bento = () => {
                 <Vector id='R' $name='arrowLeft' $color={theme.colors.primary} $height={'4svh'} $width={'8svh'} $position='bottom' />
             </ActionBox>
 
-            {width > mediumBreakpoint && (
+            {width > largeBreakpoint && aspectRatio > 1 && (
                 <>
-                    <NewsImageBox $gridArea='NewsImageBox' />
-                    <NewsBox $gridArea='NewsBox' />
-                    <TopTrailBox $gridArea='TopTrailBox' />
-                    <PopularBox $gridArea='PopularBox' />
+                    <NewsImageBox $color={theme.colors.primary} />
+                    <NewsBox $glass />
+                    <TopTrailBox $color={theme.colors.primary} />
+                    <PopularBox $glass />
                 </>
             )}
 
             <GridPlaceholder gridArea='Slider' />
             <GridPlaceholder gridArea='StartButton' />
-        </BentoGridContainer>
+        </BentoGrid>
     );
 };
 

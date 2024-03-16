@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { scaleOnHover, glassMorph } from '../misc/mixins';
+import { scaleOnHover } from '../misc/mixins';
 
 /**
  * Button
@@ -11,17 +11,20 @@ const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: none;
-    border-radius: 1rem;
+    border-radius: max(0.5svh, 0.5svw, 0.5rem);
     padding: 1rem;
-    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme, $bgColor }) => $bgColor || theme.colors.primary};
+    color: ${({ theme, $color }) => $color || theme.colors.background};
     text-transform: uppercase;
     cursor: pointer;
     touch-action: manipulation;
     transition: 200ms ease-in-out;
 
     ${scaleOnHover}
-    ${glassMorph}
+
+    &:hover {
+        border-radius: max(0.25svh, 0.25svw, 0.25rem);
+    }
 `;
 
 export default Button;

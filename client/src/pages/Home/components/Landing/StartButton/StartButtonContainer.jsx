@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import Container from '@components/ui/Container';
-import { rotateInFB } from '@components/misc/Anims';
 
 /**
  * StartButtonContainer
@@ -16,9 +15,6 @@ const StartButtonContainer = styled(Container)`
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
     top: ${({ $top }) => $top}px;
-    perspective: 500px;
-    transform: rotatex(10deg);
-    animation: ${rotateInFB} 1s ease-in-out;
 `;
 
 export default StartButtonContainer;

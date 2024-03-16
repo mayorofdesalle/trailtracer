@@ -22,7 +22,7 @@ const theme = {
 
 	fonts: {
 		heading: 'neighbor, sans-serif',
-		text: 'new-order, sans-serif',
+		text: 'niveau-grotesk, sans-serif',
 	},
 
 	fontWeights: {
@@ -32,39 +32,17 @@ const theme = {
 		black: '900',
 	},
 
-	fontSizes: {
-		xSmall: '1rem',
-		small: '1.125rem',
-		medium: '1.18rem',
-		large: '1.25rem',
-		xLarge: '1.31rem',
-		xxLarge: '1.35rem',
-		xxxLarge: '1.4rem',
-		xxxxLarge: '2rem'
-	},
-
 	// Mobile-first
 	breakpoints: {
 		xSmall: '0',
 		small: '24rem',
-		medium: '48rem',
+		medium: '36rem',
 		large: '62rem',
 		xLarge: '78rem',
 		xxLarge: '98rem',
 		xxxLarge: '120rem',
 		xxxxLarge: '160rem'
 	},
-
-	sizeNames: [
-		'xSmall',
-		'small',
-		'medium',
-		'large',
-		'xLarge',
-		'xxLarge',
-		'xxxLarge',
-		'xxxxLarge'
-	]
 };
 
 const Theme = ({ children }) => {

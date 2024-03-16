@@ -1,26 +1,28 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import getImageUrl from '@utils/getImageUrl';
-import { scaleOnHover } from '@components/misc/Mixins';
+import Button from '@components/ui/Button';
 
 /**
  * NavbarLogo
  * @description
- * This is a styled link that is used as the logo for the navbar.
+ * This is a styled button that is used as the logo for the navbar.
  **/
-const NavbarLogo = styled(Link)`
-    display: inline-block;
-    height: 1.5rem;
-    width: 6rem;
+const NavbarLogo = styled(Button)`
+    border-radius: 0;
+    width: clamp(6rem, min(12svw, 12svh), 8rem);
     background-color: ${({ theme }) => theme.colors.primary};
     -webkit-mask-image: url(${getImageUrl('logo')});
     mask-image: url(${getImageUrl('logo')});
-    mask-size: 6rem;
+    mask-clip: border-box;
+    mask-size: contain;
     mask-repeat: no-repeat;
+    mask-position: center;
     transition: 200ms ease-in-out;
 
-    ${scaleOnHover}
+    &:hover {
+        border-radius: 0;
+    }
 
     &:active {
         background-color: ${({ theme }) => theme.colors.secondary};

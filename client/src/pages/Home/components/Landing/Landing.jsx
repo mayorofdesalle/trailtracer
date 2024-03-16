@@ -13,16 +13,17 @@ import FourthBento from './FourthBento/Bento';
 const Landing = () => {
     const scrollWrapper = useRef();
     const pageWidth = useResize(scrollWrapper).width;
-    const [scrollPosition, setScrollPosition] = useState(0);
+    const [scrollPosition, setScrollPosition] = useState(sessionStorage.getItem('LandingScrollPosition') || 0);
 
     useEffect(() => {
         // This is a workaround for the scroll behaviour when dragging the Slider.
-        // When the button is being dragged, the scroll behaviour is set to 'auto' not to cause a stutter.
+        // When the button is being dragged or during the initial load of the page, the scroll behaviour is set to 'auto' not to cause a stutter.
         let scrollBehaviour = 'smooth';
-        if (document.body.getElementsByClassName('isDragging').length > 0) {
+        if (document.body.getElementsByClassName('isDragging').length > 0 || scrollPosition === sessionStorage.getItem('LandingScrollPosition')) {
             scrollBehaviour = 'auto';
         }
         scrollWrapper.current?.scrollTo({ left: scrollPosition, behavior: scrollBehaviour });
+        sessionStorage.setItem('LandingScrollPosition', scrollPosition);
     }, [scrollPosition]);
 
     return (

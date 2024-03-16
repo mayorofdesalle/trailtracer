@@ -1,49 +1,48 @@
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 
-import BentoBox from '@components/ui/BentoBox';
-import { glassMorph } from '@components/misc/mixins';
+import BentoBox from '@components/ui/Bento/Box';
 
-import BentoGridContainer from './BentoGridContainer';
-
+import GridPlaceholder from '../GridPlaceholder';
+import BentoGrid from './BentoGrid';
 
 const Box1 = styled(BentoBox)`
-    background-color: ${({ theme }) => theme.colors.primary};
+    grid-area: Box1;
 `;
 
 const Box2 = styled(BentoBox)`
-    ${glassMorph};
-    border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
+    grid-area: Box2;
 `;
 
 const Box3 = styled(BentoBox)`
-    background-color: ${({ theme }) => theme.colors.secondary};
+    grid-area: Box3;
 `;
 
 const Box4 = styled(BentoBox)`
-    ${glassMorph};
-    border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
+    grid-area: Box4;
 `;
 
 const Box5 = styled(BentoBox)`
-    background-color: ${({ theme }) => theme.colors.secondary};
+    grid-area: Box5;
 `;
 
 /**
  * Bento
  * @description
- * This component represents the main buildign block of the Home page.
- * It displays a grid layout with various sections including a hero image, description, action boxes, slider, and buttons.
- * The component is responsive and adjusts its layout based on the window size.
+ * This is the third bento of the landing page.
  **/
 const Bento = () => {
+    const theme = useTheme();
+
     return (
-        <BentoGridContainer >
-            <Box1 $gridArea='Box1' />
-            <Box2 $gridArea='Box2' />
-            <Box3 $gridArea='Box3' />
-            <Box4 $gridArea='Box4' />
-            <Box5 $gridArea='Box5' />
-        </BentoGridContainer>
+        <BentoGrid >
+            <Box1 $color={theme.colors.secondary} />
+            <Box2 $color={theme.colors.primary} />
+            <Box3 $color={theme.colors.text} />
+            <Box4 $glass />
+            <Box5 $glass />
+            <GridPlaceholder gridArea='Slider' />
+            <GridPlaceholder gridArea='StartButton' />
+        </BentoGrid>
     );
 };
 

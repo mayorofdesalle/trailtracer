@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-import BentoBox from '@components/ui/BentoBox';
-import Text from '@components/ui/Text';
-import { rotateInFB, fadeIn, slideInR, slideInBL } from '@components/misc/anims';
+import BentoBox from '@components/ui/Bento/Box';
+import { slideFromRight, slideFromBottomLeft } from '@components/misc/anims';
 
 /**
  * ActionBox
@@ -10,23 +9,17 @@ import { rotateInFB, fadeIn, slideInR, slideInBL } from '@components/misc/anims'
  * This is a styled bento box that is used to contain the CTA content.
  **/
 const ActionBox = styled(BentoBox)`
+    grid-area: ${({ $gridArea }) => $gridArea};
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     overflow: hidden;
-    background-color: ${({ $color }) => $color};
-    animation: ${rotateInFB} 1s ease-in-out;
-
-    & > ${Text} {
-        animation: ${fadeIn} 1s ease-in-out;
-    }
 
     & > #R {
-        animation: ${slideInR} 1s ease-in-out;
+        animation: ${slideFromRight} 1s ease-in-out;
     }
 
     & > #L {
-        animation: ${slideInBL} 1s ease-in-out;
+        animation: ${slideFromBottomLeft} 1s ease-in-out;
     }
 `;
 

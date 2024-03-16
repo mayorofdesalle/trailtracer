@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-import BentoBox from '@components/ui/BentoBox';
-import { glassMorph } from '@components/misc/mixins';
-import { rotateInFB } from '@components/misc/anims';
-
-import { pseudoBentoArrowBottom } from '../mixins';
+import BentoBox from '@components/ui/Bento/Box';
+import { pseudoBentoArrowBottom } from '@components/misc/mixins';
+import { slideFromTop } from '@components/misc/anims';
 
 /**
  * PopularBox
@@ -12,12 +10,13 @@ import { pseudoBentoArrowBottom } from '../mixins';
  * This is a styled bento box that is used to display the most popular trails.
  **/
 const PopularBox = styled(BentoBox)`
-    border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
-    animation: ${rotateInFB} 1s ease-in-out;
-    
+    grid-area: PopularBox;
     --arrowColor: ${({ theme }) => theme.colors.secondary};
     ${pseudoBentoArrowBottom}
-    ${glassMorph}
+
+    &::before {
+        animation: ${slideFromTop} 1s ease-in-out;
+    }
 `;
 
 export default PopularBox;

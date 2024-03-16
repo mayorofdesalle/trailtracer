@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import backgroundReducer from '@features/background/backgroundSlice';
-import gridPlaceholderReducer from '@features/gridPlaceholder/gridPlaceholderSlice';
+import backgroundReducer from '@features/backgroundSlice';
+import gridPlaceholderReducer from '@features/gridPlaceholderSlice';
 
 const store = configureStore({
     reducer: {

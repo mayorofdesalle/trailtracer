@@ -54,17 +54,7 @@ export const translateWobble = keyframes`
  **/
 export const scaleDown = keyframes`
     0% {
-        height: calc(var(--h) * 2);
-    }
-`;
-
-/**
- * @description
- * Rotates in the element from top.
- **/
-export const rotateInFT = keyframes`
-    0% {
-        transform: rotateY(0deg) rotateX(-33deg);
+        height: calc(var(--h) * 3);
     }
 `;
 
@@ -72,9 +62,19 @@ export const rotateInFT = keyframes`
  * @description
  * Rotates in the element from bottom.
  **/
-export const rotateInFB = keyframes`
+export const rotateFromBottom = keyframes`
     0% {
-        transform: rotateY(0deg) rotateX(33deg);
+        transform: rotateX(50deg);
+    }
+`;
+
+/**
+ * @description
+ * Rotates in the element from left.
+ **/
+export const rotateFromLeft = keyframes`
+    0% {
+        transform: rotateX(15deg) rotateY(30deg);
     }
 `;
 
@@ -82,14 +82,13 @@ export const rotateInFB = keyframes`
  * @description
  * Slides in the element from right.
  **/
-export const slideInR = keyframes`
+export const slideFromRight = keyframes`
     0% {
         transform: translateX(200%);
         opacity: 0;
     }
 
     100% {
-        transform: translateX(0);
         opacity: 1;
     }
 `;
@@ -98,9 +97,54 @@ export const slideInR = keyframes`
  * @description
  * Slides in the element from left.
  **/
-export const slideInBL = keyframes`
+export const slideFromLeft = keyframes`
+    0% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+`;
+
+/**
+ * @description
+ * Slides in the element from left.
+ **/
+export const slideFromBottomLeft = keyframes`
     0% {
         transform: translateX(-200%) translateY(200%);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+`;
+
+/**
+ * @description
+ * Slides in the element from bottom.
+ **/
+export const slideFromBottom = keyframes`
+    0% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+`;
+
+/**
+ * @description
+ * Slides in the element from top.
+ **/
+export const slideFromTop = keyframes`
+    0% {
+        transform: translateY(-200%);
         opacity: 0;
     }
 
