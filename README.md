@@ -31,6 +31,8 @@
 
 This is a website for bikers to share, to collaborate on, and to plan trails and points of interests online.
 
+You can find the design file [here](https://www.figma.com/file/6ezhNt04ZvQTGNWF4JH22v/trailtracer?type=design&node-id=0%3A1&mode=design&t=2R90PO8EbLy7iDTO-1).
+
 ### Built With
 
 * [![Figma][Figma]][Figma-url]
