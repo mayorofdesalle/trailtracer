@@ -1,33 +1,35 @@
 import styled, { useTheme, keyframes } from 'styled-components';
 
 import Container from '@components/ui/Container';
-import Text, { Undr } from '@components/ui/Text';
+import Text, { Prim } from '@components/ui/Text';
 import Icon from '@components/ui/Icon';
 
-const orientate = keyframes`
-    0% {
+const orientate = (themeColors) => keyframes`
+    0%, 25% {
         transform: rotate(-90deg);
+        fill: ${themeColors.secondary};
     }
 
-    25% {
+    50% {
         transform: rotate(0);
+        fill: ${themeColors.primary};
     }
 `;
 
 const WarningContainer = styled(Container)`
-    height: 100svh;
-    width: 100svw;
+    height: 100dvh;
+    width: 100dvw;
     padding: 10%;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background-color: ${({ theme }) => theme.colors.background};
 
     & > svg {
         --size: 100%;
         height: var(--size);
         width: var(--size);
-        animation: ${orientate} 5s ease-in-out infinite;
+        animation: ${({ theme }) => orientate(theme.colors)} 2s ease-in-out infinite alternate;
     }
 `;
 
@@ -36,7 +38,7 @@ const DisplayWarning = () => {
     return (
         <WarningContainer>
             <Icon name='phone-fill' color={theme.colors.primary} />
-            <Text $heading $color={theme.colors.primary} $ratio={2}>CONTENT IS BEST DISPLAYED IN <Undr>PORTRAIT</Undr> ORIENTATION IN CURRENT RESOLUTION</Text>
+            <Text $heading $color={theme.colors.secondary} >CONTENT IS BEST DISPLAYED IN <Prim>PORTRAIT</Prim> ORIENTATION IN CURRENT RESOLUTION</Text>
         </WarningContainer>
     );
 };

@@ -6,7 +6,6 @@ import styled, { useTheme } from 'styled-components';
 import useWindowSize from '@hooks/useWindowSize';
 import { randomize } from '@features/backgroundSlice';
 import Container from '@components/ui/Container';
-import { remToPx } from '@utils/conversions';
 
 import Navbar from './Navbar/Navbar';
 import Background from './Background/Background';
@@ -19,8 +18,8 @@ import DisplayWarning from './DisplayWarning';
  **/
 const ContentWrapper = styled(Container)`
 	position: relative;
-	height: 100svh;
-	width: 100svw;
+	height: 100dvh;
+	width: 100dvw;
 `;
 
 const ContentContainer = styled(Container)`
@@ -45,7 +44,6 @@ const PageContainer = () => {
 	const dispatch = useDispatch();
 
 	const theme = useTheme();
-	const mediumBreakpoint = remToPx(theme.breakpoints.medium.slice(0, -3));
 
 	const [previousLocation, setPreviousLocation] = useState('');
 	const location = useLocation();
@@ -65,7 +63,7 @@ const PageContainer = () => {
 			<Background />
 			<ContentWrapper>
 				<ContentContainer>
-					{height < mediumBreakpoint && aspectRatio > 1.25 ? <DisplayWarning /> :
+					{height < theme.breakpoints.small && aspectRatio > 1.25 ? <DisplayWarning /> :
 						<>
 							<Navbar />
 							<Outlet />

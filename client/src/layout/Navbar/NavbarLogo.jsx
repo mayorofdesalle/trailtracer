@@ -10,7 +10,7 @@ import Button from '@components/ui/Button';
  **/
 const NavbarLogo = styled(Button)`
     border-radius: 0;
-    width: clamp(6rem, min(12svw, 12svh), 8rem);
+    width: clamp(6rem, min(12dvw, 12dvh), 8rem);
     background-color: ${({ theme }) => theme.colors.primary};
     -webkit-mask-image: url(${getImageUrl('logo')});
     mask-image: url(${getImageUrl('logo')});
@@ -19,10 +19,6 @@ const NavbarLogo = styled(Button)`
     mask-repeat: no-repeat;
     mask-position: center;
     transition: 200ms ease-in-out;
-
-    &:hover {
-        border-radius: 0;
-    }
 
     &:active {
         background-color: ${({ theme }) => theme.colors.secondary};

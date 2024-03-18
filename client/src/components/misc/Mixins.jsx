@@ -26,14 +26,14 @@ export const scaleOnHover = css`
  **/
 export const glassMorph = css`
     background-color: ${({ theme }) => theme.colors.backgroundTransparent};
-    --webkit-backdrop-filter: blur(0.25rem);
-    backdrop-filter: blur(0.25rem);
     border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
+    -webkit-backdrop-filter: blur(0.25rem);
+    backdrop-filter: blur(0.25rem);
 `;
 
 // BentoArrow
 const pseudoBentoArrowBase = css`
-        --size: clamp(1.625rem, max(2svw, 2svh), 4.125rem);
+        --size: clamp(1.625rem, max(2dvw, 2dvh), 4.125rem);
         position: absolute;
         display: inline-block;
         content: '';

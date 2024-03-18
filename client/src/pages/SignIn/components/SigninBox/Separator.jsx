@@ -4,7 +4,7 @@ import Container from '@components/ui/Container';
 import Text from '@components/ui/Text';
 
 const HR = styled.hr`
-    width: calc((100% - clamp(0.825rem, min(2svw, 2svh), 2.5625rem) * 9) / 2);
+    width: calc((100% - clamp(0.825rem, min(2dvw, 2dvh), 2.5625rem) * 9) / 2);
     height: 2px;
     background-color: ${({ theme }) => theme.colors.secondary};
 `;

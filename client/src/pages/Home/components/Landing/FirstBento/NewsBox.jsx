@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import BentoBox from '@components/ui/Bento/Box';
-import { pseudoBentoArrowTop } from '@components/misc/mixins';
-import { slideFromBottom } from '@components/misc/anims';
+import { pseudoBentoArrowTop } from '@components/misc/Mixins';
+import { slideFromBottom } from '@components/misc/Anims';
 
 /**
  * NewsBox

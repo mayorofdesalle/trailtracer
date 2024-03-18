@@ -16,7 +16,7 @@ const Text = styled.div`
     vertical-align: middle;
 
     font-size:
-    calc(clamp(0.825rem, min(2svw, 2svh), 2.5625rem)
+    calc(clamp(0.825rem, min(2dvw, 2dvh), 2.5625rem)
     * ${({ $heading }) => $heading ? HEADING_MULTIPLIER : 1}
     * ${({ $ratio }) => $ratio || 1});
 
@@ -24,7 +24,7 @@ const Text = styled.div`
     font-weight: ${({ theme, $heading }) => $heading ? theme.fontWeights.bold : theme.fontWeights.regular};
     line-height: ${({ $heading }) => $heading ? 1.25 : 1};
     font-display: fallback;
-    color: ${({ $color }) => $color};
+    color: ${({ theme, $color }) => $color || theme.colors.text};
 `;
 
 export default Text;

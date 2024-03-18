@@ -1,8 +1,24 @@
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+import Container from '@components/ui/Container';
 
 import Nav from './Nav';
-import SignInButton from './SignInButton';
+import SignInButton from './Buttons/SignInButton';
+import ThemeButton from './Buttons/ThemeButton';
 import NavbarLogo from './NavbarLogo';
+
+const ButtonContainer = styled(Container)`
+    width: fit-content;
+    
+    & > * {
+        margin-left: clamp(0.5rem, min(2dvw, 2dvh), 2rem);
+    }
+
+    & > *:first-child {
+        margin-left: 0;
+    }
+`;
 
 /**
  * Navbar
@@ -15,7 +31,10 @@ const Navbar = () => {
     return (
         <Nav>
             <NavbarLogo onClick={() => navigate('/')} aria-label='Return to homepage' />
-            <SignInButton onClick={() => navigate('/signin')} />
+            <ButtonContainer>
+                <ThemeButton />
+                <SignInButton onClick={() => navigate('/signin')} />
+            </ButtonContainer>
         </Nav>
     );
 };

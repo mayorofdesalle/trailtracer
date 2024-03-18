@@ -8,43 +8,23 @@ import { keyframes } from 'styled-components';
 
 /**
  * @description
- * Creates a wobble effect on the element.
+ * Creates a colorful shadow that rotates around the element.
  **/
-export const translateWobble = keyframes`
+export const rotateShadow = (color1, color2) => keyframes`
     0% {
-        opacity: 0;
-        transform: translate3d(calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
+        box-shadow: -2px -2px 0px 0px ${color1}, 2px 2px 0px 0px ${color2};
     }
-
-    16% {
-        transform: translate3d(calc(var(--z) * 160px), calc(var(--z) * 160px), calc(var(--z) * 160px));
+    25% {
+        box-shadow: -2px 2px 0px 0px ${color1}, 2px -2px 0px 0px ${color2};
     }
-
-    28% {
-        opacity: 1;
-        transform: translate3d(calc(var(--z) * 70px), calc(var(--z) * 70px), calc(var(--z) * 70px));
+    50% {
+        box-shadow: 2px 2px 0px 0px ${color1}, -2px -2px 0px 0px ${color2};
     }
-
-    44% {
-        transform: translate3d(calc(var(--z) * 130px), calc(var(--z) * 130px), calc(var(--z) * 130px));
+    75% {
+        box-shadow: 2px -2px 0px 0px ${color1}, -2px 2px 0px 0px ${color2};
     }
-
-    59% {
-        transform: translate3d(calc(var(--z) * 85px), calc(var(--z) * 85px), calc(var(--z) * 85px));
-    }
-
-    73% {
-        transform: translate3d(calc(var(--z) * 110px), calc(var(--z) * 110px), calc(var(--z) * 110px));
-    }
-
-    88% {
-        opacity: 1;
-        transform: translate3d(calc(var(--z) * 90px), calc(var(--z) * 90px), calc(var(--z) * 90px));
-    }
-
     100% {
-        opacity: 1;
-        transform: translate3d(calc(var(--z) * 100px), calc(var(--z) * 100px), calc(var(--z) * 100px));
+        box-shadow: -2px -2px 0px 0px ${color1}, 2px 2px 0px 0px ${color2};
     }
 `;
 
@@ -148,19 +128,6 @@ export const slideFromTop = keyframes`
         opacity: 0;
     }
 
-    100% {
-        opacity: 1;
-    }
-`;
-
-/**
- * @description
- * Fades in the element.
- **/
-export const fadeIn = keyframes`
-    0% {
-        opacity: 0;
-    }
     100% {
         opacity: 1;
     }

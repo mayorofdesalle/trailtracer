@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import BentoBox from '@components/ui/Bento/Box';
-import { slideFromRight, slideFromBottomLeft } from '@components/misc/anims';
+import { slideFromRight, slideFromBottomLeft } from '@components/misc/Anims';
 
 /**
  * ActionBox
