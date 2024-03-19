@@ -1,8 +1,9 @@
 import { useTheme } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import bikerImg from '@assets/images/biker.svg';
 import useWindowSize from '@hooks/useWindowSize';
-import Text, { Prim, Sec } from '@components/ui/Text';
+import Text from '@components/ui/Text';
 import Vector from '@components/ui/Vector';
 
 import GridPlaceholder from '../GridPlaceholder';
@@ -22,6 +23,7 @@ import PopularBox from './PopularBox';
  **/
 const Bento = () => {
     const theme = useTheme();
+    const { t } = useTranslation();
     const { height, width } = useWindowSize();
     const largeScreen = width > theme.breakpoints.medium && width / height > 1;
 
@@ -33,17 +35,17 @@ const Bento = () => {
 
             <HeroDescriptionBox $glass>
                 <Text $heading $color={theme.colors.text}>
-                    <Sec>COLLABORATE</Sec> WITH RIDERS LIKE YOU <Sec>AND PLAN</Sec> <Prim>YOUR NEXT TRAIL!</Prim>
+                    {t('landing.title')}
                 </Text>
             </HeroDescriptionBox>
 
             <ActionBox $gridArea='ActionBox1' $color={theme.colors.primary}>
                 <Vector id='L' $name={largeScreen ? 'arrowUpRight' : 'arrowUp'} $color={theme.colors.tertiary} $height='7dvh' $width='7dvh' $position='top' />
-                <Text $color={theme.colors.tertiary}>NAVIGATE TO LEARN MORE</Text>
+                <Text $color={theme.colors.tertiary}>{t('landing.CTA1')}</Text>
             </ActionBox>
 
             <ActionBox $gridArea='ActionBox2' $color={theme.colors.secondary} >
-                <Text $color={theme.colors.primary}>OR START YOUR JOURNEY NOW</Text>
+                <Text $color={theme.colors.primary}>{t('landing.CTA2')}</Text>
                 <Vector id='R' $name='arrowLeft' $color={theme.colors.primary} $height={'4dvh'} $width={'8dvh'} $position='bottom' />
             </ActionBox>
 

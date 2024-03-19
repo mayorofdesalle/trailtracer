@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
 import Container from '@components/ui/Container';
@@ -25,9 +26,11 @@ const SeparatorInner = styled(Container)`
 
 const Separator = () => {
     const theme = useTheme();
+    const { t } = useTranslation();
+
     return (
         <SeparatorInner>
-            <HR /><Text $color={theme.colors.background}>or continue with</Text><HR />
+            <HR /><Text $color={theme.colors.background}>{t('signin.option2')}</Text><HR />
         </SeparatorInner>
     );
 };

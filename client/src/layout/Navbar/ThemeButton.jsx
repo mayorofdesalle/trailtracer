@@ -15,8 +15,7 @@ import Icon from '@components/ui/Icon';
 const ThemeButtonInner = styled(Button)`
     padding: 0;
     width: 3rem;
-    height: clamp(1.5rem, min(3svw, 3svh), 2rem);
-    backdrop-filter: none;
+    height: clamp(1.5rem, min(3dvw, 3dvh), 2rem);
 
     &:active {
         background-color: ${({ theme }) => theme.colors.secondary};
@@ -31,8 +30,8 @@ const ThemeButtonInner = styled(Button)`
 const ThemeButton = () => {
     const dispatch = useDispatch();
     const preference = useSelector((state) => state.theme.preference);
-    const themeButton = useRef();
-    const isHovered = useHover(themeButton);
+    const button = useRef();
+    const isHovered = useHover(button);
     const iconSet = preference ? ['moon-fill', 'moon-line'] : ['sun-fill', 'sun-line'];
 
     const toggleTheme = useCallback(() => {
@@ -44,7 +43,7 @@ const ThemeButton = () => {
     }, [preference]);
 
     return (
-        <ThemeButtonInner ref={themeButton} onClick={toggleTheme}>
+        <ThemeButtonInner ref={button} onClick={toggleTheme}>
             <Icon name={isHovered ? iconSet[0] : iconSet[1]} />
         </ThemeButtonInner>
     );

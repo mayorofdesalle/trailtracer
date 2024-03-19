@@ -10,6 +10,7 @@ import Home from '@pages/Home/Home';
 import SignIn from '@pages/SignIn/SignIn';
 
 import store from './app/store';
+import './app/i18n';
 
 /**
  * Router

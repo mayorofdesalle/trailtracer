@@ -15,7 +15,6 @@ const SignInButtonInner = styled(Button)`
     padding: 0;
     width: 3rem;
     height: clamp(1.5rem, min(3dvw, 3dvh), 2rem);
-    backdrop-filter: none;
 
     &:active {
         background-color: ${({ theme }) => theme.colors.secondary};
@@ -28,11 +27,11 @@ const SignInButtonInner = styled(Button)`
 `;
 
 const SignInButton = ({ onClick }) => {
-    const signInButton = useRef();
-    const isHovered = useHover(signInButton);
+    const button = useRef();
+    const isHovered = useHover(button);
 
     return (
-        <SignInButtonInner ref={signInButton} onClick={onClick}>
+        <SignInButtonInner ref={button} onClick={onClick}>
             <Icon name={isHovered ? 'user-fill' : 'user-line'} />
         </SignInButtonInner>
     );

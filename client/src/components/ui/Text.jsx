@@ -30,13 +30,6 @@ const Text = styled.div`
 export default Text;
 
 // Text Modifiers
-export const Prim = styled.span`
-    color: ${({ theme }) => theme.colors.primary};
-`;
-
-export const Sec = styled.span`
-    color: ${({ theme }) => theme.colors.secondary};
-`;
 
 export const Undr = styled.span`
     text-decoration-line: underline;

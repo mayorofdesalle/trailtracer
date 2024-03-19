@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import Container from '@components/ui/Container';
 
 import Nav from './Nav';
-import SignInButton from './Buttons/SignInButton';
-import ThemeButton from './Buttons/ThemeButton';
+import SignInButton from './SignInButton';
+import ThemeButton from './ThemeButton';
+import LanguageButton from './Language/LanguageButton';
 import NavbarLogo from './NavbarLogo';
 
 const ButtonContainer = styled(Container)`
@@ -32,6 +33,7 @@ const Navbar = () => {
         <Nav>
             <NavbarLogo onClick={() => navigate('/')} aria-label='Return to homepage' />
             <ButtonContainer>
+                <LanguageButton />
                 <ThemeButton />
                 <SignInButton onClick={() => navigate('/signin')} />
             </ButtonContainer>

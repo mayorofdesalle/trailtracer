@@ -5,16 +5,12 @@ import grain from '@assets/grain.svg';
 import BentoBox from '@components/ui/Bento/Box';
 import Container from '@components/ui/Container';
 import { slideFromTop, scaleDown, rotateFromBottom } from '@components/misc/Anims';
-import { pseudoBentoArrowBottom } from '@components/misc/Mixins';
 
 const ImageBoxInner = styled(BentoBox)`
     grid-area: ImageBox;
     background-image: url(${grain});
     background-color: ${({ theme }) => theme.colors.secondary};
     animation: ${rotateFromBottom} 1s ease-in-out;
-
-    --arrowColor: ${({ theme }) => theme.colors.primary};
-    ${pseudoBentoArrowBottom}
 
     &::before {
         animation: ${slideFromTop} 1s ease-in-out;

@@ -1,7 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import styled, { useTheme, keyframes } from 'styled-components';
 
 import Container from '@components/ui/Container';
-import Text, { Prim } from '@components/ui/Text';
+import Text from '@components/ui/Text';
 import Icon from '@components/ui/Icon';
 
 const orientate = (themeColors) => keyframes`
@@ -35,10 +36,12 @@ const WarningContainer = styled(Container)`
 
 const DisplayWarning = () => {
     const theme = useTheme();
+    const { t } = useTranslation();
+
     return (
         <WarningContainer>
             <Icon name='phone-fill' color={theme.colors.primary} />
-            <Text $heading $color={theme.colors.secondary} >CONTENT IS BEST DISPLAYED IN <Prim>PORTRAIT</Prim> ORIENTATION IN CURRENT RESOLUTION</Text>
+            <Text $heading $color={theme.colors.secondary} $ratio={1.5}>{t('displayWarning')}</Text>
         </WarningContainer>
     );
 };

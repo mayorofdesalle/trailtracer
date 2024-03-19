@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
 import BentoBox from '@components/ui/Bento/Box';
@@ -18,11 +19,12 @@ const SigninBoxInner = styled(BentoBox)`
 
 const SigninBox = () => {
     const theme = useTheme();
+    const { t } = useTranslation();
 
     return (
         <SigninBoxInner $color={theme.colors.primary}>
-            <Text $color={theme.colors.background} $heading $ratio={1.5}>WELCOME BACK!</Text>
-            <Text $color={theme.colors.background}>Sign in using your credentials</Text>
+            <Text $color={theme.colors.background} $heading $ratio={1.5}>{t('signin.title')}</Text>
+            <Text $color={theme.colors.background}>{t('signin.option1')}</Text>
             <SigninForm />
             <Separator />
             <AuthButtons />

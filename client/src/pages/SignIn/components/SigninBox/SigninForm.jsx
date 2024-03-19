@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
 import Input from '@components/ui/Input';
@@ -28,19 +29,20 @@ const FormInner = styled.form`
 
 const SigninForm = () => {
     const theme = useTheme();
+    const { t } = useTranslation();
 
     return (
         <FormInner>
             <>
-                <label hidden>Username or email</label>
-                <Input type='email' name='email' autoComplete='email' placeholder='Username or email' icon='at-fill' iconColor={theme.colors.primary} required />
+                <label hidden>{t('signin.email')}</label>
+                <Input type='email' name='email' autoComplete='email' placeholder={t('signin.email')} icon='at-fill' iconColor={theme.colors.primary} required />
             </>
             <>
-                <label hidden>Password</label>
-                <Input type='password' eyeColor={theme.colors.secondary} name='password' autoComplete='current-password' placeholder='Password' icon='key-fill' iconColor={theme.colors.primary} required />
+                <label hidden>{t('signin.password')}</label>
+                <Input type='password' eyeColor={theme.colors.secondary} name='password' autoComplete='current-password' placeholder={t('signin.password')} icon='key-fill' iconColor={theme.colors.primary} required />
             </>
             <Button $bgColor={theme.colors.background} $animColors={[theme.colors.background, theme.colors.secondary]}>
-                <Text $color={theme.colors.primary} $heading>SIGN IN</Text>
+                <Text $color={theme.colors.primary} $heading>{t('signin.signin')}</Text>
             </Button>
         </FormInner>
     );
