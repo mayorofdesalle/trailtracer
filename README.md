@@ -46,11 +46,9 @@ You can find the design file [here](https://www.figma.com/file/6ezhNt04ZvQTGNWF4
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Stories
-- [ ] Tests
 - [ ] User
     - [ ] Signup
-    - [ ] Login 
+    - [X] Signin
 - [ ] Trails
     - [ ] Create
     - [ ] View
