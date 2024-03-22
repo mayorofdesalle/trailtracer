@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Icons from '@assets/icons.svg';
 
 const IconSvg = styled.svg`
-    --size: calc(clamp(1rem, min(2.5svw, 2.5svh), 3rem));
+    --size: calc(clamp(1rem, min(2.5dvw, 2.5dvh), 3rem));
     height: var(--size);
     width: var(--size);
 `;

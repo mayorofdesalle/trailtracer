@@ -4,7 +4,6 @@ import bikerImg from '@assets/images/biker.svg';
 import useWindowSize from '@hooks/useWindowSize';
 import Text, { Prim, Sec } from '@components/ui/Text';
 import Vector from '@components/ui/Vector';
-import { remToPx } from '@utils/conversions';
 
 import GridPlaceholder from '../GridPlaceholder';
 import BentoGrid from './BentoGrid';
@@ -24,8 +23,7 @@ import PopularBox from './PopularBox';
 const Bento = () => {
     const theme = useTheme();
     const { height, width } = useWindowSize();
-    const largeBreakpoint = remToPx(theme.breakpoints.large.slice(0, -3));
-    const aspectRatio = width / height;
+    const largeScreen = width > theme.breakpoints.medium && width / height > 1;
 
     return (
         <BentoGrid>
@@ -40,16 +38,16 @@ const Bento = () => {
             </HeroDescriptionBox>
 
             <ActionBox $gridArea='ActionBox1' $color={theme.colors.primary}>
-                <Vector id='L' $name={width > largeBreakpoint ? 'arrowUpRight' : 'arrowUp'} $color={theme.colors.background} $height='7svh' $width='7svh' $position='top' />
-                <Text>NAVIGATE TO LEARN MORE</Text>
+                <Vector id='L' $name={largeScreen ? 'arrowUpRight' : 'arrowUp'} $color={theme.colors.tertiary} $height='7dvh' $width='7dvh' $position='top' />
+                <Text $color={theme.colors.tertiary}>NAVIGATE TO LEARN MORE</Text>
             </ActionBox>
 
             <ActionBox $gridArea='ActionBox2' $color={theme.colors.secondary} >
                 <Text $color={theme.colors.primary}>OR START YOUR JOURNEY NOW</Text>
-                <Vector id='R' $name='arrowLeft' $color={theme.colors.primary} $height={'4svh'} $width={'8svh'} $position='bottom' />
+                <Vector id='R' $name='arrowLeft' $color={theme.colors.primary} $height={'4dvh'} $width={'8dvh'} $position='bottom' />
             </ActionBox>
 
-            {width > largeBreakpoint && aspectRatio > 1 && (
+            {largeScreen && (
                 <>
                     <NewsImageBox $color={theme.colors.primary} />
                     <NewsBox $glass />

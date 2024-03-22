@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { scaleOnHover } from '../misc/mixins';
+import { scaleOnHover } from '../misc/Mixins';
+import { rotateShadow } from '../misc/Anims';
 
 /**
  * Button
@@ -11,7 +12,7 @@ const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border-radius: max(0.5svh, 0.5svw, 0.5rem);
+    border-radius: max(0.5dvh, 0.5dvw, 0.5rem);
     padding: 1rem;
     background-color: ${({ theme, $bgColor }) => $bgColor || theme.colors.primary};
     color: ${({ theme, $color }) => $color || theme.colors.background};
@@ -22,8 +23,9 @@ const Button = styled.button`
 
     ${scaleOnHover}
 
-    &:hover {
-        border-radius: max(0.25svh, 0.25svw, 0.25rem);
+    &:hover, &:active {
+        border-radius: max(0.25dvh, 0.25dvw, 0.25rem);
+        animation: ${({ theme, $animColors }) => $animColors ? rotateShadow(...$animColors) : rotateShadow(theme.colors.primary, theme.colors.secondary)} 2s ease-in-out infinite;
     }
 `;
 

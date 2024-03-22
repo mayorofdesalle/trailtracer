@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
+import grain from '@assets/grain.svg';
 import BentoBox from '@components/ui/Bento/Box';
-import { rotateFromBottom, scaleDown } from '@components/misc/anims';
+import { rotateFromBottom, scaleDown } from '@components/misc/Anims';
 
 /**
  * HeroImageBox
@@ -12,11 +13,12 @@ const HeroImageBox = styled(BentoBox)`
     grid-area: HeroImageBox;
     animation: ${rotateFromBottom} 1s ease-in-out;
     overflow: hidden;
-    
+    background-image: url(${grain});
+
     & > img {
-        --h: 200%;
+        --h: min(80dvh, 120dvw);
         height: var(--h);
-        transform: translateY(calc(var(--h)/16));
+        transform: translate(calc(var(--h) / 12), calc(var(--h) / 6));
         animation: ${scaleDown} 1s ease-in-out;
     }
 `;

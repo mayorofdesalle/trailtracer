@@ -11,15 +11,17 @@ const AuthButtonsInner = styled(Container)`
 
 const AuthButtons = () => {
     const theme = useTheme();
+    const animColors = [theme.colors.background, theme.colors.secondary];
+
     return (
         <AuthButtonsInner>
-            <Button $bgColor={theme.colors.background}>
+            <Button $bgColor={theme.colors.background} $animColors={animColors}>
                 <Icon name='google-fill' color={theme.colors.primary} />
             </Button>
-            <Button $bgColor={theme.colors.background}>
+            <Button $bgColor={theme.colors.background} $animColors={animColors}>
                 <Icon name='facebook-fill' color={theme.colors.primary} />
             </Button>
-            <Button $bgColor={theme.colors.background}>
+            <Button $bgColor={theme.colors.background} $animColors={animColors}>
                 <Icon name='twitter-fill' color={theme.colors.primary} />
             </Button>
         </AuthButtonsInner>

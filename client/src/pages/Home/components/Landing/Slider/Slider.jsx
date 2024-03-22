@@ -1,6 +1,6 @@
 // This component is a mess. Needs refactor!
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useLayoutEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
@@ -69,6 +69,10 @@ const Slider = ({ fullPageWidth, setScrollPosition }) => {
     const [activePage, setActivePage] = useState(sessionStorage.getItem('LandingActivePage') || 0);
     const size = useSelector((state) => state.gridPlaceholder.Slider);
     const dotPositions = useMemo(() => [0, 1, 2, 3].map((i) => getDotPosition(i, size?.width)), [size?.width]);
+
+    useLayoutEffect(() => {
+        setScrollPosition(mapSliderToPage(getDotPosition(activePage, size?.width), size?.width, fullPageWidth));
+    }, [activePage, size, fullPageWidth, setScrollPosition]);
 
     const handleActivePage = useCallback((page, distance) => {
         setScrollPosition(mapSliderToPage(getDotPosition(page, size.width), size.width, fullPageWidth));

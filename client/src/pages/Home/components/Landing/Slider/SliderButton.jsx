@@ -24,14 +24,25 @@ const SliderButtonInner = styled(Button)`
     z-index: 1;
     transition: 200ms ease-in-out;
 
+    &.isDragging {
+        background-color: ${({ theme }) => theme.colors.primary};
+        transition: none;
+    }
+
+    &.isDragging > * {
+        fill: ${({ theme }) => theme.colors.tertiary};
+    }
+
+    & > svg {
+        pointer-events: none;
+    }
+
     & > #arrow-left-fill {
         transform: translateX(0.3rem);
-        transition: 200ms ease-in-out;
     }
 
     & > #arrow-right-fill {
         transform: translateX(-0.3rem);
-        transition: 200ms ease-in-out;
     }
 
     &:hover > #arrow-left-fill, &.isDragging > #arrow-left-fill {
@@ -65,8 +76,8 @@ const SliderButton = ({ onDrag, onStop, position }) => {
             onStop={(e, button) => onStop(e, button)}
         >
             <SliderButtonInner ref={button}>
-                <Icon name='arrow-left-fill' height={4} width={4} />
-                <Icon name='arrow-right-fill' height={4} width={4} />
+                <Icon name='arrow-left-fill' />
+                <Icon name='arrow-right-fill' />
             </SliderButtonInner>
         </Draggable>
     );

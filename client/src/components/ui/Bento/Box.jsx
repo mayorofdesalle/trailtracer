@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 import Container from '../Container';
-import { glassMorph } from '../../misc/mixins';
-import { fadeIn } from '../../misc/anims';
+import { glassMorph } from '../../misc/Mixins';
 
 /**
  * Box
@@ -14,11 +13,8 @@ const Box = styled(Container)`
     position: relative;
     padding: 0.5rem;
     background-color: ${({ $color }) => $color};
+    transition: 200ms ease-in-out;
     ${({ $glass }) => $glass && glassMorph};
-
-    & > * {
-        animation: ${fadeIn} 1s ease-in-out;
-    }
 `;
 
 export default Box;

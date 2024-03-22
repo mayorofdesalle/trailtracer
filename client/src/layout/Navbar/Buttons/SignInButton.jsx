@@ -14,11 +14,16 @@ import Icon from '@components/ui/Icon';
 const SignInButtonInner = styled(Button)`
     padding: 0;
     width: 3rem;
-    height: clamp(1.5rem, min(3svw, 3svh), 2rem);
+    height: clamp(1.5rem, min(3dvw, 3dvh), 2rem);
     backdrop-filter: none;
 
     &:active {
         background-color: ${({ theme }) => theme.colors.secondary};
+    }
+
+    & > svg {
+        width: 100%;
+        height: 100%;
     }
 `;
 

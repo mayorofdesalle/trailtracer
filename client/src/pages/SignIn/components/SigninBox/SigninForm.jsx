@@ -11,9 +11,9 @@ const FormInner = styled.form`
     justify-content: space-around;
     align-items: center;
     height: fit-content;
-
-    & > ${Container}, & > ${Button} {
-        margin-top: clamp(1.5625rem, min(3svw, 3svh), 3.25rem);
+    
+    & > * {
+        margin-top: clamp(1.5625rem, min(3dvw, 3dvh), 3.25rem);
     }
 
     & > ${Container}:first-of-type {
@@ -33,13 +33,13 @@ const SigninForm = () => {
         <FormInner>
             <>
                 <label hidden>Username or email</label>
-                <Input type='email' required placeholder='Username or email' icon='at-fill' iconColor={theme.colors.primary} />
+                <Input type='email' name='email' autoComplete='email' placeholder='Username or email' icon='at-fill' iconColor={theme.colors.primary} required />
             </>
             <>
                 <label hidden>Password</label>
-                <Input type='password' required placeholder='Password' icon='key-fill' iconColor={theme.colors.primary} />
+                <Input type='password' eyeColor={theme.colors.secondary} name='password' autoComplete='current-password' placeholder='Password' icon='key-fill' iconColor={theme.colors.primary} required />
             </>
-            <Button $bgColor={theme.colors.background}>
+            <Button $bgColor={theme.colors.background} $animColors={[theme.colors.background, theme.colors.secondary]}>
                 <Text $color={theme.colors.primary} $heading>SIGN IN</Text>
             </Button>
         </FormInner>

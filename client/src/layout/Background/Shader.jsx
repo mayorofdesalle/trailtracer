@@ -11,6 +11,7 @@ import { set } from '@features/backgroundSlice';
  * @description
  * This is the Shader component that is used to render the texture on the background.
  * The uniforms are updated every frame to match the state of the background.
+ * This shader is from the Noise & Texture extension on Figma by Rogie @ https://twitter.com/rogie and Patricio @ https://twitter.com/patriciogv.
  */
 const Shader = () => {
     const material = useRef();

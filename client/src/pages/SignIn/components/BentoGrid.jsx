@@ -8,21 +8,20 @@ import Grid from '@components/ui/Bento/Grid';
  * This is a styled container that is used to provide the grid layout of the bento.
  **/
 const BentoGrid = styled(Grid)`
-    grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 2fr 3fr 1.25fr 0.75fr;
+    grid-template-rows: 5fr 1fr 2fr;
     grid-template-areas:
-        '.   UserBox     UserBox       SigninBox   SigninBox'
-        '.   SignupBox   SignupBox     SigninBox   SigninBox'
-        '.   SignupBox   SignupBox     SigninBox   SigninBox'
-        '.   SignupBox   SignupBox     TermsBox    HelpBox';
+        'ImageBox   FrameBox    SigninBox    SigninBox'
+        'SignupBox  FrameBox    SigninBox    SigninBox'
+        'SignupBox  FrameBox    TermsBox     HelpBox';
 
     /* Medium screens and downwards */
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}) or (max-aspect-ratio: 1) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) or (max-aspect-ratio: 1) {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 2fr repeat(2, 0.5fr);
+        grid-template-rows: 2fr 1fr 0.5fr;
         grid-template-areas:
             'SigninBox  SigninBox   SigninBox'
-            'TermsBox   UserBox     HelpBox'
+            'TermsBox   ImageBox     HelpBox'
             'SignupBox  SignupBox   SignupBox';
     }
 `;

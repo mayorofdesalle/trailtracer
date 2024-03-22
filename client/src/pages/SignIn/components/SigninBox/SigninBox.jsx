@@ -9,7 +9,6 @@ import AuthButtons from './AuthButtons';
 const SigninBoxInner = styled(BentoBox)`
     grid-area: SigninBox;
     flex-direction: column;
-    align-items: center;
     justify-content: space-around;
 
     & > * {

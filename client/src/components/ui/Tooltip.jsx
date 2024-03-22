@@ -8,7 +8,7 @@ const StyledTooltip = styled(Tooltip).attrs(
         font-weight: ${({ theme }) => theme.fontWeights.xBold};
         color: ${({ theme }) => theme.colors.text};
         background-color: ${({ theme }) => theme.colors.secondary};
-        --webkit-backdrop-filter: blur(0.25rem);
+        -webkit-backdrop-filter: blur(0.25rem);
         backdrop-filter: blur(0.25rem);
         border: 2px solid ${({ theme }) => theme.colors.secondaryTransparent};
         border-radius: 0.25rem;
@@ -16,8 +16,8 @@ const StyledTooltip = styled(Tooltip).attrs(
         opacity: 1;
 
     & > .arrow { 
-        height: 0.75svh;
-        width: 0.75svh;
+        height: 0.75dvh;
+        width: 0.75dvh;
         background-color: ${({ theme }) => theme.colors.text};
         transform: rotate(45deg);
         border-radius: 0.125rem;

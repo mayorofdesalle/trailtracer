@@ -15,11 +15,11 @@ const BentoGrid = styled(Grid)`
         'NewsImageBox   HeroImageBox            HeroImageBox            HeroImageBox            PopularBox'
         'NewsImageBox   HeroImageBox            HeroImageBox            HeroImageBox            PopularBox'
         'NewsBox        HeroImageBox            HeroImageBox            HeroImageBox            PopularBox'
-        'NewsBox        HeroDescriptionBox      HeroDescriptionBox      HeroDescriptionBox      TopTrailBox'
+        'NewsBox        HeroDescriptionBox      HeroDescriptionBox      HeroDescriptionBox      PopularBox'
         'NewsBox        ActionBox1              Slider                  ActionBox2              TopTrailBox'
         'NewsBox        ActionBox1              StartButton             ActionBox2              TopTrailBox';
     
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}) or (max-aspect-ratio: 1) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) or (max-aspect-ratio: 1) {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 6fr 2fr 1fr 3fr;
         grid-template-areas:

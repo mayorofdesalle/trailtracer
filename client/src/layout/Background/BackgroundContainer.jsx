@@ -10,11 +10,18 @@ import Container from '@components/ui/Container';
  **/
 const BackgroundContainer = memo(styled(Container)`
     position: absolute;
-    height: 100svh;
-    width: 100svw;
+    height: 100dvh;
+    width: 100dvw;
     border-radius: 0;
     background-color: ${({ theme }) => theme.colors.background};
     z-index: -999;
+    overflow: hidden;
+
+    & > img {
+        opacity: 0.5;
+        width: ${({ $adjustingDimension }) => $adjustingDimension ? 'auto' : '100%'};
+        height: ${({ $adjustingDimension }) => $adjustingDimension ? '100%' : 'auto'};
+    }
 `);
 
 export default BackgroundContainer;

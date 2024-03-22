@@ -19,7 +19,7 @@ const BentoGrid = styled(Grid)`
         'Box4   Box3    Slider      Box5    Box5'
         'Box4   Box3    StartButton Box5    Box5';
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.large}) or (max-aspect-ratio: 1) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) or (max-aspect-ratio: 1) {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 6fr 2fr 1fr 3fr;
         grid-template-areas:

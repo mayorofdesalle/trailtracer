@@ -2,8 +2,7 @@ import { memo } from 'react';
 import styled from 'styled-components';
 
 import Container from '@components/ui/Container';
-import { glassMorph } from '@components/misc/mixins';
-import { fadeIn } from '@components/misc/anims';
+import { glassMorph } from '@components/misc/Mixins';
 
 /**
  * SliderButtonContainer
@@ -18,24 +17,7 @@ const SliderButtonContainer = memo(styled(Container)`
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
     top: ${({ $top }) => $top}px;
-    display: flex;
     justify-content: space-around;
-    align-items: center;
-    border: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
-
-    & > * {
-        animation: ${fadeIn} 1s ease-in-out;
-    }
-
-    & > .isDragging {
-        background-color: ${({ theme }) => theme.colors.primary};
-        transition: none;
-    }
-
-    & > .isDragging > * {
-        fill: ${({ theme }) => theme.colors.backgroundTransparent};
-    }
-
     ${glassMorph}
 `);
 
