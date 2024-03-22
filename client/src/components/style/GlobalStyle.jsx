@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 /**
  * GlobalStyle
  * @description
- * This is a set of CSS declarations that are applied to the entire app.
+ * Style applied to the entire application.
  **/
 const GlobalStyle = createGlobalStyle`
     * {

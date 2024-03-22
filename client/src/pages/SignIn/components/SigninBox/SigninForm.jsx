@@ -1,11 +1,16 @@
+import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useForm } from 'react-hook-form';
 import styled, { useTheme } from 'styled-components';
 
-import Input from '@components/ui/Input';
+import TextInput from '@components/ui/Input/TextInput';
+import Icon from '@components/ui/Icon';
 import Button from '@components/ui/Button';
 import Text from '@components/ui/Text';
 import Container from '@components/ui/Container';
 
-const FormInner = styled.form`
+const SigninFormInner = styled.form`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,21 +33,38 @@ const FormInner = styled.form`
 
 const SigninForm = () => {
     const theme = useTheme();
+    const { t } = useTranslation();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const { register, handleSubmit, setFocus, watch, formState: { errors } } = useForm({
+        defaultValues: useMemo(() => {
+            return {
+                email: '',
+                password: ''
+            };
+        }, [])
+    });
+
+    useEffect(() => {
+        setFocus('email');
+    }, [setFocus]);
+
+    const onSubmit = (data) => {
+        setIsSubmitting(true);
+        console.log(data);
+    };
 
     return (
-        <FormInner>
-            <>
-                <label hidden>Username or email</label>
-                <Input type='email' name='email' autoComplete='email' placeholder='Username or email' icon='at-fill' iconColor={theme.colors.primary} required />
-            </>
-            <>
-                <label hidden>Password</label>
-                <Input type='password' eyeColor={theme.colors.secondary} name='password' autoComplete='current-password' placeholder='Password' icon='key-fill' iconColor={theme.colors.primary} required />
-            </>
-            <Button $bgColor={theme.colors.background} $animColors={[theme.colors.background, theme.colors.secondary]}>
-                <Text $color={theme.colors.primary} $heading>SIGN IN</Text>
+        <SigninFormInner onSubmit={handleSubmit(onSubmit)}>
+            <TextInput register={register} error={errors.email} label={t('forms.handle')} type='email' required validate>
+                <Icon id='email' name='at-fill' color={errors.email ? theme.colors.secondary : theme.colors.primary} />
+            </TextInput>
+            <TextInput register={register} error={errors.password} label={t('forms.password')} type='password' watch={watch} required>
+                <Icon id='password' name='key-fill' color={errors.password ? theme.colors.secondary : theme.colors.primary} />
+            </TextInput>
+            <Button $bgColor={theme.colors.background} $animColors={[theme.colors.background, theme.colors.secondary]} disabled={isSubmitting}>
+                <Text $color={theme.colors.primary} $heading>{t('signinPage.signin')}</Text>
             </Button>
-        </FormInner>
+        </SigninFormInner>
     );
 };
 

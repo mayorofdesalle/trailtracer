@@ -4,6 +4,9 @@ import themeReducer from '@features/themeSlice';
 import backgroundReducer from '@features/backgroundSlice';
 import gridPlaceholderReducer from '@features/gridPlaceholderSlice';
 
+/**
+ * Redux store
+ */
 const store = configureStore({
     reducer: {
         theme: themeReducer,

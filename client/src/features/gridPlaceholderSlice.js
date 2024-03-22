@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 /**
- * The gridPlaceholderSlice is responsible for managing the grid placeholders that provide size and position information to the
- * Slider and StartButton components, so that they can adjust their positions accordingly.
+ * The gridPlaceholderSlice is responsible for providing size and position information to the
+ * Slider and StartButton components, so that they can adjust their forms accordingly.
  **/
 const initialState = {
 };

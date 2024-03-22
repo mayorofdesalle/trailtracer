@@ -1,44 +1,38 @@
-import { useMemo } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { useMemo, Suspense, lazy, memo } from 'react';
+import styled from 'styled-components';
 
 import useWindowSize from '@hooks/useWindowSize';
-import BackgroundContainer from './BackgroundContainer';
-import Image from './Image';
-import Shader from './Shader';
+import Container from '@components/ui/Container';
 
-// GL settings
-const GL = {
-	powerPreference: 'low-power',
-	precision: 'lowp',
-	failIfMajorPerformanceCaveat: true,
-	preserveDrawingBuffer: false,
-	premultipliedAlpha: false,
-	alpha: false,
-	transparent: false,
-	antialias: true
-};
+import Image from './BackgroundImage';
+const Canvas = lazy(() => import('./BackgroundCanvas'));
+
+const BackgroundContainer = memo(styled(Container)`
+    position: absolute;
+    height: 100dvh;
+    width: 100dvw;
+    border-radius: 0;
+    background-color: ${({ theme }) => theme.colors.background};
+    z-index: -999;
+    overflow: hidden;
+`);
 
 /**
  * Background
  * @description
- * This is the main background for the application.
+ * Background for the entire application.
  **/
 const Background = () => {
 	const { width, height } = useWindowSize();
 	const isUsingWebkit = useMemo(() => typeof window.webkitConvertPointFromNodeToPage === 'function', []);
 
 	return (
-		<BackgroundContainer $adjustingDimension={width > height ? 0 : 1}>
-			{isUsingWebkit ? // Fallback since webkit has problems with premultipliedAlpha
-				<Image />
-				:
-				<Canvas gl={GL} orthographic camera frameloop='demand' dpr={[1, 1]}>
-					<mesh>
-						<planeGeometry args={[width, height]} />
-						<Shader />
-					</mesh>
-				</Canvas>
-			}
+		<BackgroundContainer>
+			{// Webkit has problems with premultipliedAlpha so the shader does not work properly
+				isUsingWebkit ? <Image /> :
+					<Suspense fallback={<Image />}>
+						<Canvas width={width} height={height} />
+					</Suspense>}
 		</BackgroundContainer>
 	);
 };

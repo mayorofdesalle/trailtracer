@@ -3,7 +3,7 @@ import styled from 'styled-components';
 /**
  * Container
  * @description
- * This is a basic container that is used to hold other components.
+ * Default styled div component to hold other components.
  **/
 const Container = styled.div`
     width: 100%;

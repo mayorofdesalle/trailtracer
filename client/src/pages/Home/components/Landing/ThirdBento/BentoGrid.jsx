@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Grid from '@components/ui/Bento/Grid';
+import Grid from '@components/ui/Bento/BentoGrid';
 
 /**
  * BentoGrid

@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import Button from '@components/ui/Button';
 import Text from '@components/ui/Text';
@@ -33,12 +34,13 @@ const StartButtonInner = styled(Button)`
  */
 const StartButton = memo(() => {
     const size = useSelector((state) => state.gridPlaceholder.StartButton);
+    const { t } = useTranslation();
 
     return (
-        size &&
+        size?.width > 0 &&
         <StartButtonContainer $height={size.height} $width={size.width} $top={size.offsetTop}>
             <StartButtonInner>
-                <Text $heading>GET STARTED — IT&apos;S FREE!</Text>
+                <Text $heading>{t('landingPage.start')}</Text>
             </StartButtonInner>
         </StartButtonContainer>
     );

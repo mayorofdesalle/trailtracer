@@ -11,15 +11,13 @@ import Navbar from './Navbar/Navbar';
 import Background from './Background/Background';
 import DisplayWarning from './DisplayWarning';
 
-/**
- * ContentWrapper
- * @description
- * This is a styled container that is used to contain the content of the page.
- **/
 const ContentWrapper = styled(Container)`
 	position: relative;
 	height: 100dvh;
 	width: 100dvw;
+
+	max-width: 196rem;
+	max-height: 148rem;
 `;
 
 const ContentContainer = styled(Container)`
@@ -37,12 +35,10 @@ const ContentContainer = styled(Container)`
 /**
  * PageContainer
  * @description
- * This is a styled container that is used to contain the whole page.
- * It also provides the size of the page to its children.
+ * Styled container  to contain the whole page.
  **/
 const PageContainer = () => {
 	const dispatch = useDispatch();
-
 	const theme = useTheme();
 
 	const [previousLocation, setPreviousLocation] = useState('');

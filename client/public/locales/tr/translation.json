@@ -1,0 +1,30 @@
+{
+    "displayWarning": "BU ÇÖZÜNÜRLÜKTE İÇERİK EN İYİ PORTRE MODUNDA GÖRÜNTÜLENİR",
+
+    "landingPage": {
+        "title": "SİZİN GİBİ SÜRÜCÜLERLE ETKİLEŞİME GİRİN VE BİR SONRAKİ ROTANIZI PLANLAYIN!",
+        "start": "BAŞLA — TAMAMEN ÜCRETSİZ!",
+        "CTA1": "DAHA FAZLA BİLGİ İÇİN KAYDIRIN",
+        "CTA2": "VEYA ŞİMDİ YOLCULUĞA BAŞLAYIN"
+    },
+
+    "signinPage": {
+        "title": "TEKRAR HOŞGELDİNİZ!",
+        "credentials": "Bilgilerinizle giriş yapın",
+        "auths": "veya",
+        "signin": "GİRİŞ YAP",
+        "terms": "GİRİŞ YAPARAK, KULLANIM KOŞULLARIMIZI VE GİZLİLİK POLİTİKAMIZI KABUL EDERSİNİZ.",
+        "help": "YARDIMA MI İHTİYACINIZ VAR?",
+        "signupTitle": "HENÜZ TRAILTRACER\"DA DEĞİL MİSİNİZ?",
+        "explanation": "Yine de topluluğun oluşturduğu her şeyi keşfedebilirsiniz. Ama onlarla etkileşime girmek için bir hesabınız olması gerekiyor.",
+        "signup": "KAYDOL"
+    },
+
+    "forms": {
+        "handle": "Kullanıcı adı veya e-posta adresi",
+        "password": "Şifre",
+        "requiredError": "Bu alan zorunludur",
+        "emailError": "Bu geçerli bir e-posta adresi değil",
+        "passwordError": "Şifre en az 1 küçük harf, 1 büyük harf, 1 sayı ve 1 sembol içermelidir"
+    }
+}

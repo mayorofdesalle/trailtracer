@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as THREE from 'three';
 import { useFrame, invalidate } from '@react-three/fiber';
@@ -6,31 +6,31 @@ import { useFrame, invalidate } from '@react-three/fiber';
 import textureShader from '@data/textureShader';
 import { set } from '@features/backgroundSlice';
 
+const uniforms = {
+    u_scale: { value: textureShader.uniforms?.u_scale },
+    u_layers: { value: textureShader.uniforms?.u_layers },
+    u_distortion: { value: textureShader.uniforms?.u_distortion },
+    u_thickness: { value: textureShader.uniforms?.u_thickness },
+    u_slope: { value: textureShader.uniforms?.u_slope },
+    u_jitter: { value: textureShader.uniforms?.u_jitter },
+    u_sharpness: { value: textureShader.uniforms?.u_sharpness },
+    u_color: { value: textureShader.uniforms?.u_color },
+    u_resolution: { value: textureShader.uniforms?.u_resolution },
+};
+
+const fragmentShader = textureShader.fragmentShader;
+const vertexShader = textureShader.vertexShader;
+
 /**
- * Shader
+ * BackgroundShader
  * @description
- * This is the Shader component that is used to render the texture on the background.
+ * Shader component that is used to render the texture on the background.
  * The uniforms are updated every frame to match the state of the background.
  * This shader is from the Noise & Texture extension on Figma by Rogie @ https://twitter.com/rogie and Patricio @ https://twitter.com/patriciogv.
  */
-const Shader = () => {
+const BackgroundShader = () => {
     const material = useRef();
     const dispatch = useDispatch();
-
-    const uniforms = useMemo(() => ({
-        u_scale: { value: textureShader.uniforms.u_scale },
-        u_layers: { value: textureShader.uniforms.u_layers },
-        u_distortion: { value: textureShader.uniforms.u_distortion },
-        u_thickness: { value: textureShader.uniforms.u_thickness },
-        u_slope: { value: textureShader.uniforms.u_slope },
-        u_jitter: { value: textureShader.uniforms.u_jitter },
-        u_sharpness: { value: textureShader.uniforms.u_sharpness },
-        u_color: { value: textureShader.uniforms.u_color },
-        u_resolution: { value: textureShader.uniforms.u_resolution },
-    }), []);
-
-    const fragmentShader = useMemo(() => textureShader.fragmentShader, []);
-    const vertexShader = useMemo(() => textureShader.vertexShader, []);
 
     const { animate, distortion, slope, jitter } = useSelector((state) => state.background);
     const speed = animate ? 1 : 100;
@@ -60,4 +60,4 @@ const Shader = () => {
     );
 };
 
-export default Shader;
+export default BackgroundShader;

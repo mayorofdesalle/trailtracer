@@ -1,7 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import styled, { useTheme, keyframes } from 'styled-components';
 
 import Container from '@components/ui/Container';
-import Text, { Prim } from '@components/ui/Text';
+import Text from '@components/ui/Text';
 import Icon from '@components/ui/Icon';
 
 const orientate = (themeColors) => keyframes`
@@ -17,8 +18,6 @@ const orientate = (themeColors) => keyframes`
 `;
 
 const WarningContainer = styled(Container)`
-    height: 100dvh;
-    width: 100dvw;
     padding: 10%;
     flex-direction: column;
     justify-content: space-around;
@@ -32,13 +31,19 @@ const WarningContainer = styled(Container)`
         animation: ${({ theme }) => orientate(theme.colors)} 2s ease-in-out infinite alternate;
     }
 `;
-
+/**
+ * DisplayWarning
+ * @description
+ * Component to display a warning message to the user if the content is not optimized for the aspect ratio at that resolution.
+ */
 const DisplayWarning = () => {
     const theme = useTheme();
+    const { t } = useTranslation();
+
     return (
         <WarningContainer>
             <Icon name='phone-fill' color={theme.colors.primary} />
-            <Text $heading $color={theme.colors.secondary} >CONTENT IS BEST DISPLAYED IN <Prim>PORTRAIT</Prim> ORIENTATION IN CURRENT RESOLUTION</Text>
+            <Text $heading $color={theme.colors.secondary} $ratio={1.5}>{t('displayWarning')}</Text>
         </WarningContainer>
     );
 };

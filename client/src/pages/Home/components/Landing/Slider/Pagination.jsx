@@ -12,11 +12,11 @@ const pages = [{ name: 'Home', id: 0 }, { name: 'Features', id: 1 }, { name: 'Fe
  * This is a styled container that is used to create a page dot.
  **/
 const PageDot = styled(Button)`
+    position: relative;
     padding: 0;
     height: 1dvh;
     width: 0.75dvh;
     border-radius: max(0.125dvh, 0.125dvw, 0.125rem);
-    transform: rotate(-360deg);
     background-color: ${({ theme }) => theme.colors.textTransparent};
 
     // To incease the hover area
@@ -37,7 +37,7 @@ const PageDot = styled(Button)`
     &:hover {
         border-radius: max(0.0625dvh, 0.0625dvw, 0.0625rem);
         background-color: ${({ theme }) => theme.colors.text};
-        transform: rotate(360deg) scale(1.5);
+        transform: scale(1.5);
     }
 
     &:active {

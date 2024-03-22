@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/Box';
+import BentoBox from '@components/ui/Bento/BentoBox';
 
 const FrameBox = styled(BentoBox)`
     grid-area: ${({ $gridArea }) => $gridArea || 'FrameBox'};

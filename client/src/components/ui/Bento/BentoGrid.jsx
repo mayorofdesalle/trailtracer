@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import Container from '@components/ui/Container';
 
 /**
- * Grid
+ * BentoGrid
  * @description
- * This is a styled container that is used to contain the grid layout of the bento.
+ * Styled container to display a grid of bento boxes.
  **/
-const Grid = styled(Container)`
+const BentoGrid = styled(Container)`
     display: grid;
     padding: clamp(0.7625rem, min(2dvw, 2dvh), 2.5625rem);
     grid-gap: clamp(0.7625rem, min(2dvw, 2dvh), 2.5625rem);
 `;
 
-export default Grid;
+export default BentoGrid;

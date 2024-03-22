@@ -8,7 +8,7 @@ const HEADING_MULTIPLIER = 1.3;
  * @param {String} $color - The color of the text
  * @param {Boolean} $heading - If the text is a heading or not
  * @description
- * This is a styled div that is used to display text. It is used to create a more visually appealing text component.
+ * Styled div component to display text.
  **/
 const Text = styled.div`
     text-decoration: none;
@@ -23,20 +23,13 @@ const Text = styled.div`
     font-family: ${({ theme, $heading }) => $heading ? theme.fonts.heading : theme.fonts.text};
     font-weight: ${({ theme, $heading }) => $heading ? theme.fontWeights.bold : theme.fontWeights.regular};
     line-height: ${({ $heading }) => $heading ? 1.25 : 1};
-    font-display: fallback;
+
     color: ${({ theme, $color }) => $color || theme.colors.text};
 `;
 
 export default Text;
 
 // Text Modifiers
-export const Prim = styled.span`
-    color: ${({ theme }) => theme.colors.primary};
-`;
-
-export const Sec = styled.span`
-    color: ${({ theme }) => theme.colors.secondary};
-`;
 
 export const Undr = styled.span`
     text-decoration-line: underline;
@@ -54,8 +47,4 @@ export const Thru = styled.span`
     text-decoration-line: line-through;
     text-decoration-color: ${({ $color }) => $color};
     text-decoration-style: ${({ $style }) => $style};
-`;
-
-export const Uppr = styled.span`
-    text-transform: uppercase;
 `;
