@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/Box';
+import BentoBox from '@components/ui/Bento/BentoBox';
 import Text from '@components/ui/Text';
 import SigninForm from './SigninForm';
 import Separator from './Separator';
@@ -13,7 +13,7 @@ const SigninBoxInner = styled(BentoBox)`
     justify-content: space-around;
 
     & > * {
-        width: 90%;
+        width: 80%;
     }
 `;
 
@@ -23,8 +23,8 @@ const SigninBox = () => {
 
     return (
         <SigninBoxInner $color={theme.colors.primary}>
-            <Text $color={theme.colors.background} $heading $ratio={1.5}>{t('signin.title')}</Text>
-            <Text $color={theme.colors.background}>{t('signin.option1')}</Text>
+            <Text $color={theme.colors.background} $heading $ratio={1.5}>{t('signinPage.title')}</Text>
+            <Text $color={theme.colors.background}>{t('signinPage.credentials')}</Text>
             <SigninForm />
             <Separator />
             <AuthButtons />

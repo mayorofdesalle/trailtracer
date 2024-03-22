@@ -11,7 +11,7 @@ import SignupBox from './SignupBox';
 import ImageBox from './ImageBox';
 import SigninBox from './SigninBox/SigninBox';
 import ButtonBox from './ButtonBox';
-import FrameBox from './FrameBox';
+import MapBox from './MapBox';
 
 const Bento = () => {
     const theme = useTheme();
@@ -22,32 +22,33 @@ const Bento = () => {
     return (
         <BentoGrid>
             <ImageBox />
+
             <SignupBox $glass>
-                <Text $color={theme.colors.primary} $heading $ratio={largeScreen ? 1 : 0.8}>{t('signin.signupTitle')}</Text>
+                <Text $color={theme.colors.primary} $heading $ratio={largeScreen ? 1 : 0.8}>{t('signinPage.signupTitle')}</Text>
                 {largeScreen && (
                     <Text $color={theme.colors.text}>
-                        {t('signin.explanation')}
+                        {t('signinPage.explanation')}
                     </Text>
                 )}
                 <Button $bgColor={theme.colors.secondary}>
-                    <Text $color={theme.colors.text} $heading>{t('signin.signup')}</Text>
+                    <Text $color={theme.colors.text} $heading>{t('signinPage.signup')}</Text>
                 </Button>
             </SignupBox>
 
-            {largeScreen && <FrameBox />}
+            {largeScreen && <MapBox />}
 
             <SigninBox />
 
             <ButtonBox as={Button} $gridArea='TermsBox'>
-                <Icon name='file-paper-fill' color={theme.colors.secondary} />
-                <Text $color={theme.colors.text} $heading $ratio={largeScreen ? 0.8 : 0.5}>
-                    {t('signin.terms')}
+                <Icon name='article-fill' color={theme.colors.primary} />
+                <Text $color={theme.colors.text} $heading $ratio={largeScreen ? 0.7 : 0.5}>
+                    {t('signinPage.terms')}
                 </Text>
             </ButtonBox>
 
             <ButtonBox as={Button} $gridArea='HelpBox'>
-                <Icon name='login-box-fill' color={theme.colors.secondary} />
-                <Text $color={theme.colors.text} $heading $ratio={0.8}>{t('signin.help')}</Text>
+                <Icon name='login-box-fill' color={theme.colors.primary} />
+                <Text $color={theme.colors.text} $heading $ratio={0.8}>{t('signinPage.help')}</Text>
             </ButtonBox>
         </BentoGrid>
     );

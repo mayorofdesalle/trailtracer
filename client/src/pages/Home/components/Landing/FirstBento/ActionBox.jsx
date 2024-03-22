@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/Box';
-import { slideFromRight, slideFromBottomLeft } from '@components/misc/Anims';
+import BentoBox from '@components/ui/Bento/BentoBox';
+import { slideFromRight, slideFromLeft } from '@components/misc/Anims';
 
 /**
  * ActionBox
@@ -19,7 +19,7 @@ const ActionBox = styled(BentoBox)`
     }
 
     & > #L {
-        animation: ${slideFromBottomLeft} 1s ease-in-out;
+        animation: ${slideFromLeft} 1s ease-in-out;
     }
 `;
 

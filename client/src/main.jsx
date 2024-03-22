@@ -15,7 +15,7 @@ import './app/i18n';
 /**
  * Router
  * @description
- * This is the router for the application.
+ * Router for the application.
  **/
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -28,7 +28,7 @@ const router = createBrowserRouter(
 /**
  * Main
  * @description
- * This is the main entry point of the application.
+ * Entry point of the application.
  **/
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>

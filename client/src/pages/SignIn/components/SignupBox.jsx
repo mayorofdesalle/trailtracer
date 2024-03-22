@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/Box';
+import BentoBox from '@components/ui/Bento/BentoBox';
 import Button from '@components/ui/Button';
-import { pseudoBentoArrowTop } from '@components/misc/Mixins';
+import { pseudoBentoArrowTop } from '@components/ui/Bento/Arrows';
+import { slideFromBottom } from '@components/misc/Anims';
 
 const SignupBox = styled(BentoBox)`
     grid-area: SignupBox;
@@ -12,8 +13,12 @@ const SignupBox = styled(BentoBox)`
     --arrowColor: ${({ theme }) => theme.colors.secondary};
     ${pseudoBentoArrowTop}
 
+    &::before {
+        animation: ${slideFromBottom} 1s ease-in-out;
+    }
+
     & > * {
-        width: 90%;
+        width: 80%;
     }
 
     & > ${Button} {

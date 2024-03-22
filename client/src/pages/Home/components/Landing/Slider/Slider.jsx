@@ -66,7 +66,7 @@ const mapSliderToPage = (position, sliderWidth, fullPageWidth) => {
 const Slider = ({ fullPageWidth, setScrollPosition }) => {
     const dispatch = useDispatch();
 
-    const [activePage, setActivePage] = useState(sessionStorage.getItem('LandingActivePage') || 0);
+    const [activePage, setActivePage] = useState(sessionStorage.getItem('landingActivePage') || 0);
     const size = useSelector((state) => state.gridPlaceholder.Slider);
     const dotPositions = useMemo(() => [0, 1, 2, 3].map((i) => getDotPosition(i, size?.width)), [size?.width]);
 
@@ -78,7 +78,7 @@ const Slider = ({ fullPageWidth, setScrollPosition }) => {
         setScrollPosition(mapSliderToPage(getDotPosition(page, size.width), size.width, fullPageWidth));
         dispatch(modify({ animate: true, distortion: BACKGROUND_EFFECTOR * distance, slope: BACKGROUND_EFFECTOR * distance, jitter: BACKGROUND_EFFECTOR * distance }));
         setActivePage(page);
-        sessionStorage.setItem('LandingActivePage', page);
+        sessionStorage.setItem('landingActivePage', page);
     }, [setScrollPosition, size, fullPageWidth, dispatch]);
 
     /**
@@ -123,7 +123,7 @@ const Slider = ({ fullPageWidth, setScrollPosition }) => {
     }, [size, activePage, handleActivePage]);
 
     return (
-        size &&
+        size?.width > 0 &&
         <SliderButtonContainer $height={size.height} $width={size.width} $top={size.offsetTop}>
             <SliderButton onDrag={onDrag} onStop={onStop} position={getDotPosition(activePage, size.width)} />
             <Pagination onClick={onClick} />

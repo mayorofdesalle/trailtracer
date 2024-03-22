@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
  * function useResize()
  * @param {Object} elementRef - The reference to the element to observe
  * @description
- * This hook is used to get the size of an element and its position relative to the viewport.
+ * Hook to get the size of an element and its position relative to the viewport.
  * It uses the ResizeObserver API to observe the element and update the size when it changes.
  * @returns {Object} The size and position of the element
  **/

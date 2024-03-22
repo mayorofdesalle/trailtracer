@@ -1,51 +1,28 @@
-import { useRef, useCallback, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from '@features/themeSlice';
-import styled from 'styled-components';
 
-import useHover from '@hooks/useHover';
-import Button from '@components/ui/Button';
-import Icon from '@components/ui/Icon';
+import NavbarButton from './NavbarButton';
 
 /**
- * ThemeButtonInner
+ * ThemeButton
  * @description
- * This component creates the base of the ThemeButton.
- **/
-const ThemeButtonInner = styled(Button)`
-    padding: 0;
-    width: 3rem;
-    height: clamp(1.5rem, min(3dvw, 3dvh), 2rem);
-
-    &:active {
-        background-color: ${({ theme }) => theme.colors.secondary};
-    }
-
-    & > svg {
-        width: 100%;
-        height: 100%;
-    }
-`;
-
+ * Button to toggle between light and dark themes.
+ */
 const ThemeButton = () => {
     const dispatch = useDispatch();
     const preference = useSelector((state) => state.theme.preference);
-    const button = useRef();
-    const isHovered = useHover(button);
-    const iconSet = preference ? ['moon-fill', 'moon-line'] : ['sun-fill', 'sun-line'];
+
+    useEffect(() => {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', preference ? '#000000' : '#EBFFF5');
+    }, [preference]);
 
     const toggleTheme = useCallback(() => {
         dispatch(toggle());
     }, [dispatch]);
 
-    useEffect(() => { // also change meta theme-color
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', preference ? '#000000' : '#EBFFF5');
-    }, [preference]);
-
     return (
-        <ThemeButtonInner ref={button} onClick={toggleTheme}>
-            <Icon name={isHovered ? iconSet[0] : iconSet[1]} />
-        </ThemeButtonInner>
+        <NavbarButton onClick={toggleTheme} icon={preference ? 'moon' : 'sun'} />
     );
 };
 

@@ -30,7 +30,7 @@ const Separator = () => {
 
     return (
         <SeparatorInner>
-            <HR /><Text $color={theme.colors.background}>{t('signin.option2')}</Text><HR />
+            <HR /><Text $color={theme.colors.background}>{t('signinPage.auths')}</Text><HR />
         </SeparatorInner>
     );
 };

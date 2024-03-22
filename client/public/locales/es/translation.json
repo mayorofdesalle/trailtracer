@@ -1,0 +1,30 @@
+{
+    "displayWarning": "EL CONTENIDO SE VE MEJOR EN ORIENTACIÓN VERTICAL EN LA RESOLUCIÓN ACTUAL",
+
+    "landingPage": {
+        "title": "¡INTERACTÚA CON CICLISTAS COMO TÚ Y PLANEA TU PRÓXIMA RUTA!",
+        "start": "¡EMPEZAR — ES GRATIS!",
+        "CTA1": "NAVEGAR PARA APRENDER MÁS",
+        "CTA2": "O EMPEZAR TU VIAJE AHORA"
+    },
+
+    "signinPage": {
+        "title": "¡BIENVENIDO DE NUEVO!",
+        "credentials": "Inicia sesión con tus credenciales",
+        "auths": "o continúa con",
+        "signin": "INICIAR SESIÓN",
+        "terms": "AL INICIAR SESIÓN, ACEPTAS NUESTROS TÉRMINOS Y CONDICIONES Y POLÍTICA DE PRIVACIDAD.",
+        "help": "¿NECESITAS AYUDA PARA INICIAR SESIÓN?",
+        "signupTitle": "¿AÚN NO ESTÁS EN TRAILTRACER?",
+        "explanation": "Todavía puedes explorar todo lo que la comunidad ha creado. Pero necesitarás una cuenta para interactuar con ellos.",
+        "signup": "REGÍSTRATE"
+    },
+
+    "forms": {
+        "handle": "Nombre de usuario o dirección de correo electrónico",
+        "password": "Contraseña",
+        "requiredError": "Este campo es obligatorio",
+        "emailError": "Esta no es una dirección de correo electrónico válida",
+        "passwordError": "La contraseña debe contener al menos 1 letra minúscula, 1 letra mayúscula, 1 número y 1 símbolo"
+    }
+}

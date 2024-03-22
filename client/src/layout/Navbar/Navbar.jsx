@@ -4,16 +4,16 @@ import styled from 'styled-components';
 import Container from '@components/ui/Container';
 
 import Nav from './Nav';
-import SignInButton from './SignInButton';
 import ThemeButton from './ThemeButton';
 import LanguageButton from './Language/LanguageButton';
+import NavbarButton from './NavbarButton';
 import NavbarLogo from './NavbarLogo';
 
 const ButtonContainer = styled(Container)`
     width: fit-content;
     
     & > * {
-        margin-left: clamp(0.5rem, min(2dvw, 2dvh), 2rem);
+        margin-left: clamp(0.7625rem, min(2dvw, 2dvh), 2.5625rem);
     }
 
     & > *:first-child {
@@ -24,7 +24,7 @@ const ButtonContainer = styled(Container)`
 /**
  * Navbar
  * @description
- * This is a simple navbar that is used to navigate the site.
+ * Navbar to navigate the site.
  **/
 const Navbar = () => {
     const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Navbar = () => {
             <ButtonContainer>
                 <LanguageButton />
                 <ThemeButton />
-                <SignInButton onClick={() => navigate('/signin')} />
+                <NavbarButton onClick={() => navigate('/signin')} icon='user' />
             </ButtonContainer>
         </Nav>
     );

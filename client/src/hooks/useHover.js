@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
  * function useHover()
  * @param {Object} elementRef - The reference to the element to observe
  * @description
- * This hook is used to get the hover state of an element.
+ * Hook to get the hover state of an element.
  * It uses the mouseenter and mouseleave events to update the hover state.
  * @returns {Boolean} The hover state of the element
  **/

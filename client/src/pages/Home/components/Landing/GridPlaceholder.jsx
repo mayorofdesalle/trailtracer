@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 
 import { set } from '@features/gridPlaceholderSlice';
 import useResize from '@hooks/useResize';
-import BentoBox from '@components/ui/Bento/Box';
+import BentoBox from '@components/ui/Bento/BentoBox';
 import styled from 'styled-components';
 
 const GridPlaceholderInner = styled(BentoBox)`

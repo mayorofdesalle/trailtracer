@@ -1,7 +1,6 @@
 import { useTheme } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
-import bikerImg from '@assets/images/biker.svg';
 import useWindowSize from '@hooks/useWindowSize';
 import Text from '@components/ui/Text';
 import Vector from '@components/ui/Vector';
@@ -29,23 +28,21 @@ const Bento = () => {
 
     return (
         <BentoGrid>
-            <HeroImageBox $color={theme.colors.secondary}>
-                <img src={bikerImg} alt='A biker on an enduro motorcycle' />
-            </HeroImageBox>
+            <HeroImageBox />
 
             <HeroDescriptionBox $glass>
                 <Text $heading $color={theme.colors.text}>
-                    {t('landing.title')}
+                    {t('landingPage.title')}
                 </Text>
             </HeroDescriptionBox>
 
             <ActionBox $gridArea='ActionBox1' $color={theme.colors.primary}>
                 <Vector id='L' $name={largeScreen ? 'arrowUpRight' : 'arrowUp'} $color={theme.colors.tertiary} $height='7dvh' $width='7dvh' $position='top' />
-                <Text $color={theme.colors.tertiary}>{t('landing.CTA1')}</Text>
+                <Text $color={theme.colors.tertiary}>{t('landingPage.CTA1')}</Text>
             </ActionBox>
 
             <ActionBox $gridArea='ActionBox2' $color={theme.colors.secondary} >
-                <Text $color={theme.colors.primary}>{t('landing.CTA2')}</Text>
+                <Text $color={theme.colors.primary}>{t('landingPage.CTA2')}</Text>
                 <Vector id='R' $name='arrowLeft' $color={theme.colors.primary} $height={'4dvh'} $width={'8dvh'} $position='bottom' />
             </ActionBox>
 

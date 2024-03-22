@@ -18,8 +18,6 @@ const orientate = (themeColors) => keyframes`
 `;
 
 const WarningContainer = styled(Container)`
-    height: 100dvh;
-    width: 100dvw;
     padding: 10%;
     flex-direction: column;
     justify-content: space-around;
@@ -33,7 +31,11 @@ const WarningContainer = styled(Container)`
         animation: ${({ theme }) => orientate(theme.colors)} 2s ease-in-out infinite alternate;
     }
 `;
-
+/**
+ * DisplayWarning
+ * @description
+ * Component to display a warning message to the user if the content is not optimized for the aspect ratio at that resolution.
+ */
 const DisplayWarning = () => {
     const theme = useTheme();
     const { t } = useTranslation();

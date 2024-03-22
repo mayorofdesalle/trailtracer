@@ -1,6 +1,6 @@
 import styled, { useTheme } from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/Box';
+import BentoBox from '@components/ui/Bento/BentoBox';
 
 import GridPlaceholder from '../GridPlaceholder';
 import BentoGrid from './BentoGrid';

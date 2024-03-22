@@ -37,10 +37,10 @@ const StartButton = memo(() => {
     const { t } = useTranslation();
 
     return (
-        size &&
+        size?.width > 0 &&
         <StartButtonContainer $height={size.height} $width={size.width} $top={size.offsetTop}>
             <StartButtonInner>
-                <Text $heading>{t('landing.start')}</Text>
+                <Text $heading>{t('landingPage.start')}</Text>
             </StartButtonInner>
         </StartButtonContainer>
     );
