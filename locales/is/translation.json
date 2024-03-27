@@ -1,0 +1,33 @@
+{
+    "displayWarning": "EFNI ER BEST SKOÐAÐ Í LÓÐRÉTTU SNÚNINGI Í NÚVERANDI UPPLAUSN",
+    "landingPage": {
+        "title": "TENGDUR VIÐ REIÐMENN EINS OG ÞIG OG SKIPULEGGÐU NÆSTA SLÓÐ!",
+        "start": "BYRJAÐU — ÞAÐ ER ÓKEYPIS!",
+        "CTA1": "FARAÐU TIL AÐ LÆRA MEIRA",
+        "CTA2": "EÐA BYRJAÐU FERÐALAGIÐ ÞITT NÚNA"
+    },
+    "signinPage": {
+        "title": "VELKOMIN AFTUR!",
+        "credentials": "Skráðu þig inn með auðkennum þínum",
+        "auths": "eða halda áfram með",
+        "signin": "SKRÁÐU ÞIG INN",
+        "termsPrefix": "Með því að skrá þig inn samþykkir þú ",
+        "terms": "Skilmála og Persónuverndarstefnu ",
+        "termsSuffix": "Trailtracer.",
+        "help": "ÞARF HJÁLP?",
+        "signupTitle": "EKKI Á TRAILTRACER ENN?",
+        "explanation": "Þú getur samt kannað allt sem samfélagið hefur búið til. En þú þarft aðgang til að eiga samskipti við þau.",
+        "signup": "SKRÁÐU ÞIG"
+    },
+    "forms": {
+        "email": "Notendanafn eða tölvupóstfang",
+        "password": "Lykilorð",
+        "requiredError": "Þessi reitur er nauðsynlegur",
+        "emailError": "Þetta er ekki gilt tölvupóstfang",
+        "passwordError": "Lykilorð verður að innihalda a.m.k. 1 lágstaf, 1 hástaf, 1 tölu og 1 tákn",
+        "search": "Leita",
+        "explore": "Kanna",
+        "theme": "Þema",
+        "language": "Tungumál"
+    }
+}

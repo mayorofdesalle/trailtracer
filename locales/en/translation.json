@@ -1,0 +1,33 @@
+{
+    "displayWarning": "CONTENT IS BEST VIEWED IN PORTRAIT ORIENTATION IN CURRENT RESOLUTION",
+    "landingPage": {
+        "title": "CONNECT WITH RIDERS LIKE YOU AND PLAN YOUR NEXT TRAIL!",
+        "start": "GET STARTED — IT'S FREE!",
+        "CTA1": "NAVIGATE TO LEARN MORE",
+        "CTA2": "OR START YOUR JOURNEY NOW"
+    },
+    "signinPage": {
+        "title": "WELCOME BACK!",
+        "credentials": "Sign in using your credentials",
+        "auths": "or continue with",
+        "signin": "SIGN IN",
+        "termsPrefix": "By signing in, you agree to Trailtracer's ",
+        "terms": "Terms and Conditions and Privacy Policy.",
+        "termsSuffix": "",
+        "help": "NEED HELP?",
+        "signupTitle": "NOT ON TRAILTRACER YET?",
+        "explanation": "You can still explore everything the community has created. But you will need an account to interact with them.",
+        "signup": "SIGN UP"
+    },
+    "forms": {
+        "email": "Username or email address",
+        "password": "Password",
+        "requiredError": "This field is required",
+        "emailError": "This is not a valid email address",
+        "passwordError": "Password must contain at least 1 lowercase letter, 1 uppercase letter, 1 number, and 1 symbol",
+        "search": "Search...",
+        "explore": "Explore",
+        "theme": "Theme",
+        "language": "Language"
+    }
+}
