@@ -15,7 +15,7 @@ const RTooltip = styled(Tooltip).attrs(
         background-color: ${({ theme }) => theme.colors.secondary};
         border: 2px solid ${({ theme }) => theme.colors.background};
         border-radius: max(0.25rem, 0.25dvh, 0.25dvw);
-        z-index: 999;
+        z-index: 9999;
         opacity: 1;
   }
 `;

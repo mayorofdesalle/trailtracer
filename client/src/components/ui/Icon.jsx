@@ -1,7 +1,5 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
-import Icons from '@assets/icons.svg';
+import styled from 'styled-components';
 
 /**
  * IconSvg
@@ -9,7 +7,7 @@ import Icons from '@assets/icons.svg';
  * Styled svg component to display icons.
  **/
 const IconSvg = styled.svg`
-    --size: calc(clamp(1rem, min(2.5dvw, 2.5dvh), 3rem));
+    --size: clamp(0.825rem, min(2dvw, 2dvh), 2.5rem);
     height: var(--size);
     width: var(--size);
 `;
@@ -25,9 +23,9 @@ const IconSvg = styled.svg`
  **/
 const Icon = ({ id, name, color }) => {
     return (
-        <IconSvg id={id} fill={color || 'currentColor'} style={{ pointerEvents: 'none' }}>
+        <IconSvg id={id || name} fill={color || 'currentColor'} style={{ pointerEvents: 'none' }}>
             <title>{name}</title>
-            <use href={`${Icons}#${name}`} />
+            <use href={`${new URL('../../assets/icons.svg', import.meta.url).href}#${name}`} />
         </IconSvg>
     );
 };

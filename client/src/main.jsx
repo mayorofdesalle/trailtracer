@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 
 import GlobalStyle from '@components/style/GlobalStyle';
 import Theme from '@components/style/Theme';
-import PageContainer from '@layout/PageContainer';
+import AppContainer from '@layout/AppContainer';
 import Home from '@pages/Home/Home';
-import SignIn from '@pages/SignIn/SignIn';
+import Profile from '@pages/Profile/Profile';
 
 import store from './app/store';
 import './app/i18n';
@@ -19,9 +19,10 @@ import './app/i18n';
  **/
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		<Route path='/' element={<PageContainer />}>
+		<Route path='/' element={<AppContainer />}>
 			<Route index element={<Home />} />
-			<Route path='/signin' element={<SignIn />} />
+			<Route path='/signin' element={<Profile />} />
+			<Route path='/signup' element={<Profile newUser />} />
 		</Route>
 	));
 

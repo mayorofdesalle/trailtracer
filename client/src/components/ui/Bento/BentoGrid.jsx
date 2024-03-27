@@ -9,8 +9,8 @@ import Container from '@components/ui/Container';
  **/
 const BentoGrid = styled(Container)`
     display: grid;
-    padding: clamp(0.7625rem, min(2dvw, 2dvh), 2.5625rem);
-    grid-gap: clamp(0.7625rem, min(2dvw, 2dvh), 2.5625rem);
+    padding: clamp(0.75rem, min(2dvw, 2dvh), 2.5rem);
+    grid-gap: clamp(0.75rem, min(2dvw, 2dvh), 2.5rem);
 `;
 
 export default BentoGrid;

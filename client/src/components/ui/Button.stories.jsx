@@ -2,8 +2,8 @@ import { fn } from '@storybook/test';
 
 import { colors } from '@components/style/themes';
 
-import Text from './Text';
 import Button from './Button';
+import Text from './Text';
 
 export default {
     component: Button,

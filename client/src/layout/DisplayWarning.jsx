@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import styled, { useTheme, keyframes } from 'styled-components';
+import styled, { keyframes, useTheme } from 'styled-components';
 
 import Container from '@components/ui/Container';
-import Text from '@components/ui/Text';
 import Icon from '@components/ui/Icon';
+import Text from '@components/ui/Text';
 
 const orientate = (themeColors) => keyframes`
     0%, 25% {
@@ -18,16 +18,15 @@ const orientate = (themeColors) => keyframes`
 `;
 
 const WarningContainer = styled(Container)`
-    padding: 10%;
+    padding: clamp(4rem, min(8dvw, 8dvh), 8rem);
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.background};
 
     & > svg {
-        --size: 100%;
-        height: var(--size);
-        width: var(--size);
+        height: 100%;
+        width: 100%;
         animation: ${({ theme }) => orientate(theme.colors)} 2s ease-in-out infinite alternate;
     }
 `;

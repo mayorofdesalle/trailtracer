@@ -1,9 +1,9 @@
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LocalStorageBackend from 'i18next-localstorage-backend';
-import HttpApi from 'i18next-http-backend';
-import ChainedBackend from 'i18next-chained-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import ChainedBackend from 'i18next-chained-backend';
+import HttpApi from 'i18next-http-backend';
+import LocalStorageBackend from 'i18next-localstorage-backend';
+import { initReactI18next } from 'react-i18next';
 
 /**
  * i18n configuration
@@ -15,6 +15,7 @@ i18n
     .init({
         debug: true,
         nonExplicitSupportedLngs: true,
+        supportedLngs: ['en', 'tr', 'ja', 'es', 'is'],
         fallbackLng: 'en',
         load: 'languageOnly',
         interpolation: {
@@ -45,8 +46,9 @@ i18n
 i18n.supportedLanguages = [
     { code: 'en', name: 'English' },
     { code: 'tr', name: 'Türkçe' },
-    { code: 'jp', name: '日本語' },
-    { code: 'es', name: 'Español' }
+    { code: 'ja', name: '日本語' },
+    { code: 'es', name: 'Español' },
+    { code: 'is', name: 'Íslenska' }
 ];
 
 export default i18n;

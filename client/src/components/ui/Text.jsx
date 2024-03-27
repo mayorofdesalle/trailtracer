@@ -16,13 +16,13 @@ const Text = styled.div`
     vertical-align: middle;
 
     font-size:
-    calc(clamp(0.825rem, min(2dvw, 2dvh), 2.5625rem)
+    calc(clamp(0.825rem, min(2dvw, 2dvh), 2.5rem)
     * ${({ $heading }) => $heading ? HEADING_MULTIPLIER : 1}
     * ${({ $ratio }) => $ratio || 1});
 
     font-family: ${({ theme, $heading }) => $heading ? theme.fonts.heading : theme.fonts.text};
     font-weight: ${({ theme, $heading }) => $heading ? theme.fontWeights.bold : theme.fontWeights.regular};
-    line-height: ${({ $heading }) => $heading ? 1.25 : 1};
+    line-height: ${({ $heading }) => $heading ? 1.5 : 1.25};
 
     color: ${({ theme, $color }) => $color || theme.colors.text};
 `;

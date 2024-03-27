@@ -1,23 +1,27 @@
+import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Container from '@components/ui/Container';
 
 import Nav from './Nav';
-import ThemeButton from './ThemeButton';
-import LanguageButton from './Language/LanguageButton';
 import NavbarButton from './NavbarButton';
 import NavbarLogo from './NavbarLogo';
+import SettingsButton from './Settings/SettingsButton';
+import ExploreBar from './Explore/ExploreBar';
 
-const ButtonContainer = styled(Container)`
+const NavContainer = styled(Container)`
+    position: relative;
     width: fit-content;
+    height: fit-content;
+    margin-left: clamp(0.75rem, min(2dvw, 2dvh), 2.5rem);
     
     & > * {
-        margin-left: clamp(0.7625rem, min(2dvw, 2dvh), 2.5625rem);
-    }
+        margin-left: inherit;
 
-    & > *:first-child {
-        margin-left: 0;
+        &:first-child {
+            margin-left: 0;
+        }
     }
 `;
 
@@ -28,15 +32,17 @@ const ButtonContainer = styled(Container)`
  **/
 const Navbar = () => {
     const navigate = useNavigate();
+    const navigateHome = useCallback(() => navigate('/'), [navigate]);
+    const navigateProfile = useCallback(() => navigate('/signin'), [navigate]);
 
     return (
         <Nav>
-            <NavbarLogo onClick={() => navigate('/')} aria-label='Return to homepage' />
-            <ButtonContainer>
-                <LanguageButton />
-                <ThemeButton />
-                <NavbarButton onClick={() => navigate('/signin')} icon='user' />
-            </ButtonContainer>
+            <NavbarLogo onClick={navigateHome} aria-label='Return to homepage' />
+            <NavContainer>
+                <ExploreBar />
+                <NavbarButton onClick={navigateProfile} icon='user' />
+                <SettingsButton />
+            </NavContainer>
         </Nav>
     );
 };

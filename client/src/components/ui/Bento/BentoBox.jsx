@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
+import { glassMorph } from '@components/style/mixins';
+
 import Container from '../Container';
-import { glassMorph } from '@components/misc/Mixins';
 
 /**
  * BentoBox
@@ -11,8 +12,7 @@ import { glassMorph } from '@components/misc/Mixins';
  * Styled container in a bentobox shape. The entire app is built on this shape.
  **/
 const BentoBox = styled(Container)`
-    position: relative;
-    padding: 0.5rem;
+    padding: clamp(0.5rem, min(1dvw, 1dvh), 2rem);
     background-color: ${({ $color }) => $color};
     transition: 200ms ease-in-out;
     ${({ $glass }) => $glass && glassMorph};

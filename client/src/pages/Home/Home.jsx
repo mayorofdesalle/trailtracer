@@ -1,16 +1,12 @@
-import Landing from './components/Landing/Landing';
-import preloadImages from '@utils/preloadImages';
+import Page from '@layout/Page';
 
-/**
- * Home
- * @description
- * Home page of the application.
- **/
+import Landing from './Landing/Landing';
+
 const Home = () => {
-	preloadImages('biker', '/src/assets/images/biker.svg');
-
 	return (
-		<Landing />
+		<Page>
+			<Landing />
+		</Page>
 	);
 };
 
