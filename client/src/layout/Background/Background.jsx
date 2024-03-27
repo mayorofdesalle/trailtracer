@@ -1,13 +1,13 @@
-import { useMemo, Suspense, lazy, memo } from 'react';
+import { Suspense, lazy, useMemo } from 'react';
 import styled from 'styled-components';
 
-import useWindowSize from '@hooks/useWindowSize';
 import Container from '@components/ui/Container';
+import useWindowSize from '@hooks/useWindowSize';
 
 import Image from './BackgroundImage';
 const Canvas = lazy(() => import('./BackgroundCanvas'));
 
-const BackgroundContainer = memo(styled(Container)`
+const BackgroundContainer = styled(Container)`
     position: absolute;
     height: 100dvh;
     width: 100dvw;
@@ -15,7 +15,7 @@ const BackgroundContainer = memo(styled(Container)`
     background-color: ${({ theme }) => theme.colors.background};
     z-index: -999;
     overflow: hidden;
-`);
+`;
 
 /**
  * Background

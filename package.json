@@ -1,15 +1,14 @@
 {
   "name": "trailtracer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A website for bikers to pin and share their favorite trails and points of interest.",
   "scripts": {
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" ",
     "storybook": "cd client && npm run storybook"
   },
   "author": "Buğra Aras",
-  "license": "GGPL",
+  "license": "GPL3",
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
     "concurrently": "^8.2.2"
   }
 }

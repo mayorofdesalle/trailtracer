@@ -17,6 +17,17 @@ const GlobalStyle = createGlobalStyle`
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
+
+        scrollbar-color: ${({ theme }) => theme.colors.primary} ${({ theme }) => theme.colors.background};
+        scrollbar-width: thin;
+    }
+
+    a {
+        color: ${({ theme }) => theme.colors.link};
+
+        &:visited {
+            color: ${({ theme }) => theme.colors.linkVisited};
+        }
     }
 `;
 

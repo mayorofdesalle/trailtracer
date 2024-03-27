@@ -1,7 +1,7 @@
-import { useForm } from 'react-hook-form';
 import { fn } from '@storybook/test';
+import { useForm } from 'react-hook-form';
 
-import { lightTheme, darkTheme } from '@components/style/themes';
+import { darkTheme, lightTheme } from '@components/style/themes';
 
 import Icon from '../Icon';
 import TextInput from './TextInput';

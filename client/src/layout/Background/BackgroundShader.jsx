@@ -1,7 +1,7 @@
+import { invalidate, useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as THREE from 'three';
-import { useFrame, invalidate } from '@react-three/fiber';
 
 import textureShader from '@data/textureShader';
 import { set } from '@features/backgroundSlice';

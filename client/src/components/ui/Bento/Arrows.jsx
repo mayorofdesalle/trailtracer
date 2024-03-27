@@ -2,12 +2,12 @@ import { css } from 'styled-components';
 
 // BentoArrow
 const pseudoBentoArrowBase = css`
-        --size: clamp(1.625rem, max(2dvw, 2dvh), 4.125rem);
-        position: absolute;
-        display: inline-block;
-        content: '';
-        width: 0;
-        height: 0;
+    --size: clamp(2rem, max(2dvw, 2dvh), 4rem);
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 0;
 `;
 
 /**

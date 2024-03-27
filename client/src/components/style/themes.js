@@ -22,6 +22,11 @@ const theme = {
         large: '1920',
         xLarge: '2560'
     },
+
+    colors: {
+        link: '#E16464',
+        linkVisited: '#6D333C'
+    }
 };
 
 export const colors = {
@@ -40,6 +45,7 @@ export const colors = {
 export const darkTheme = {
     ...theme,
     colors: {
+        ...theme.colors,
         primary: colors.mint,
         primaryTransparent: colors.mintTransparent,
         secondary: colors.coral,
@@ -56,6 +62,7 @@ export const darkTheme = {
 export const lightTheme = {
     ...theme,
     colors: {
+        ...theme.colors,
         primary: colors.darkGreen,
         primaryTransparent: colors.darkGreenTransparent,
         secondary: colors.coral,

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { scaleOnHover } from '../misc/Mixins';
+import { scaleOnHover } from '../style/mixins';
 
 /**
  * @description
@@ -32,12 +32,12 @@ const rotateShadow = (color1, color2) => keyframes`
  * @description
  * Default styled button component.
  **/
-const Button = styled.button`
+const Button = styled.button.attrs(({ $type }) => ({ type: $type || 'button' }))`
     display: flex;
     align-items: center;
     justify-content: space-around;
     border-radius: max(0.5dvh, 0.5dvw, 0.5rem);
-    padding: 1rem;
+    padding: clamp(0.5rem, min(1dvw, 1dvh), 2rem);
     background-color: ${({ theme, $bgColor }) => $bgColor || theme.colors.primary};
     color: ${({ theme, $color }) => $color || theme.colors.background};
     text-transform: uppercase;
@@ -55,7 +55,6 @@ const Button = styled.button`
     &:disabled {
         animation: none;
         filter: opacity(50%);
-        cursor: not-allowed;
     }
 `;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import getImageUrl from '@utils/getImageUrl';
 import Button from '@components/ui/Button';
+import { getImageUrl } from '@utils/imageHelpers';
 
 /**
  * NavbarLogo
@@ -9,13 +9,14 @@ import Button from '@components/ui/Button';
  * Styled button used as the logo for the navbar.
  **/
 const NavbarLogo = styled(Button)`
+    flex-shrink: 0;
     border-radius: 0;
     padding: 0;
     width: clamp(6rem, min(12dvw, 12dvh), 12rem);
     height: clamp(1.5rem, min(3dvw, 3dvh), 3rem);
     background-color: ${({ theme }) => theme.colors.primary};
-    -webkit-mask-image: url(${getImageUrl('logo.svg')});
-    mask-image: url(${getImageUrl('logo.svg')});
+    -webkit-mask-image: url(${getImageUrl('logos/trailtracer.svg')});
+    mask-image: url(${getImageUrl('logos/trailtracer.svg')});
     mask-clip: border-box;
     mask-size: contain;
     mask-repeat: no-repeat;
@@ -28,9 +29,8 @@ const NavbarLogo = styled(Button)`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         width: clamp(1rem, min(6dvw, 6dvh), 8rem);
-        height: clamp(1.5rem, min(3dvw, 3dvh), 3rem);
-        -webkit-mask-image: url(${getImageUrl('smallLogo.svg')});
-        mask-image: url(${getImageUrl('smallLogo.svg')});
+        -webkit-mask-image: url(${getImageUrl('logos/tt.svg')});
+        mask-image: url(${getImageUrl('logos/tt.svg')});
     }
 `;
 

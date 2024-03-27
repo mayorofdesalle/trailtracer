@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import getImageUrl from '@utils/getImageUrl';
+import { getImageUrl } from '@utils/imageHelpers';
 
 /**
  * Vector
@@ -17,8 +17,8 @@ const Vector = styled.div`
     width: ${({ $width }) => $width};
     display: inline-block;
     background-color: ${({ $color }) => $color};
-    -webkit-mask-image: url(${({ $name }) => getImageUrl(`${$name}.svg`)});
-    mask-image: url(${({ $name }) => getImageUrl(`${$name}.svg`)});
+    -webkit-mask-image: url(${({ $name }) => getImageUrl(`vectors/${$name}.svg`)});
+    mask-image: url(${({ $name }) => getImageUrl(`vectors/${$name}.svg`)});
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: ${({ $position }) => $position};

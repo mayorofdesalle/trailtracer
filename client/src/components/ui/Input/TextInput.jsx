@@ -1,12 +1,12 @@
-import { useMemo, useState, Children, useCallback } from 'react';
+import PropTypes from 'prop-types';
+import { Children, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
-import PropTypes from 'prop-types';
 
 import Container from '../Container';
+import Icon from '../Icon';
 import RTooltip from '../RTooltip';
 import Text from '../Text';
-import Icon from '../Icon';
 import inputRules from './inputRules';
 
 const TextInputInner = styled.input`
@@ -19,11 +19,11 @@ const TextInputInner = styled.input`
     border-bottom: 2px solid ${({ theme }) => theme.colors.primaryTransparent};
     border-radius: max(0.5dvh, 0.5dvw, 0.5rem);
     padding:
-    0.5rem
+    clamp(0.5rem, min(1dvw, 1dvh), 2rem)
     ${({ $isPassword }) => $isPassword ? 'calc(clamp(1rem, min(2.5dvw, 2.5dvh), 3rem) + 1rem)' : '0.5rem'}
-    0.5rem
+    clamp(0.5rem, min(1dvw, 1dvh), 2rem)
     ${({ $hasIcon }) => $hasIcon ? 'calc(clamp(1rem, min(2.5dvw, 2.5dvh), 3rem) + 1rem)' : '0.5rem'};
-    font-size: clamp(0.825rem, min(2dvw, 2dvh), 2.5625rem);
+    font-size: clamp(0.825rem, min(2dvw, 2dvh), 2.5rem);
     font-family: ${({ theme }) => theme.fonts.text};
     font-weight: ${({ theme }) => theme.fontWeights.regular};
     transition: 200ms ease-in-out;
@@ -47,6 +47,10 @@ const TextInputInner = styled.input`
         -webkit-text-fill-color: ${({ theme }) => theme.colors.text};
         caret-color: ${({ theme }) => theme.colors.primary};
         transition: background-color 999999s ease-in-out 0s;
+    }
+
+    &::placeholder {
+        color: ${({ theme }) => theme.colors.primaryTransparent};
     }
 `;
 
@@ -78,7 +82,7 @@ const HideIconContainer = styled(Container)`
  * @param {function} register - The register function of the component
  * @param {object} error - The error object of the component
  * @param {string} type - The type of the input
- * @param {boolean} showHideIcon - Whether to show the hide icon
+ * @param {boolean} watch - Function to watch the input
  * @param {boolean} required - Whether the input is required
  * @param {boolean} disabled - Whether the input is disabled
  * @param {boolean} validate - Whether the input should be validated
@@ -86,12 +90,12 @@ const HideIconContainer = styled(Container)`
  * @description
  * Default styled text input component (for email, password, etc.).
  */
-const TextInput = ({ children, register, error, type, watch, required, disabled, validate, ...props }) => {
+const TextInput = ({ children, register, error, type, label, placeholder, watch, required, disabled, validate, ...props }) => {
     const theme = useTheme();
     const { t } = useTranslation();
     const isPassword = useMemo(() => type === 'password', [type]);
     const watchPassword = isPassword && watch('password');
-    const inputIcon = useMemo(() => Children.toArray(children).map(child => { return child.type.name === 'Icon' && child; }).filter(child => child)[0], [children]);
+    const hasIcon = useMemo(() => Children.toArray(children).map(child => child.type.name === 'Icon').length > 0, [children]);
     const [isHidden, setIsHidden] = useState(isPassword);
 
     const toggleHidden = useCallback(() => setIsHidden((isHidden) => !isHidden), []);
@@ -102,9 +106,10 @@ const TextInput = ({ children, register, error, type, watch, required, disabled,
                 <RTooltip id={type} place='left' openEvents={{ focus: true }} closeEvents={{ blur: true }}>
                     <Text>{t(error.message)}</Text>
                 </RTooltip>}
-            <TextInputInner type={isHidden ? 'password' : 'text'} name={type} autoComplete={type} data-tooltip-id={type} $hasIcon={inputIcon} $isPassword={isPassword}
+            <TextInputInner type={isHidden ? 'password' : 'text'} name={type} label={label || t(`forms.${type}`)} placeholder={placeholder || t(`forms.${type}`)}
+                data-tooltip-id={type} $hasIcon={hasIcon} $isPassword={isPassword}
                 {...register(type, inputRules(type, required, disabled, validate))} {...props} />
-            {inputIcon}
+            {children}
             {watchPassword &&
                 <HideIconContainer onClick={toggleHidden}>
                     <Icon name={isHidden ? 'eye-fill' : 'eye-off-fill'} color={theme.colors.primary} />
@@ -118,6 +123,8 @@ TextInput.propTypes = {
     register: PropTypes.func,
     error: PropTypes.object,
     type: PropTypes.string,
+    label: PropTypes.string,
+    placeholder: PropTypes.string,
     watch: PropTypes.func,
     required: PropTypes.bool,
     disabled: PropTypes.bool,
