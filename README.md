@@ -6,7 +6,7 @@
 <br />
 <div>
   <a href='https://github.com/mayorofdesalle/trailtracer'>
-    <img src='client/src/assets/images/logo.svg' alt='Logo'>
+    <img src='client/src/assets/images/logos/trailtracer.svg' alt='Logo'>
   </a>
   <h3>trailtracer</h3>
 </div>
@@ -31,7 +31,9 @@
 
 This is a website for bikers to share, to collaborate on, and to plan trails and points of interests online.
 
-You can find the design file [here](https://www.figma.com/file/6ezhNt04ZvQTGNWF4JH22v/trailtracer?type=design&node-id=0%3A1&mode=design&t=2R90PO8EbLy7iDTO-1).
+See the frontend in action in [Pages](https://mayorofdesalle.github.io/trailtracer).
+
+You can find the design file in [Figma](https://www.figma.com/file/6ezhNt04ZvQTGNWF4JH22v/trailtracer?type=design&node-id=0%3A1&mode=design&t=2R90PO8EbLy7iDTO-1).
 
 ### Built With
 
@@ -80,7 +82,7 @@ Buğra Aras
 [issues-shield]: https://img.shields.io/github/issues/mayorofdesalle/trailtracer.svg?style=for-the-badge
 [issues-url]: https://github.com/mayorofdesalle/trailtracer/issues
 [license-shield]: https://img.shields.io/github/license/mayorofdesalle/trailtracer.svg?style=for-the-badge
-[license-url]: https://github.com/mayorofdesalle/trailtracer/blob/master/LICENSE
+[license-url]: https://github.com/mayorofdesalle/trailtracer/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://linkedin.com/in/bugraaras
 [proton-shield]: https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white
