@@ -47,20 +47,25 @@ You can find the design file in [Figma](https://www.figma.com/file/6ezhNt04ZvQTG
 
 <!-- ROADMAP -->
 ## Roadmap
+<br/>
 
 - [ ] User
     - [ ] Signup
-    - [X] Signin
+    - [ ] Signin
+    - [ ] Profile
 - [ ] Trails
     - [ ] Create
     - [ ] View
     - [ ] Edit
     - [ ] Delete
     - [ ] Rate/Review
-    - [ ] Make lists of
 - [ ] Homepage
 - [ ] Explore
     - [ ] Filters
+- [ ] Connections
+<br/>
+
+- DISTANT FUTURE
 - [ ] Mobile App
     - [ ] Record trails
 
