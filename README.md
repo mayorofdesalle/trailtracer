@@ -79,9 +79,9 @@ Buğra Aras
 <p>(<a href='#readme-top'>back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[issues-shield]: https://img.shields.io/github/issues/mayorofdesalle/trailtracer.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/mayorofdesalle/trailtracer.svg
 [issues-url]: https://github.com/mayorofdesalle/trailtracer/issues
-[license-shield]: https://img.shields.io/github/license/mayorofdesalle/trailtracer.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/mayorofdesalle/trailtracer.svg
 [license-url]: https://github.com/mayorofdesalle/trailtracer/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://linkedin.com/in/bugraaras
