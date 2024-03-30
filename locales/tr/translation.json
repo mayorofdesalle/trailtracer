@@ -1,22 +1,22 @@
 {
-    "displayWarning": "BU ÇÖZÜNÜRLÜKTE İÇERİK EN İYİ PORTRE MODUNDA GÖRÜNTÜLENİR",
+    "displayWarning": "BU ÇÖZÜNÜRLÜKTE İÇERİK EN İYİ ŞEKİLDE PORTRE MODUNDA GÖRÜNTÜLENİR",
     "landingPage": {
-        "title": "SİZİN GİBİ SÜRÜCÜLERLE BAĞLANTI KURUN VE BİR SONRAKİ ROTANIZI PLANLAYIN!",
+        "title": "SENİN GİBİ SÜRÜCÜLERLE BAĞLANTI KUR VE BİR SONRAKİ ROTANI PLANLA!",
         "start": "BAŞLA — ÜCRETSİZ!",
-        "CTA1": "DAHA FAZLA BİLGİ İÇİN KAYDIRIN",
-        "CTA2": "VEYA ŞİMDİ YOLCULUĞA BAŞLAYIN"
+        "CTA1": "DAHA FAZLA BİLGİ İÇİN KAYDIR",
+        "CTA2": "VEYA ŞİMDİ YOLCULUĞA BAŞLA"
     },
     "signinPage": {
-        "title": "TEKRAR HOŞGELDİNİZ!",
-        "credentials": "Bilgilerinizle giriş yapın",
+        "title": "TEKRAR HOŞGELDİN!",
+        "credentials": "Bilgilerinle giriş yap",
         "auths": "veya",
         "signin": "GİRİŞ YAP",
         "termsPrefix": "Giriş yaparak Trailtracer'ın ",
         "terms": "Kullanım Koşulları'nı ve Gizlilik Politikası'nı",
-        "termsSuffix": " kabul etmiş olursunuz.",
-        "help": "YARDIMA MI İHTİYACINIZ VAR?",
-        "signupTitle": "HENÜZ TRAILTRACER'DA DEĞİL MİSİNİZ?",
-        "explanation": "Yine de topluluğun oluşturduğu her şeyi keşfedebilirsiniz. Ama onlarla etkileşime girmek için bir hesabınız olması gerekiyor.",
+        "termsSuffix": " kabul etmiş olursun.",
+        "help": "YARDIMA MI İHTİYACIN VAR?",
+        "signupTitle": "HENÜZ TRAILTRACER'DA DEĞİL MİSİN?",
+        "explanation": "Yine de topluluğun oluşturduğu her şeyi keşfedebilirsin. Ama onlarla etkileşime girmek için bir hesabın olması gerekiyor.",
         "signup": "KAYDOL"
     },
     "forms": {
