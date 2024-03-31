@@ -26,7 +26,7 @@ export default defineConfig({
         globals: true,
         coverage: {
             provider: 'istanbul',
-            reporters: ['json']
+            reporter: ['json-summary', 'json']
         }
     }
 })
