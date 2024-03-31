@@ -10,7 +10,7 @@ jobs:
       - name: Vitest Coverage Report
         uses: davelosert/vitest-coverage-report-action@v2.3.0
         with:
-          vitest-config-path: ./vitest.config.mjs
+          vite-config-path: ./vitest.config.mjs
           working-directory: ./client/
 
       - name: Vitest Badge Action
