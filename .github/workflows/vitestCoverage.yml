@@ -1,4 +1,4 @@
-name: 'Test'
+name: 'Vitest Coverage'
 on: 
   pull_request:
 
@@ -27,6 +27,8 @@ jobs:
     - name: 'Report Coverage'
       if: always() 
       uses:  davelosert/vitest-coverage-report-action@v2.3.0
+      with:
+        working-directory: ./client/
     - name: Vitest Badge Action
       uses: wjervis7/vitest-badge-action@v1.0.0
       with:
@@ -37,3 +39,4 @@ jobs:
         badge-pass-color: EBFFF5
         badge-fail-color: EF6F6C
         badge-neutral-color: 435049
+        working-directory: ./client/
