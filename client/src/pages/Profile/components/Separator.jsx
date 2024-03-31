@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Container from '@components/ui/Container';
 import Text from '@components/ui/Text';
@@ -31,16 +32,19 @@ const SeparatorInner = styled(Container)`
  * @description
  * Horizontal rule with text in the middle.
  * **/
-const Separator = () => {
+const Separator = ({ color }) => {
     const context = useContext(PageContext);
-    const theme = context.theme;
     const t = context.t;
 
     return (
         <SeparatorInner>
-            <HR /><Text $color={theme.colors.background}>{t('signinPage.auths')}</Text><HR />
+            <HR /><Text $color={color}>{t('signinPage.auths')}</Text><HR />
         </SeparatorInner>
     );
+};
+
+Separator.propTypes = {
+    color: PropTypes.string
 };
 
 export default Separator;

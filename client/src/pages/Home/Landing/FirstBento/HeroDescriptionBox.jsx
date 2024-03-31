@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
-import { slideFromBottom } from '@components/style/anims';
+import { slideFromBottom } from '@components/anims';
 import { pseudoBentoArrowTop } from '@components/ui/Bento/Arrows';
 import BentoBox from '@components/ui/Bento/BentoBox';
 import Text from '@components/ui/Text';

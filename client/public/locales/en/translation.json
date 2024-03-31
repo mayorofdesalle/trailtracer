@@ -20,7 +20,8 @@
         "signup": "SIGN UP"
     },
     "forms": {
-        "email": "Username or email address",
+        "email": "Email address",
+        "username": "Username",
         "password": "Password",
         "requiredError": "This field is required",
         "emailError": "This is not a valid email address",
@@ -29,5 +30,9 @@
         "explore": "Explore",
         "theme": "Theme",
         "language": "Language"
+    },
+    "signupModal": {
+        "title": "CREATE YOUR ACCOUNT",
+        "subtitle": "IT'S EASY!"
     }
 }

@@ -2,11 +2,12 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 
 import BentoBox from '@components/ui/Bento/BentoBox';
+import Container from '@components/ui/Container';
 import Text from '@components/ui/Text';
 import PageContext from '@context/PageContext';
 
-import AuthButtons from './AuthButtons';
-import Separator from './Separator';
+import AuthButtons from '@pages/Profile/components/AuthButtons';
+import Separator from '@pages/Profile//components/Separator';
 import SigninForm from './SigninForm';
 
 const SigninBoxInner = styled(BentoBox)`
@@ -23,6 +24,11 @@ const SigninBoxInner = styled(BentoBox)`
     }
 `;
 
+const Wrapper = styled(Container)`
+    height: fit-content;
+    flex-direction: column;
+`;
+
 /**
  * SigninBox
  * @description
@@ -35,11 +41,13 @@ const SigninBox = () => {
 
     return (
         <SigninBoxInner $color={theme.colors.primary}>
-            <Text $color={theme.colors.background} $heading $ratio={1.5}>{t('signinPage.title')}</Text>
-            <Text $color={theme.colors.background}>{t('signinPage.credentials')}</Text>
+            <Wrapper>
+                <Text $color={theme.colors.background} $heading $ratio={1.5}>{t('signinPage.title')}</Text>
+                <Text $color={theme.colors.background}>{t('signinPage.credentials')}</Text>
+            </Wrapper>
             <SigninForm />
-            <Separator />
-            <AuthButtons />
+            <Separator color={theme.colors.background} />
+            <AuthButtons bgColor={theme.colors.background} color={theme.colors.primary} animColors={[theme.colors.background, theme.colors.secondary]} />
         </SigninBoxInner>
     );
 };

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
-import { slideFromLeft, slideFromRight } from '@components/style/anims';
+import { slideFromLeft, slideFromRight } from '@components/anims';
 import BentoBox from '@components/ui/Bento/BentoBox';
 import Text from '@components/ui/Text';
 import Vector from '@components/ui/Vector';

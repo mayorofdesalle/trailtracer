@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { scaleOnHover } from '../style/mixins';
+import { scaleOnHover } from '../mixins';
 
 /**
  * @description

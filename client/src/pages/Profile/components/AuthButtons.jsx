@@ -1,10 +1,9 @@
-import { useContext } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Button from '@components/ui/Button';
 import Container from '@components/ui/Container';
 import Icon from '@components/ui/Icon';
-import PageContext from '@context/PageContext';
 
 const AuthButtonsInner = styled(Container)`
     justify-content: space-around;
@@ -27,23 +26,26 @@ const AuthButtonsInner = styled(Container)`
  * @description
  * Styled container that wraps the auth buttons.
  **/
-const AuthButtons = () => {
-    const theme = useContext(PageContext).theme;
-    const animColors = [theme.colors.background, theme.colors.secondary];
-
+const AuthButtons = ({ bgColor, color, animColors }) => {
     return (
         <AuthButtonsInner>
-            <Button $bgColor={theme.colors.background} $animColors={animColors}>
-                <Icon name='google-fill' color={theme.colors.primary} />
+            <Button $bgColor={bgColor} $color={color} $animColors={animColors}>
+                <Icon name='google-fill' />
             </Button>
-            <Button $bgColor={theme.colors.background} $animColors={animColors}>
-                <Icon name='facebook-fill' color={theme.colors.primary} />
+            <Button $bgColor={bgColor} $color={color} $animColors={animColors}>
+                <Icon name='facebook-fill' />
             </Button>
-            <Button $bgColor={theme.colors.background} $animColors={animColors}>
-                <Icon name='twitter-fill' color={theme.colors.primary} />
+            <Button $bgColor={bgColor} $color={color} $animColors={animColors}>
+                <Icon name='twitter-fill' />
             </Button>
         </AuthButtonsInner>
     );
+};
+
+AuthButtons.propTypes = {
+    bgColor: PropTypes.string,
+    color: PropTypes.string,
+    animColors: PropTypes.array
 };
 
 export default AuthButtons;

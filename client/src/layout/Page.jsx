@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { fadeIn } from '@components/style/anims';
+import { fadeIn } from '@components/anims';
 import Container from '@components/ui/Container';
 
 /**

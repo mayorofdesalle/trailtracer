@@ -17,7 +17,9 @@ const SettingsButton = () => {
         else setIsOpen(true);
     }, [isOpen]);
 
-    useEffect(() => { isOpen && dropdown.current.focus(); }, [isOpen]);
+    useEffect(() => {
+        isOpen && dropdown.current.focus();
+    }, [isOpen]);
 
     return (
         <>

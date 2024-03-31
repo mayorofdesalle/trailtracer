@@ -101,12 +101,12 @@ const TextInput = ({ children, register, error, type, label, placeholder, watch,
     const toggleHidden = useCallback(() => setIsHidden((isHidden) => !isHidden), []);
 
     return (
-        <TextInputContainer $inputIconId={type}>
+        <TextInputContainer>
             {error &&
                 <RTooltip id={type} place='left' openEvents={{ focus: true }} closeEvents={{ blur: true }}>
                     <Text>{t(error.message)}</Text>
                 </RTooltip>}
-            <TextInputInner type={isHidden ? 'password' : 'text'} name={type} label={label || t(`forms.${type}`)} placeholder={placeholder || t(`forms.${type}`)}
+            <TextInputInner type={isHidden ? 'password' : 'text'} name={type} label={label || t(`forms.${type}`)} placeholder={placeholder || t(`forms.${label || type}`)}
                 data-tooltip-id={type} $hasIcon={hasIcon} $isPassword={isPassword}
                 {...register(type, inputRules(type, required, disabled, validate))} {...props} />
             {children}
