@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { slideFromBottom } from '@components/style/anims';
+import { slideFromBottom } from '@components/anims';
 import { pseudoBentoArrowTop } from '@components/ui/Bento/Arrows';
 import BentoBox from '@components/ui/Bento/BentoBox';
 

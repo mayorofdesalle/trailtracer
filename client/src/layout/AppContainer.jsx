@@ -1,4 +1,4 @@
-import { lazy, useEffect, useState } from 'react';
+import { lazy, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet, useLocation } from 'react-router-dom';
 import styled, { useTheme } from 'styled-components';
@@ -41,18 +41,18 @@ const AppContainer = () => {
 	const dispatch = useDispatch();
 	const theme = useTheme();
 
-	const [previousLocation, setPreviousLocation] = useState('');
+	const previousLocation = useRef(null);
 	const location = useLocation();
 
 	const { height, width } = useWindowSize();
 	const aspectRatio = width / height;
 
 	useEffect(() => {
-		if (location.pathname !== previousLocation) {
-			setPreviousLocation(location.pathname);
+		if (location.pathname !== previousLocation.current) {
+			previousLocation.current = location.pathname;
 			dispatch(randomize());
 		}
-	}, [previousLocation, location, dispatch]);
+	}, [location, dispatch]);
 
 	return (
 		<Container>

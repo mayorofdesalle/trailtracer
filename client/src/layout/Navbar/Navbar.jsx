@@ -8,7 +8,7 @@ import Nav from './Nav';
 import NavbarButton from './NavbarButton';
 import NavbarLogo from './NavbarLogo';
 import SettingsButton from './Settings/SettingsButton';
-import ExploreBar from './Explore/ExploreBar';
+import ExploreButton from './Explore/ExploreButton';
 
 const NavContainer = styled(Container)`
     position: relative;
@@ -39,7 +39,7 @@ const Navbar = () => {
         <Nav>
             <NavbarLogo onClick={navigateHome} aria-label='Return to homepage' />
             <NavContainer>
-                <ExploreBar />
+                <ExploreButton />
                 <NavbarButton onClick={navigateProfile} icon='user' />
                 <SettingsButton />
             </NavContainer>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { glassMorph } from '@components/style/mixins';
+import { glassMorph } from '@components/mixins';
 
 /**
  * Nav

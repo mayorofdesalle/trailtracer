@@ -9,15 +9,15 @@ import NavbarButton from '@/layout/Navbar/NavbarButton';
 
 import ExploreDropdown from './ExploreDropdown';
 
-const ExploreBarInner = styled(TextInput)`
+const ExploreButtonInner = styled(TextInput)`
     width: clamp(3rem, min(6dvw, 6dvh), 12rem);
     height: clamp(1.5rem, min(3dvw, 3dvh), 3rem);
     background-color: ${({ theme }) => theme.colors.primary};
     caret-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.background};
-    transition: none;
 
     &:focus, &:active {
+        transition: none;
         ${({ $isOpen }) => $isOpen && css`width: 100%;`};
     }
 
@@ -35,11 +35,11 @@ const ExploreBarInner = styled(TextInput)`
 `;
 
 /**
- * ExploreBar
+ * ExploreButton
  * @description
- * Bar to explore the website in disguise of a button.
+ * Button that opens a dropdown to explore the site.
  **/
-const ExploreBar = () => {
+const ExploreButton = () => {
     const theme = useTheme();
     const { t } = useTranslation();
     const dropdown = useRef();
@@ -61,20 +61,22 @@ const ExploreBar = () => {
 
     const onClick = useCallback(() => { setIsOpen(true); }, []);
 
-    useEffect(() => { isOpen && setFocus('text'); }, [isOpen, setFocus]);
+    useEffect(() => {
+        isOpen && setFocus('text');
+    }, [isOpen, setFocus]);
 
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <ExploreBarInner as={!isOpen && NavbarButton} $isOpen={isOpen}
+                <ExploreButtonInner as={!isOpen && NavbarButton} $isOpen={isOpen}
                     onClick={onClick} onBlur={onBlur}
                     {...(!isOpen ? { icon: 'menu-search' } : { register: register, type: 'text', label: t('forms.search'), placeholder: t('forms.search'), autoComplete: 'on' })}>
                     <Icon id='text' name='search-line' color={theme.colors.background} />
-                </ExploreBarInner>
+                </ExploreButtonInner>
             </form>
             {isOpen && <ExploreDropdown ref={dropdown} />}
         </>
     );
 };
 
-export default ExploreBar;
+export default ExploreButton;

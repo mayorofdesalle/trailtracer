@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { rotateFromBottom, scaleDown } from '@components/style/anims';
+import { rotateFromBottom, scaleDown } from '@components/anims';
 import BentoBox from '@components/ui/Bento/BentoBox';
 import { getImageUrl } from '@utils/imageHelpers';
 
