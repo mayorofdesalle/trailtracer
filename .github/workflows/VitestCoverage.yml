@@ -1,0 +1,27 @@
+on: ["push", "pull_request"]
+
+name: Vitest Coverage
+
+defaults:
+  run:
+    working-directory: ./client/src/
+    
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vitest Coverage Report
+        uses: davelosert/vitest-coverage-report-action@v2.3.0
+          
+      - name: Vitest Badge Action
+        uses: wjervis7/vitest-badge-action@v1.0.0
+        with:
+          result-type: lines
+          badge-path: .src/coverage/
+          vitest-config-path: vitest.config.mjs
+          badge-text: Coverage
+          badge-pass-color: EBFFF5
+          badge-fail-color: EF6F6C
+          badge-neutral-color: 435049
+                
