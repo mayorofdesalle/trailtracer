@@ -36,7 +36,7 @@ jobs:
         vitest-config-path: ./client/vitest.config.mjs
         summary-path: ./client/coverage/coverage-summary.json
         badge-path: ./client/coverage/badge.svg
-        badge-text: Coverage
+        badge-text: coverage
         badge-pass-color: EBFFF5
         badge-fail-color: EF6F6C
         badge-neutral-color: 435049

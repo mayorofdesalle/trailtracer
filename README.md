@@ -1,8 +1,8 @@
 <a name='readme-top'></a>
 
+![Coverage][coverage-shield]
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
-![Coverage][coverage-shield]
 
 <br />
 <div>
