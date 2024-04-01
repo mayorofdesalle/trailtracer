@@ -2,6 +2,7 @@
 
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
+![Coverage][coverage-shield]
 
 <br />
 <div>
@@ -88,6 +89,7 @@ Buğra Aras
 [issues-url]: https://github.com/mayorofdesalle/trailtracer/issues
 [license-shield]: https://img.shields.io/github/license/mayorofdesalle/trailtracer.svg
 [license-url]: https://github.com/mayorofdesalle/trailtracer/blob/main/LICENSE
+[coverage-shield]: https://gist.githubusercontent.com/mayorofdesalle/1ed67afd2d34bac6920b52afac873088/raw/d7c9f8f142c043d12b4fac7ed1dd9f37b2f5adf2/badge.svg
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://linkedin.com/in/bugraaras
 [proton-shield]: https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white
