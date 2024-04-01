@@ -41,5 +41,5 @@ jobs:
         badge-fail-color: EF6F6C
         badge-neutral-color: 435049
         gist-token: ${{ secrets.GIST_TOKEN }}
-        gist-url: https://gist.github.com/mayorofdesalle/trailtracer-coverage-badge.svg
+        gist-url: https://gist.github.com/mayorofdesalle/1ed67afd2d34bac6920b52afac873088
         upload-badge: true
