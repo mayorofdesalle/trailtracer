@@ -1,6 +1,6 @@
-import { render, screen, expect, it, vi } from '@app/tester/tester'
+import { expect, it, render, screen } from '@app/tester/tester';
 
-import Button from '../Button'
+import Button from '../Button';
 
 it('Should render correctly with no props', async () => {
     const result = render(<Button>Button</Button>);
@@ -9,7 +9,7 @@ it('Should render correctly with no props', async () => {
 });
 
 it('Should render correctly with all props', async () => {
-    const result = render(<Button $type="submit" disabled $bgColor="red" $color="blue" $animColors={['red', 'blue']}>AllPropsButton</Button>);
+    const result = render(<Button $type='submit' disabled $bgColor='red' $color='blue' $animColors={['red', 'blue']}>AllPropsButton</Button>);
     const button = screen.getByText('AllPropsButton');
     expect(button).toBeDefined();
     expect(button).to.have.property('type', 'submit');
