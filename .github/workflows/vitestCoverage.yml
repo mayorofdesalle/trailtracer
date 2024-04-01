@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: '20.x'
     - name: 'Install Deps'
-      run: npm install
+      run: npm ci
     - name: 'Test'
       run: npx vitest --coverage.enabled
     - name: 'Report Coverage'
@@ -33,8 +33,9 @@ jobs:
       if: success() || failure()
       with:
         result-type: lines
-        badge-path: ./client/coverage/badge.svg
         vitest-config-path: ./client/vitest.config.mjs
+        summary-path: ./client/coverage/coverage-summary.json
+        badge-path: ./client/coverage/badge.svg
         badge-text: Coverage
         badge-pass-color: EBFFF5
         badge-fail-color: EF6F6C
