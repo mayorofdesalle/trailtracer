@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import GlobalStyle from '@components/style/GlobalStyle';
 import Theme from '@components/style/Theme';
 import AppContainer from '@layout/AppContainer';
-import Home from '@pages/Home/Home';
-import Profile from '@pages/Profile/Profile';
+import Home from '@pages/home/Home';
+import Profile from '@pages/profile/Profile';
 
 import store from './app/store';
 import './app/i18n';

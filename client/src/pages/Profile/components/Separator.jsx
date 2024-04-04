@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
 
-import Container from '@components/ui/Container';
-import Text from '@components/ui/Text';
-import PageContext from '@context/PageContext';
+import { Container } from '@components/ui';
+import { Text } from '@components/ui';
 
 const HR = styled.hr`
     width: 100%;
@@ -32,13 +31,12 @@ const SeparatorInner = styled(Container)`
  * @description
  * Horizontal rule with text in the middle.
  * **/
-const Separator = ({ color }) => {
-    const context = useContext(PageContext);
-    const t = context.t;
+const Separator = ({ color, ...props }) => {
+    const { t } = useTranslation();
 
     return (
-        <SeparatorInner>
-            <HR /><Text $color={color}>{t('signinPage.auths')}</Text><HR />
+        <SeparatorInner {...props} role='separator'>
+            <HR role='none' /><Text $color={color}>{t('signinPage.auths')}</Text><HR role='none' />
         </SeparatorInner>
     );
 };

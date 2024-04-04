@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeroDescriptionBox > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-guDLey sc-dmyCSP sc-irLvIq kHwwsn dHdhmG kOBRmR"
+  >
+    <div
+      class="sc-iBdnpw eFPdJJ"
+    >
+      landingPage.title
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -20,14 +20,21 @@
         "signup": "KAYDOL"
     },
     "forms": {
-        "email": "Kullanıcı adı veya e-posta adresi",
-        "password": "Şifre",
+        "email": "E-posta adresi",
+        "username": "Kullanıcı adı",
+        "current-password": "Şifre",
+        "new-password": "Şifre",
         "requiredError": "Bu alan zorunludur",
         "emailError": "Bu geçerli bir e-posta adresi değil",
         "passwordError": "Şifre en az 1 küçük harf, 1 büyük harf, 1 sayı ve 1 sembol içermelidir",
         "search": "Ara...",
         "explore": "Keşfet",
         "theme": "Tema",
-        "language": "Dil"
+        "language": "Dil",
+        "continue": "DEVAM ET"
+    },
+    "signupModal": {
+        "title": "HESABINI OLUŞTUR",
+        "subtitle": "OLDUKÇA KOLAY!"
     }
 }

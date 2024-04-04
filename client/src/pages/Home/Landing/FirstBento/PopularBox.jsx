@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import { slideFromTop } from '@components/anims';
-import { pseudoBentoArrowBottom } from '@components/ui/Bento/Arrows';
-import BentoBox from '@components/ui/Bento/BentoBox';
+import { pseudoBentoArrowBottom } from '@components/ui/bento/mixins';
+import { BentoBox } from '@components/ui/bento';
 
 /**
  * PopularBox

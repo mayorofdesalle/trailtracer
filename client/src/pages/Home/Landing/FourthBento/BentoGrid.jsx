@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-import Grid from '@components/ui/Bento/BentoGrid';
+import { BentoGrid } from '@components/ui/bento';
 
 /**
- * BentoGrid
+ * FourthBentoGrid
  * @description
  * Styled container to provide the grid layout to the bento.
  **/
-const BentoGrid = styled(Grid)`
+const FourthBentoGrid = styled(BentoGrid)`
     flex: 0 0 auto;
     grid-template-columns: 3fr 1.5fr 3fr 1.5fr 3fr;
     grid-template-rows: 5fr 4fr 1fr 2fr;
@@ -28,4 +28,4 @@ const BentoGrid = styled(Grid)`
     }
 `;
 
-export default BentoGrid;
+export default FourthBentoGrid;

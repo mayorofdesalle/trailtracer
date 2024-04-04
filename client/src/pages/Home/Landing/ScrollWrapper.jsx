@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Container from '@components/ui/Container';
+import { Container } from '@components/ui';
 
 /**
  * ScrollWrapper

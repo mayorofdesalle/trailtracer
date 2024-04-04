@@ -3,13 +3,13 @@ import { useDispatch } from 'react-redux';
 import { Outlet, useLocation } from 'react-router-dom';
 import styled, { useTheme } from 'styled-components';
 
-import Container from '@components/ui/Container';
+import { Container } from '@components/ui';
 import { randomize } from '@features/backgroundSlice';
-import useWindowSize from '@hooks/useWindowSize';
+import { useWindowSize } from '@hooks';
 
 import DisplayWarning from './DisplayWarning';
 import Navbar from './Navbar/Navbar';
-const Background = lazy(() => import('./Background/Background'));
+const Background = lazy(() => import('./background/Background'));
 
 
 const ContentWrapper = styled(Container)`
@@ -37,7 +37,7 @@ const ContentContainer = styled(Container)`
  * @description
  * Styled container to contain the whole app.
  **/
-const AppContainer = () => {
+const AppContainer = (props) => {
 	const dispatch = useDispatch();
 	const theme = useTheme();
 
@@ -55,7 +55,7 @@ const AppContainer = () => {
 	}, [location, dispatch]);
 
 	return (
-		<Container>
+		<Container {...props}>
 			<Background />
 			<ContentWrapper>
 				<ContentContainer>

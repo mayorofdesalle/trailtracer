@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import styled from 'styled-components';
 
-import Button from '@components/ui/Button';
-import Icon from '@components/ui/Icon';
-import useHover from '@hooks/useHover';
+import { Button } from '@components/ui';
+import { Icon } from '@components/ui';
+import { useHover } from '@hooks';
 
 const NavbarButtonInner = styled(Button)`
     flex-shrink: 0;

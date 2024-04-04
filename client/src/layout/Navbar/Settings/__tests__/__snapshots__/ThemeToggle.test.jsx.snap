@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ThemeToggle > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-guDLey sc-irLvIq kHwwsn eyoKnt"
+  >
+    <div
+      class="sc-iBdnpw icncPb"
+    >
+      forms.theme
+    </div>
+    <div
+      class="sc-guDLey sc-csKJxZ kHwwsn dMulKN"
+    >
+      <button
+        aria-checked="false"
+        class="sc-beySPh zbkUW"
+        role="switch"
+        type="button"
+      >
+        <svg
+          class="sc-jTQCzO ldKJNf"
+          fill="#435049"
+          role="img"
+        >
+          <title>
+            sun-fill
+          </title>
+          <use
+            href="http://localhost:3000/src/assets/icons.svg#sun-fill"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

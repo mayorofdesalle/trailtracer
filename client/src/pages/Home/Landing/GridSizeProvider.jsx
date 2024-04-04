@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-import BentoBox from '@components/ui/Bento/BentoBox';
+import { BentoBox } from '@components/ui/bento';
 import { set } from '@features/gridSizeProviderSlice';
-import useResize from '@hooks/useResize';
+import { useResize } from '@hooks';
 import styled from 'styled-components';
 
 const GridSizeProviderInner = styled(BentoBox)`
@@ -18,7 +18,7 @@ const GridSizeProviderInner = styled(BentoBox)`
  * @description
  * Component that provides the calculated size of the given grid area.
  */
-const GridSizeProvider = ({ gridArea }) => {
+const GridSizeProvider = ({ gridArea, ...props }) => {
     const ref = useRef();
     const size = useResize(ref);
     const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const GridSizeProvider = ({ gridArea }) => {
     }, [size, gridArea, dispatch]);
 
     return (
-        <GridSizeProviderInner $gridArea={gridArea} ref={ref} />
+        <GridSizeProviderInner $gridArea={gridArea} ref={ref} {...props} />
     );
 };
 

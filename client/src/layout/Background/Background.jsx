@@ -2,9 +2,9 @@ import { getGPUTier } from 'detect-gpu';
 import { Suspense, lazy, useEffect, useReducer } from 'react';
 import styled from 'styled-components';
 
-import logger from '@app/logger';
-import Container from '@components/ui/Container';
-import useWindowSize from '@hooks/useWindowSize';
+import { logger } from '@app';
+import { Container } from '@components/ui';
+import { useWindowSize } from '@hooks';
 
 import Image from './BackgroundImage';
 const Canvas = lazy(() => import('./BackgroundCanvas'));
@@ -52,8 +52,6 @@ const Background = () => {
 				dispatch({ type: 'SET_IS_WEBKIT', payload: typeof window.webkitConvertPointFromNodeToPage === 'function' });
 			});
 	}, []);
-
-
 
 	return (
 		<BackgroundContainer>

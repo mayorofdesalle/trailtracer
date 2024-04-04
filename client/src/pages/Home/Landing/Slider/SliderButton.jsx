@@ -3,8 +3,8 @@ import { useRef } from 'react';
 import Draggable from 'react-draggable';
 import styled from 'styled-components';
 
-import Button from '@components/ui/Button';
-import Icon from '@components/ui/Icon';
+import { Button } from '@components/ui';
+import { Icon } from '@components/ui';
 
 const SliderButtonInner = styled(Button)`
     position: absolute;
@@ -64,7 +64,7 @@ const SliderButtonInner = styled(Button)`
  * @description
  * Styled react-draggable button that controls the scroll amount.
  **/
-const SliderButton = ({ onDrag, onStop, position }) => {
+const SliderButton = ({ onDrag, onStop, position, ...props }) => {
     const button = useRef();
 
     return (
@@ -77,7 +77,7 @@ const SliderButton = ({ onDrag, onStop, position }) => {
             onDrag={(e, button) => onDrag(e, button)}
             onStop={(e, button) => onStop(e, button)}
         >
-            <SliderButtonInner ref={button}>
+            <SliderButtonInner ref={button} {...props}>
                 <Icon name='arrow-left-fill' />
                 <Icon name='arrow-right-fill' />
             </SliderButtonInner>

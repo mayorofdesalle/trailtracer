@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
 
+import { glassMorph } from '@components/mixins';
+import { Container } from '@components/ui';
 import { modify } from '@features/backgroundSlice';
 
 import Pagination from './Pagination';
 import SliderButton from './SliderButton';
-import SliderButtonContainer from './SliderButtonContainer';
 
 const BACKGROUND_EFFECTOR = 0.0007;
 
@@ -30,6 +32,15 @@ const adjustBackground = (dispatch, distance, animate) => {
     dispatch(modify({ animate: animate, distortion: BACKGROUND_EFFECTOR * distance, slope: BACKGROUND_EFFECTOR * distance, jitter: BACKGROUND_EFFECTOR * distance }));
 };
 
+const SliderButtonContainer = styled(Container)`
+    position: absolute;
+    height: ${({ $height }) => $height}px;
+    width: ${({ $width }) => $width}px;
+    top: ${({ $top }) => $top}px;
+    justify-content: space-around;
+    ${glassMorph}
+`;
+
 /**
  * Slider
  * @param {Number} fullWidth - The width of the ScrollWrapper.
@@ -37,7 +48,7 @@ const adjustBackground = (dispatch, distance, animate) => {
  * @description
  * Slider to navigate between pages.
  **/
-const Slider = ({ fullWidth, setScroll }) => {
+const Slider = ({ fullWidth, setScroll, ...props }) => {
     const dispatch = useDispatch();
     const [currentPage, setCurrentPage] = useState(sessionStorage.getItem('landing-cp') || 0);
 
@@ -75,7 +86,7 @@ const Slider = ({ fullWidth, setScroll }) => {
 
     return (
         size?.width > 0 &&
-        <SliderButtonContainer $height={size.height} $width={size.width} $top={size.offsetTop}>
+        <SliderButtonContainer role='slider' $height={size.height} $width={size.width} $top={size.offsetTop} {...props}>
             <SliderButton onDrag={onDrag} onStop={onStop} position={getDotPosition(currentPage, size.width)} />
             <Pagination onClick={onClick} />
         </SliderButtonContainer>

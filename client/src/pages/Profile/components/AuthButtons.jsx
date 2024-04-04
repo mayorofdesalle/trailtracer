@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Button from '@components/ui/Button';
-import Container from '@components/ui/Container';
-import Icon from '@components/ui/Icon';
+import { Button } from '@components/ui';
+import { Container } from '@components/ui';
+import { Icon } from '@components/ui';
 
 const AuthButtonsInner = styled(Container)`
     justify-content: space-around;
@@ -26,9 +26,9 @@ const AuthButtonsInner = styled(Container)`
  * @description
  * Styled container that wraps the auth buttons.
  **/
-const AuthButtons = ({ bgColor, color, animColors }) => {
+const AuthButtons = ({ bgColor, color, animColors, ...props }) => {
     return (
-        <AuthButtonsInner>
+        <AuthButtonsInner {...props}>
             <Button $bgColor={bgColor} $color={color} $animColors={animColors}>
                 <Icon name='google-fill' />
             </Button>

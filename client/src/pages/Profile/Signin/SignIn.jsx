@@ -1,17 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
 
-import useWindowSize from '@hooks/useWindowSize';
+import { useWindowSize } from '@hooks';
 import Page from '@layout/Page';
-import PageContext from '@context/PageContext';
 
-import BentoGrid from './BentoGrid';
+import SigninBentoGrid from './SigninBentoGrid';
+import CTABox from './CTABox';
 import HelpBox from './HelpBox';
 import ImageBox from './ImageBox';
 import MapBox from './MapBox';
-import SigninBox from './SigninBox/SigninBox';
-import CTABox from './CTABox';
 import TermsBox from './TermsBox';
+import SigninBox from './signinBox/SigninBox';
 
 const SignIn = () => {
     const theme = useTheme();
@@ -21,16 +20,14 @@ const SignIn = () => {
 
     return (
         <Page>
-            <PageContext.Provider value={{ theme: theme, t: t, largeScreen: largeScreen }}>
-                <BentoGrid>
-                    <ImageBox />
-                    <CTABox />
-                    {largeScreen && <MapBox />}
-                    <SigninBox />
-                    <TermsBox />
-                    <HelpBox />
-                </BentoGrid>
-            </PageContext.Provider>
+            <SigninBentoGrid>
+                <ImageBox />
+                <CTABox />
+                {largeScreen && <MapBox />}
+                <SigninBox />
+                <TermsBox />
+                <HelpBox />
+            </SigninBentoGrid>
         </Page>
     );
 };

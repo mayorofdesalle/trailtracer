@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CTABox > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-guDLey sc-dmyCSP sc-hIPBNq kHwwsn dHdhmG ezvXUo"
+    role="complementary"
+  >
+    <div
+      class="sc-iBdnpw dNnYEi"
+    >
+      signinPage.signupTitle
+    </div>
+    <div
+      class="sc-iBdnpw dhzxuB explanation"
+    >
+      signinPage.explanation
+    </div>
+    <button
+      class="sc-beySPh fJXTBv"
+      type="button"
+    >
+      <div
+        class="sc-iBdnpw eFPdJJ"
+      >
+        signinPage.signup
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;

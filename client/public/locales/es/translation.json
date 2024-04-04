@@ -20,14 +20,21 @@
         "signup": "REGÍSTRATE"
     },
     "forms": {
-        "email": "Nombre de usuario o dirección de correo electrónico",
-        "password": "Contraseña",
+        "email": "Dirección de correo electrónico",
+        "username": "Nombre de usuario",
+        "current-password": "Contraseña",
+        "new-password": "Contraseña",
         "requiredError": "Este campo es obligatorio",
         "emailError": "Esta no es una dirección de correo electrónico válida",
         "passwordError": "La contraseña debe contener al menos 1 letra minúscula, 1 letra mayúscula, 1 número y 1 símbolo",
         "search": "Buscar...",
         "explore": "Explorar",
         "theme": "Tema",
-        "language": "Idioma"
+        "language": "Idioma",
+        "continue": "CONTINUAR"
+    },
+    "signupModal": {
+        "title": "CREA TU CUENTA",
+        "subtitle": "¡ES FÁCIL!"
     }
 }

@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavbarButton > should match snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-beySPh sc-irLvIq zbkUW cFbOXe"
+    type="button"
+  >
+    <svg
+      class="sc-jTQCzO ldKJNf"
+      fill="currentColor"
+      role="img"
+    >
+      <title>
+        forbid-line
+      </title>
+      <use
+        href="http://localhost:3000/src/assets/icons.svg#forbid-line"
+      />
+    </svg>
+  </button>
+</DocumentFragment>
+`;

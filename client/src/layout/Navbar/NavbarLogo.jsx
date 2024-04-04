@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import Button from '@components/ui/Button';
-import { getImageUrl } from '@utils/imageHelpers';
+import { Button } from '@components/ui';
+import { getImageUrl } from '@utils';
 
 /**
  * NavbarLogo

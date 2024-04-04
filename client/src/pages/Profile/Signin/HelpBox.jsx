@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import styled, { useTheme } from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/BentoBox';
-import Button from '@components/ui/Button';
-import Icon from '@components/ui/Icon';
-import Text from '@components/ui/Text';
-import PageContext from '@context/PageContext';
+import { BentoBox } from '@components/ui/bento';
+import { Button } from '@components/ui';
+import { Icon } from '@components/ui';
+import { Text } from '@components/ui';
 
 const HelpBoxInner = styled(BentoBox)`
     grid-area: HelpBox;
@@ -19,13 +18,12 @@ const HelpBoxInner = styled(BentoBox)`
     }
 `;
 
-const HelpBox = () => {
-    const context = useContext(PageContext);
-    const theme = context.theme;
-    const t = context.t;
+const HelpBox = (props) => {
+    const theme = useTheme();
+    const { t } = useTranslation();
 
     return (
-        <HelpBoxInner as={Button} $glass>
+        <HelpBoxInner as={Button} $glass {...props}>
             <Icon name='login-box-fill' color={theme.colors.primary} />
             <Text $color={theme.colors.text} $heading $ratio={0.9}>{t('signinPage.help')}</Text>
         </HelpBoxInner>

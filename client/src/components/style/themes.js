@@ -1,4 +1,4 @@
-import { hexToRgba } from '@utils/conversions';
+import { hexToRgba } from '@utils';
 
 /**
  * Theme configuration for styled-components

@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styled, { css, useTheme } from 'styled-components';
 
 import Icon from '@/components/ui/Icon';
-import TextInput from '@/components/ui/Input/TextInput';
-import NavbarButton from '@/layout/Navbar/NavbarButton';
+import TextInput from '@/components/ui/input/TextInput';
+import NavbarButton from '@/layout/navbar/NavbarButton';
+import { FormContext } from '@context';
 
 import ExploreDropdown from './ExploreDropdown';
 
@@ -15,11 +16,7 @@ const ExploreButtonInner = styled(TextInput)`
     background-color: ${({ theme }) => theme.colors.primary};
     caret-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.background};
-
-    &:focus, &:active {
-        transition: none;
-        ${({ $isOpen }) => $isOpen && css`width: 100%;`};
-    }
+    ${({ $isOpen }) => $isOpen && css`width: 100%;`};
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
@@ -42,40 +39,41 @@ const ExploreButtonInner = styled(TextInput)`
 const ExploreButton = () => {
     const theme = useTheme();
     const { t } = useTranslation();
-    const dropdown = useRef();
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
-    const { register, handleSubmit, setFocus } = useForm({
-        defaultValues: useMemo(() => { return { text: '' }; }, [])
+
+    const { register, handleSubmit, setFocus, watch, setValue } = useForm({
+        defaultValues: useMemo(() => { return { query: '' }; }, [])
     });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const onSubmit = (data) => {
         setIsSubmitting(true);
         console.log(data, isSubmitting);
     };
 
+    const dropdown = useRef();
+    const [isOpen, setIsOpen] = useState(false);
+
     const onBlur = useCallback((e) => {
-        if (e.relatedTarget !== dropdown.current) setIsOpen(false);
-        else setFocus('text');
+        !(dropdown.current?.contains(e.relatedTarget)
+            || Array.from(e.target.parentNode.children).reduce((acc, child) => acc || child.contains(e.relatedTarget), false))
+            && setIsOpen(false);
     }, [setFocus]);
 
-    const onClick = useCallback(() => { setIsOpen(true); }, []);
-
     useEffect(() => {
-        isOpen && setFocus('text');
+        isOpen && setFocus('search');
     }, [isOpen, setFocus]);
 
     return (
-        <>
+        <FormContext.Provider value={{ register, setFocus, watch, setValue }}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <ExploreButtonInner as={!isOpen && NavbarButton} $isOpen={isOpen}
-                    onClick={onClick} onBlur={onBlur}
-                    {...(!isOpen ? { icon: 'menu-search' } : { register: register, type: 'text', label: t('forms.search'), placeholder: t('forms.search'), autoComplete: 'on' })}>
-                    <Icon id='text' name='search-line' color={theme.colors.background} />
+                    {...(!isOpen ? { onClick: () => setIsOpen(true), icon: 'menu-search' } : { onBlur: onBlur, type: 'text', name: 'search', clearable: true })}>
+                    <Icon name='search-line' color={theme.colors.background} />
                 </ExploreButtonInner>
             </form>
-            {isOpen && <ExploreDropdown ref={dropdown} />}
-        </>
+            {isOpen && <ExploreDropdown ref={dropdown} close={onBlur} />}
+        </FormContext.Provider>
     );
 };
 

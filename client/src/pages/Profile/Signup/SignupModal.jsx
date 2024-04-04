@@ -3,17 +3,16 @@ import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
 import { glassMorph } from '@components/mixins';
-import BentoBox from '@components/ui/Bento/BentoBox';
-import Container from '@components/ui/Container';
-import BentoGrid from '@components/ui/Bento/BentoGrid';
-import Button from '@components/ui/Button';
-import Icon from '@components/ui/Icon';
-import Text from '@components/ui/Text';
-import PageContext from '@context/PageContext';
+import { Button } from '@components/ui';
+import { Container } from '@components/ui';
+import { Icon } from '@components/ui';
+import { Text } from '@components/ui';
+import { BentoBox } from '@components/ui/bento';
+import { BentoGrid } from '@components/ui/bento';
 
-import SignupForm from './SignupForm';
-import Separator from '@pages/Profile/components/Separator';
 import AuthButtons from '@pages/Profile/components/AuthButtons';
+import Separator from '@pages/Profile/components/Separator';
+import SignupForm from './SignupForm';
 
 const SignupBentoGrid = styled(BentoGrid)`
     position: absolute;
@@ -70,27 +69,25 @@ const Wrapper = styled(Container)`
     flex-direction: column;
 `;
 
-const SignupModal = ({ close }) => {
+const SignupModal = ({ close, ...props }) => {
     const theme = useTheme();
     const { t } = useTranslation();
 
     return (
-        <PageContext.Provider value={{ theme: theme, t: t }}>
-            <SignupBentoGrid>
-                <SignupModalInner>
-                    <Button onClick={close}>
-                        <Icon name="close-large" />
-                    </Button>
-                    <Wrapper>
-                        <Text $color={theme.colors.primary} $heading $ratio={1.5}>{t('signupModal.title')}</Text>
-                        <Text $color={theme.colors.text}>{t('signupModal.subtitle')}</Text>
-                    </Wrapper>
-                    <SignupForm />
-                    <Separator color={theme.colors.text} />
-                    <AuthButtons />
-                </SignupModalInner>
-            </SignupBentoGrid>
-        </PageContext.Provider>
+        <SignupBentoGrid>
+            <SignupModalInner role='dialog'>
+                <Button onClick={close}>
+                    <Icon name="close-large" />
+                </Button>
+                <Wrapper>
+                    <Text $color={theme.colors.primary} $heading $ratio={1.5}>{t('signupModal.title')}</Text>
+                    <Text $color={theme.colors.text}>{t('signupModal.subtitle')}</Text>
+                </Wrapper>
+                <SignupForm />
+                <Separator color={theme.colors.text} />
+                <AuthButtons />
+            </SignupModalInner>
+        </SignupBentoGrid>
     );
 };
 

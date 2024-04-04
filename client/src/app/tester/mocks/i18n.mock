@@ -1,0 +1,22 @@
+import { vi } from 'vitest';
+
+vi.mock('react-i18next', async () => ({
+    useTranslation: () => {
+        return {
+            t: (str) => str,
+            i18n: {
+                changeLanguage: () => new Promise(vi.fn())
+            }
+        }
+    },
+    initReactI18next: {
+        type: '3rdParty',
+        init: vi.fn()
+    }
+}));
+
+vi.mock('i18next', async () => ({
+    default: {
+        supportedLanguages: [{code: 't', name: 'test'}]
+    }
+}));

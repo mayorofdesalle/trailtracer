@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getImageUrl } from '@utils/imageHelpers';
+import { getImageUrl } from '@utils';
 
 /**
  * Vector
@@ -12,7 +12,7 @@ import { getImageUrl } from '@utils/imageHelpers';
  * @description
  * Styled div to display a vector image using it as a mask (for images that need to change color).
  **/
-const Vector = styled.div`
+const Vector = styled.div.attrs({ role: 'img' })`
     height: ${({ $height }) => $height};
     width: ${({ $width }) => $width};
     display: inline-block;

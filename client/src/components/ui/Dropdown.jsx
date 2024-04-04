@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-import Bentobox from '@components/ui/Bento/BentoBox';
+import { BentoBox } from '@components/ui/bento';
 
 /**
  * Dropdown
  * @description
  * Default styled dropdown.
  **/
-const Dropdown = styled(Bentobox).attrs({ tabIndex: 0 })`
+const Dropdown = styled(BentoBox).attrs({ tabIndex: 0 })`
     position: absolute;
     flex-direction: column;
     padding: clamp(0.5rem, min(1dvw, 1dvh), 2rem);

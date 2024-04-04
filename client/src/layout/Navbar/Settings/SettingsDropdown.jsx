@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
-import Dropdown from '@components/ui/Dropdown';
+import { Dropdown } from '@components/ui';
 
 import LanguageSelector from './LanguageSelector';
 import ThemeToggle from './ThemeToggle';
