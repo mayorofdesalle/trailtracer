@@ -20,14 +20,21 @@
         "signup": "SIGN UP"
     },
     "forms": {
-        "email": "Username or email address",
-        "password": "Password",
+        "email": "Email address",
+        "username": "Username",
+        "current-password": "Password",
+        "new-password": "Password",
         "requiredError": "This field is required",
         "emailError": "This is not a valid email address",
         "passwordError": "Password must contain at least 1 lowercase letter, 1 uppercase letter, 1 number, and 1 symbol",
         "search": "Search...",
         "explore": "Explore",
         "theme": "Theme",
-        "language": "Language"
+        "language": "Language",
+        "continue": "CONTINUE"
+    },
+    "signupModal": {
+        "title": "CREATE YOUR ACCOUNT",
+        "subtitle": "IT'S EASY!"
     }
 }
