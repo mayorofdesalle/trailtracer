@@ -32,9 +32,9 @@
 
 This is a website for bikers to share, to collaborate on, and to plan trails and points of interests online.
 
-See the frontend in action in [Pages](https://mayorofdesalle.github.io/trailtracer).
+-> See the frontend in action on [Pages](https://mayorofdesalle.github.io/trailtracer).
 
-You can find the design file in [Figma](https://www.figma.com/file/6ezhNt04ZvQTGNWF4JH22v/trailtracer?type=design&node-id=0%3A1&mode=design&t=2R90PO8EbLy7iDTO-1).
+-> Find the design file on [Figma](https://www.figma.com/file/6ezhNt04ZvQTGNWF4JH22v/trailtracer?type=design&node-id=0%3A1&mode=design&t=2R90PO8EbLy7iDTO-1).
 
 ### Built With
 
