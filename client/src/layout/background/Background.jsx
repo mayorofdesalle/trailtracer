@@ -46,7 +46,7 @@ const Background = () => {
 	useEffect(() => {
 		getGPUTier({ desktopTiers: frameTiers, mobileTiers: frameTiers })
 			.then((gpuTier) => {
-				logger.info('GPUINFO:', gpuTier, `WEBKIT: ${typeof window.webkitConvertPointFromNodeToPage === 'function'}`);
+				logger.debug('GPUINFO:', gpuTier, `WEBKIT: ${typeof window.webkitConvertPointFromNodeToPage === 'function'}`);
 				dispatch({ type: 'SET_GPU_TIER', payload: gpuTier.tier });
 				dispatch({ type: 'SET_IS_MOBILE', payload: gpuTier.isMobile });
 				dispatch({ type: 'SET_IS_WEBKIT', payload: typeof window.webkitConvertPointFromNodeToPage === 'function' });

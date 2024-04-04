@@ -3,7 +3,7 @@
 exports[`SignupForm > should match snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-eTNRI kZqNyz"
+    class="sc-eTNRI gkGkaI"
     role="form"
   >
     <div
@@ -33,7 +33,7 @@ exports[`SignupForm > should match snapshot 1`] = `
           type="email"
         />
         <svg
-          class="sc-eDLKkx kBnHHP"
+          class="sc-eDLKkx fuXsHX"
           fill="#435049"
           role="img"
         >
@@ -73,7 +73,7 @@ exports[`SignupForm > should match snapshot 1`] = `
           type="password"
         />
         <svg
-          class="sc-eDLKkx kBnHHP"
+          class="sc-eDLKkx fuXsHX"
           fill="#435049"
           role="img"
         >

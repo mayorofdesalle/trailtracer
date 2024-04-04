@@ -6,6 +6,7 @@ import { BentoBox } from '@components/ui/bento';
 
 import Separator from '@pages/profile/components/Separator';
 import AuthButtons from '@pages/profile/components/AuthButtons';
+import Wrapper from '@pages/profile/components/Wrapper';
 import SigninForm from './SigninForm';
 
 const SigninBoxInner = styled(BentoBox)`
@@ -20,11 +21,6 @@ const SigninBoxInner = styled(BentoBox)`
     & > ${Text} {
         width: 100%;
     }
-`;
-
-const Wrapper = styled(Container)`
-    height: fit-content;
-    flex-direction: column;
 `;
 
 /**

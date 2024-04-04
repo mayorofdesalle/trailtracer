@@ -3,10 +3,11 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styled, { css, useTheme } from 'styled-components';
 
-import Icon from '@/components/ui/Icon';
-import { TextInput } from '@/components/ui/input';
-import NavbarButton from '@/layout/navbar/NavbarButton';
+import { logger } from '@app';
+import Icon from '@components/ui/Icon';
+import { TextInput } from '@components/ui/input';
 import { FormContext } from '@context';
+import NavbarButton from '@layout/navbar/NavbarButton';
 
 import ExploreDropdown from './ExploreDropdown';
 
@@ -48,7 +49,7 @@ const ExploreButton = () => {
 
     const onSubmit = (data) => {
         setIsSubmitting(true);
-        console.log(data, isSubmitting);
+        logger.debug(data);
     };
 
     const dropdown = useRef();
@@ -61,14 +62,16 @@ const ExploreButton = () => {
     }, [setFocus]);
 
     useEffect(() => {
-        isOpen && setFocus('search');
+        isOpen && setFocus('query');
     }, [isOpen, setFocus]);
 
     return (
         <FormContext.Provider value={{ register, setFocus, watch, setValue }}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <ExploreButtonInner as={!isOpen && NavbarButton} $isOpen={isOpen}
-                    {...(!isOpen ? { onClick: () => setIsOpen(true), icon: 'menu-search' } : { onBlur: onBlur, type: 'text', name: 'search', clearable: true })}>
+                    {...(!isOpen
+                        ? { onClick: () => setIsOpen(true), icon: 'menu-search' }
+                        : { onBlur: onBlur, type: 'text', name: 'query', id: 'explore-search-query', placeholder: 'search', clearable: true })}>
                     <Icon name='search-line' color={theme.colors.background} />
                 </ExploreButtonInner>
             </form>

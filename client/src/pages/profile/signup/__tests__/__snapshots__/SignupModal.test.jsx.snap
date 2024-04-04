@@ -3,11 +3,11 @@
 exports[`SignupModal > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-kFCroH sc-blmEgr kHwwsn cZKACD IbSiZ"
+    class="sc-guDLey sc-kFCroH sc-ifyrAs kHwwsn cZKACD cIiNWw"
     role="grid"
   >
     <div
-      class="sc-guDLey sc-dmyCSP sc-ifyrAs kHwwsn fkKYEp uzUSZ"
+      class="sc-guDLey sc-dmyCSP sc-dJGMql kHwwsn fkKYEp kFryCL"
       role="dialog"
     >
       <button
@@ -15,7 +15,7 @@ exports[`SignupModal > should match snapshot 1`] = `
         type="button"
       >
         <svg
-          class="sc-eDLKkx kBnHHP"
+          class="sc-eDLKkx fuXsHX"
           fill="currentColor"
           role="img"
         >
@@ -28,7 +28,7 @@ exports[`SignupModal > should match snapshot 1`] = `
         </svg>
       </button>
       <div
-        class="sc-guDLey sc-dJGMql kHwwsn kFqbDj"
+        class="sc-guDLey sc-brSamD kHwwsn fJKiWp"
       >
         <div
           class="sc-gLLuof hnPDDY"
@@ -42,11 +42,11 @@ exports[`SignupModal > should match snapshot 1`] = `
         </div>
       </div>
       <form
-        class="sc-fmKFGs iMNvzB"
+        class="sc-fHejqy cMecfl"
         role="form"
       >
         <div
-          class="sc-guDLey sc-fHejqy kHwwsn jvnvBG"
+          class="sc-guDLey sc-blmEgr kHwwsn gQfgnY"
         >
           <div
             class="sc-gLLuof jmevau"
@@ -54,7 +54,7 @@ exports[`SignupModal > should match snapshot 1`] = `
             forms.email
           </div>
           <div
-            class="sc-guDLey sc-ktwOfi kHwwsn ecTIsN"
+            class="sc-guDLey sc-hABBmJ kHwwsn jomkDL"
           >
             <label
               for="email"
@@ -64,7 +64,7 @@ exports[`SignupModal > should match snapshot 1`] = `
             </label>
             <input
               autocomplete="email"
-              class="sc-brSamD fskSZa"
+              class="sc-ktwOfi lbIkZd"
               data-tooltip-id="email"
               id="email"
               name="email"
@@ -72,7 +72,7 @@ exports[`SignupModal > should match snapshot 1`] = `
               type="email"
             />
             <svg
-              class="sc-eDLKkx kBnHHP"
+              class="sc-eDLKkx fuXsHX"
               fill="#435049"
               role="img"
             >
@@ -86,7 +86,7 @@ exports[`SignupModal > should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="sc-guDLey sc-fHejqy kHwwsn jvnvBG"
+          class="sc-guDLey sc-blmEgr kHwwsn gQfgnY"
         >
           <div
             class="sc-gLLuof jmevau"
@@ -94,7 +94,7 @@ exports[`SignupModal > should match snapshot 1`] = `
             forms.new-password
           </div>
           <div
-            class="sc-guDLey sc-ktwOfi kHwwsn ecTIsN"
+            class="sc-guDLey sc-hABBmJ kHwwsn jomkDL"
           >
             <label
               for="password"
@@ -104,7 +104,7 @@ exports[`SignupModal > should match snapshot 1`] = `
             </label>
             <input
               autocomplete="new-password"
-              class="sc-brSamD iAHoYb"
+              class="sc-ktwOfi kXHIUs"
               data-tooltip-id="password"
               id="password"
               name="new-password"
@@ -112,7 +112,7 @@ exports[`SignupModal > should match snapshot 1`] = `
               type="password"
             />
             <svg
-              class="sc-eDLKkx kBnHHP"
+              class="sc-eDLKkx fuXsHX"
               fill="#435049"
               role="img"
             >
@@ -155,14 +155,14 @@ exports[`SignupModal > should match snapshot 1`] = `
         />
       </div>
       <div
-        class="sc-guDLey sc-irLvIq kHwwsn bdPjGM"
+        class="sc-guDLey sc-irLvIq kHwwsn oKtfy"
       >
         <button
           class="sc-beySPh zbkUW"
           type="button"
         >
           <svg
-            class="sc-eDLKkx kBnHHP"
+            class="sc-eDLKkx fuXsHX"
             fill="currentColor"
             role="img"
           >
@@ -179,7 +179,7 @@ exports[`SignupModal > should match snapshot 1`] = `
           type="button"
         >
           <svg
-            class="sc-eDLKkx kBnHHP"
+            class="sc-eDLKkx fuXsHX"
             fill="currentColor"
             role="img"
           >
@@ -196,7 +196,7 @@ exports[`SignupModal > should match snapshot 1`] = `
           type="button"
         >
           <svg
-            class="sc-eDLKkx kBnHHP"
+            class="sc-eDLKkx fuXsHX"
             fill="currentColor"
             role="img"
           >

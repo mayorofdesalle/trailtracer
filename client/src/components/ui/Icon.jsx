@@ -5,6 +5,7 @@ const IconSvg = styled.svg`
     --size: clamp(0.825rem, min(2dvw, 2dvh), 2.5rem);
     height: var(--size);
     width: var(--size);
+    pointer-events: none;
 `;
 
 /**
