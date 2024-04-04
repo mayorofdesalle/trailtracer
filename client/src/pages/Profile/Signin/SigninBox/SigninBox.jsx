@@ -1,13 +1,12 @@
-import { useContext } from 'react';
-import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import styled, { useTheme } from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/BentoBox';
-import Container from '@components/ui/Container';
-import Text from '@components/ui/Text';
-import PageContext from '@context/PageContext';
+import { BentoBox } from '@components/ui/bento';
+import { Container } from '@components/ui';
+import { Text } from '@components/ui';
 
-import AuthButtons from '@pages/Profile/components/AuthButtons';
 import Separator from '@pages/Profile//components/Separator';
+import AuthButtons from '@pages/Profile/components/AuthButtons';
 import SigninForm from './SigninForm';
 
 const SigninBoxInner = styled(BentoBox)`
@@ -35,9 +34,8 @@ const Wrapper = styled(Container)`
  * Styled bento box to display the signin form and auth buttons.
  * **/
 const SigninBox = () => {
-    const context = useContext(PageContext);
-    const theme = context.theme;
-    const t = context.t;
+    const theme = useTheme();
+    const { t } = useTranslation();
 
     return (
         <SigninBoxInner $color={theme.colors.primary}>

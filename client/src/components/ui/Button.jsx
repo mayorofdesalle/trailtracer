@@ -32,7 +32,7 @@ const rotateShadow = (color1, color2) => keyframes`
  * @description
  * Default styled button component.
  **/
-const Button = styled.button.attrs(({ $type }) => ({ type: $type || 'button' }))`
+const Button = styled.button.attrs(({ $type = 'button' }) => ({ type: $type }))`
     display: flex;
     align-items: center;
     justify-content: space-around;

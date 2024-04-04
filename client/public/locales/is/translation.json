@@ -20,14 +20,21 @@
         "signup": "SKRÁÐU ÞIG"
     },
     "forms": {
-        "email": "Notendanafn eða tölvupóstfang",
-        "password": "Lykilorð",
+        "email": "Netfang",
+        "username": "Notendanafn",
+        "current-password": "Lykilorð",
+        "new-password": "Lykilorð",
         "requiredError": "Þessi reitur er nauðsynlegur",
         "emailError": "Þetta er ekki gilt tölvupóstfang",
         "passwordError": "Lykilorð verður að innihalda a.m.k. 1 lágstaf, 1 hástaf, 1 tölu og 1 tákn",
         "search": "Leita",
         "explore": "Kanna",
         "theme": "Þema",
-        "language": "Tungumál"
+        "language": "Tungumál",
+        "continue": "HALDA ÁFRAM"
+    },
+    "signupModal": {
+        "title": "BÚÐU TIL REIKNINGINN ÞINN",
+        "subtitle": "ÞAÐ ER AUÐVELT!"
     }
 }

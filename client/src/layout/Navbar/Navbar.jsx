@@ -2,13 +2,13 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Container from '@components/ui/Container';
+import { glassMorph } from '@components/mixins';
+import { Container } from '@components/ui';
 
-import Nav from './Nav';
+import ExploreButton from './explore/ExploreButton';
 import NavbarButton from './NavbarButton';
 import NavbarLogo from './NavbarLogo';
-import SettingsButton from './Settings/SettingsButton';
-import ExploreButton from './Explore/ExploreButton';
+import SettingsButton from './settings/SettingsButton';
 
 const NavContainer = styled(Container)`
     position: relative;
@@ -23,6 +23,17 @@ const NavContainer = styled(Container)`
             margin-left: 0;
         }
     }
+`;
+
+const Nav = styled.nav`
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: clamp(0.75rem, min(2dvw, 2dvh), 2.5rem);
+    z-index: 999;
+    ${glassMorph}
+    border: none;
 `;
 
 /**

@@ -1,0 +1,101 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SignupForm > should match snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-brSamD kCWmXs"
+    role="form"
+  >
+    <div
+      class="sc-guDLey sc-ktwOfi kHwwsn cxJKdu"
+    >
+      <div
+        class="sc-iBdnpw cZTiOz"
+      >
+        forms.email
+      </div>
+      <div
+        class="sc-guDLey sc-csKJxZ kHwwsn eYlgcS"
+      >
+        <label
+          for="email"
+          hidden=""
+        >
+          forms.email
+        </label>
+        <input
+          autocomplete="email"
+          class="sc-irLvIq lrEAM"
+          data-tooltip-id="email"
+          id="email"
+          name="email"
+          placeholder="forms.email"
+          type="email"
+        />
+        <svg
+          class="sc-jTQCzO ldKJNf"
+          fill="#435049"
+          role="img"
+        >
+          <title>
+            at-fill
+          </title>
+          <use
+            href="http://localhost:3000/src/assets/icons.svg#at-fill"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="sc-guDLey sc-ktwOfi kHwwsn cxJKdu"
+    >
+      <div
+        class="sc-iBdnpw cZTiOz"
+      >
+        forms.new-password
+      </div>
+      <div
+        class="sc-guDLey sc-csKJxZ kHwwsn eYlgcS"
+      >
+        <label
+          for="password"
+          hidden=""
+        >
+          forms.new-password
+        </label>
+        <input
+          autocomplete="new-password"
+          class="sc-irLvIq jCWhBV"
+          data-tooltip-id="password"
+          id="password"
+          name="new-password"
+          placeholder="forms.new-password"
+          type="password"
+        />
+        <svg
+          class="sc-jTQCzO ldKJNf"
+          fill="#435049"
+          role="img"
+        >
+          <title>
+            key-fill
+          </title>
+          <use
+            href="http://localhost:3000/src/assets/icons.svg#key-fill"
+          />
+        </svg>
+      </div>
+    </div>
+    <button
+      class="sc-beySPh zbkUW"
+      type="submit"
+    >
+      <div
+        class="sc-iBdnpw ghKuDe"
+      >
+        forms.continue
+      </div>
+    </button>
+  </form>
+</DocumentFragment>
+`;

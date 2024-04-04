@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Bento > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-beySPh sc-dmyCSP sc-eTNRI jVdZA igIKKw ypUGI"
+    role="grid"
+  >
+    <div
+      class="sc-beySPh sc-guDLey sc-ktwOfi jVdZA lbUchL binSLc"
+    >
+      <img
+        alt="A supersport biker"
+        src="file:///C:/src/assets/images/biker.png"
+      />
+    </div>
+    <div
+      class="sc-beySPh sc-guDLey sc-brSamD jVdZA cVargU zyufv"
+    >
+      <div
+        class="sc-fsYfdN fkLXpT"
+      >
+        landingPage.title
+      </div>
+    </div>
+    <div
+      class="sc-beySPh sc-guDLey sc-csKJxZ jVdZA hEuWzj exsIFa"
+    >
+      <div
+        class="sc-irLvIq bXrkAM left"
+        role="img"
+      />
+      <div
+        class="sc-fsYfdN jbLRtD"
+      >
+        landingPage.CTA1
+      </div>
+    </div>
+    <div
+      class="sc-beySPh sc-guDLey sc-csKJxZ jVdZA gasxRO nnRwN"
+    >
+      <div
+        class="sc-fsYfdN kzpmpg"
+      >
+        landingPage.CTA2
+      </div>
+      <div
+        class="sc-irLvIq iRAYUb right"
+        role="img"
+      />
+    </div>
+    <div
+      class="sc-beySPh sc-guDLey sc-fmKFGs jVdZA hEuWzj kGiOzI"
+    />
+    <div
+      class="sc-beySPh sc-guDLey sc-hABBmJ jVdZA cVargU kiAnSg"
+    />
+    <div
+      class="sc-beySPh sc-guDLey sc-blmEgr jVdZA hEuWzj dUzXWM"
+    />
+    <div
+      class="sc-beySPh sc-guDLey sc-fHejqy jVdZA cVargU cNCZWH"
+    />
+    <div
+      class="sc-beySPh sc-guDLey sc-hLQSwg jVdZA lbUchL cBPFij"
+    />
+    <div
+      class="sc-beySPh sc-guDLey sc-hLQSwg jVdZA lbUchL fvAXYY"
+    />
+  </div>
+</DocumentFragment>
+`;

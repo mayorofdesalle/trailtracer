@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TermsBox > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-guDLey sc-dmyCSP sc-irLvIq kHwwsn dHdhmG lfDmDW"
+    role="note"
+  >
+    <svg
+      class="sc-jTQCzO ldKJNf"
+      fill="#435049"
+      role="img"
+    >
+      <title>
+        article-fill
+      </title>
+      <use
+        href="http://localhost:3000/src/assets/icons.svg#article-fill"
+      />
+    </svg>
+    <div
+      class="sc-iBdnpw bFpKfj"
+    >
+      signinPage.termsPrefix 
+      <a
+        href=""
+      >
+        signinPage.terms
+      </a>
+       signinPage.termsSuffix
+    </div>
+  </div>
+</DocumentFragment>
+`;

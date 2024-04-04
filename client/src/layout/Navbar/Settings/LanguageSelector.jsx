@@ -5,10 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { components } from 'react-select';
 import styled from 'styled-components';
 
-import Container from '@components/ui/Container';
-import Icon from '@components/ui/Icon';
-import RSelect from '@components/ui/RSelect';
-import Text from '@components/ui/Text';
+import { Container } from '@components/ui';
+import { Icon } from '@components/ui';
+import { R_Select } from '@components/ui/input';
+import { Text } from '@components/ui';
 
 const { Option, SingleValue } = components;
 
@@ -34,7 +34,7 @@ LanguageSingleValue.propTypes = {
     data: PropTypes.object.isRequired
 };
 
-const LanguageSelectorInner = styled(RSelect)`
+const LanguageSelectorInner = styled(R_Select)`
     width: 100%;
     margin-top: clamp(0.25rem, min(0.5dvw, 0.5dvh), 1rem);
 

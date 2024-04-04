@@ -1,7 +1,7 @@
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import { fileURLToPath, URL } from 'url';
-import { defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
     plugins: [react()],
@@ -26,7 +26,15 @@ export default defineConfig({
         globals: true,
         coverage: {
             provider: 'istanbul',
-            reporter: ['json-summary', 'json']
-        }
+            reporter: ['json-summary', 'json', 'html'],
+            reportOnFailure: true,
+            exclude: [...configDefaults.exclude,
+                '*.cjs', 'src/{app,context}/**',
+                '.storybook/**', '**/__stories__/**',
+                '**/R_*.jsx', '**/main.jsx',
+                '**/checkWebpFeature.js', '**/__tests__/**',
+                '**/pages/home/landing/secondBento/**', '**/pages/home/landing/thirdBento/**',
+                '**/pages/home/landing/fourthBento/**', '**/components/ui/loader/**']
+        },
     }
 })

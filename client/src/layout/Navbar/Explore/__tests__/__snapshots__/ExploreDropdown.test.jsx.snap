@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ExploreDropdown > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-guDLey sc-dmyCSP sc-eDLKkx sc-irLvIq kHwwsn fkKYEp dyulWN JebkV"
+    tabindex="0"
+  >
+    <div
+      class="sc-iBdnpw icncPb"
+    >
+      forms.explore
+    </div>
+  </div>
+</DocumentFragment>
+`;

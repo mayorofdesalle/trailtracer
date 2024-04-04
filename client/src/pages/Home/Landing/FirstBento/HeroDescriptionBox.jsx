@@ -2,9 +2,9 @@ import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
 import { slideFromBottom } from '@components/anims';
-import { pseudoBentoArrowTop } from '@components/ui/Bento/Arrows';
-import BentoBox from '@components/ui/Bento/BentoBox';
-import Text from '@components/ui/Text';
+import { Text } from '@components/ui';
+import { BentoBox } from '@components/ui/bento';
+import { pseudoBentoArrowTop } from '@components/ui/bento/mixins';
 
 const HeroDescriptionBoxInner = styled(BentoBox)`
     grid-area: HeroDescriptionBox;
@@ -21,12 +21,12 @@ const HeroDescriptionBoxInner = styled(BentoBox)`
  * @description
  * Styled bento box to contain the hero description.
  **/
-const HeroDescriptionBox = () => {
+const HeroDescriptionBox = (props) => {
     const theme = useTheme();
     const { t } = useTranslation();
 
     return (
-        <HeroDescriptionBoxInner $glass>
+        <HeroDescriptionBoxInner $glass {...props}>
             <Text $heading $color={theme.colors.text}>
                 {t('landingPage.title')}
             </Text>

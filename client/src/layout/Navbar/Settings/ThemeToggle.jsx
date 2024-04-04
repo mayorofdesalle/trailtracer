@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled, { useTheme } from 'styled-components';
 
 import { toggle } from '@features/themeSlice';
-import Container from '@components/ui/Container';
-import Button from '@components/ui/Button';
-import Text from '@components/ui/Text';
-import Icon from '@components/ui/Icon';
+import { Container } from '@components/ui';
+import { Button } from '@components/ui';
+import { Text } from '@components/ui';
+import { Icon } from '@components/ui';
 
 const ThemeToggleContainer = styled(Container)`
     height: fit-content;
@@ -38,23 +38,23 @@ const ToggleBackground = styled(Container)`
  * @description
  * Toggle to switch between light and dark themes.
  **/
-const ThemeToggle = () => {
+const ThemeToggle = (props) => {
     const theme = useTheme();
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const preference = useSelector((state) => state.theme.preference);
 
     useEffect(() => {
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', preference ? '#000000' : '#FCFFFD');
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', preference ? '#000000' : '#FCFFFD');
     }, [preference]);
 
     const onClick = useCallback(() => dispatch(toggle()), [dispatch]);
 
     return (
-        <ThemeToggleContainer>
+        <ThemeToggleContainer {...props}>
             <Text $heading $ratio={0.5}>{t('forms.theme')}</Text>
             <ToggleBackground $preference={preference}>
-                <Button onClick={onClick}>
+                <Button onClick={onClick} role='switch' aria-checked={preference}>
                     <Icon name={preference ? 'moon-fill' : 'sun-fill'} color={theme.colors.primary} />
                 </Button>
             </ToggleBackground>

@@ -20,14 +20,20 @@
         "signup": "サインアップ"
     },
     "forms": {
-        "email": "ユーザー名またはメールアドレス",
-        "password": "パスワード",
+        "email": "メールアドレス",
+        "current-password": "パスワード",
+        "new-password": "パスワード",
         "requiredError": "このフィールドは必須です",
         "emailError": "これは有効なメールアドレスではありません",
         "passwordError": "パスワードには少なくとも1つの小文字、1つの大文字、1つの数字、および1つの記号が含まれている必要があります",
         "search": "検索…",
         "explore": "探索",
         "theme": "テーマ",
-        "language": "言語"
+        "language": "言語",
+        "continue": "続ける"
+    },
+    "signupModal": {
+        "title": "アカウントを作成する",
+        "subtitle": "簡単です！"
     }
 }

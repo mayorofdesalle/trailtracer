@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ActionBoxFirst > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-guDLey sc-dmyCSP sc-irLvIq kHwwsn gVwHLx kBAJVk"
+  >
+    <div
+      class="sc-kFCroH gxDVxW left"
+      role="img"
+    />
+    <div
+      class="sc-iBdnpw imTVdd"
+    >
+      landingPage.CTA1
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ActionBoxSecond > should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-guDLey sc-dmyCSP sc-irLvIq kHwwsn jPSObU diGZYn"
+  >
+    <div
+      class="sc-iBdnpw cdjopi"
+    >
+      landingPage.CTA2
+    </div>
+    <div
+      class="sc-kFCroH fFsaJF right"
+      role="img"
+    />
+  </div>
+</DocumentFragment>
+`;

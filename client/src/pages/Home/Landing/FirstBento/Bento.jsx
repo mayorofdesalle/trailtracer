@@ -1,6 +1,6 @@
 import { useTheme } from 'styled-components';
 
-import useWindowSize from '@hooks/useWindowSize';
+import { useWindowSize } from '@hooks';
 
 import GridSizeProvider from '../GridSizeProvider';
 import { ActionBoxFirst, ActionBoxSecond } from './ActionBox';
@@ -17,13 +17,13 @@ import TopTrailBox from './TopTrailBox';
  * @description
  * First bento of the landing page.
  **/
-const Bento = () => {
+const Bento = (props) => {
     const theme = useTheme();
     const { height, width } = useWindowSize();
     const largeScreen = width > theme.breakpoints.medium && width / height > 1;
 
     return (
-        <BentoGrid>
+        <BentoGrid {...props}>
             <HeroImageBox />
             <HeroDescriptionBox />
             <ActionBoxFirst />

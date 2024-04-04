@@ -1,6 +1,6 @@
-import Signin from './Signin/Signin';
-
 import Page from '@layout/Page';
+
+import Signin from './signin/Signin';
 
 const Home = () => {
     return (

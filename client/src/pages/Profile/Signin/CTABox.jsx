@@ -1,13 +1,14 @@
-import { useCallback, useContext, useState } from 'react';
-import styled from 'styled-components';
+import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import styled, { useTheme } from 'styled-components';
 
 import { slideFromBottom } from '@components/anims';
-import { pseudoBentoArrowTop } from '@components/ui/Bento/Arrows';
-import BentoBox from '@components/ui/Bento/BentoBox';
-import Button from '@components/ui/Button';
-import Text from '@components/ui/Text';
-import PageContext from '@context/PageContext';
-import SignupModal from '@pages/Profile/Signup/SignupModal';
+import { Button } from '@components/ui';
+import { Text } from '@components/ui';
+import { BentoBox } from '@components/ui/bento';
+import { pseudoBentoArrowTop } from '@components/ui/bento/mixins';
+import { useWindowSize } from '@hooks';
+import SignupModal from '@pages/profile/signup/SignupModal';
 
 /**
  * CTABox
@@ -31,16 +32,16 @@ const CTABoxInner = styled(BentoBox)`
         padding: 0.25rem;
     }
 
-    & > #explanation {
+    & > .explanation {
         width: 80%;
     }
 `;
 
-const CTABox = () => {
-    const context = useContext(PageContext);
-    const theme = context.theme;
-    const t = context.t;
-    const largeScreen = context.largeScreen;
+const CTABox = (props) => {
+    const theme = useTheme();
+    const { t } = useTranslation();
+    const { height, width } = useWindowSize();
+    const largeScreen = width > theme.breakpoints.medium && width / height > 1;
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -48,10 +49,10 @@ const CTABox = () => {
 
     return (
         <>
-            <CTABoxInner $glass>
+            <CTABoxInner $glass {...props} role='complementary'>
                 <Text $color={theme.colors.primary} $heading $ratio={!largeScreen && 0.8}>{t('signinPage.signupTitle')}</Text>
                 {largeScreen && (
-                    <Text id='explanation' $color={theme.colors.text}>
+                    <Text className='explanation' $color={theme.colors.text}>
                         {t('signinPage.explanation')}
                     </Text>
                 )}

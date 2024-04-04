@@ -1,14 +1,16 @@
-import { useContext, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import styled, { useTheme } from 'styled-components';
 
-import Button from '@components/ui/Button';
-import Container from '@components/ui/Container';
-import Icon from '@components/ui/Icon';
-import TextInput from '@components/ui/Input/TextInput';
-import changeFocus from '@components/ui/Input/changeFocus';
-import Text from '@components/ui/Text';
-import PageContext from '@context/PageContext';
+import { Button } from '@components/ui';
+import { Container } from '@components/ui';
+import { Icon } from '@components/ui';
+import { Text } from '@components/ui';
+import { PasswordInput } from '@components/ui/input';
+import { TextInput } from '@components/ui/input';
+import changeFocus from '@components/ui/input/changeFocus';
+import { FormContext } from '@context';
 
 const SigninFormInner = styled.form`
     position: relative;
@@ -38,16 +40,14 @@ const SigninFormInner = styled.form`
  * Form to sign in with email and password.
  * **/
 const SigninForm = () => {
-    const context = useContext(PageContext);
-    const theme = context.theme;
-    const t = context.t;
+    const theme = useTheme();
+    const { t } = useTranslation();
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const { register, handleSubmit, setFocus, watch, formState: { errors } } = useForm({
+    const { register, handleSubmit, setFocus, setValue, watch, formState: { errors } } = useForm({
         defaultValues: useMemo(() => {
             return {
                 email: '',
-                password: ''
+                'current-password': ''
             };
         }, []),
         mode: 'onBlur',
@@ -55,22 +55,26 @@ const SigninForm = () => {
         shouldFocusError: true
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
     const onSubmit = (data) => {
         setIsSubmitting(true);
         console.log(data);
     };
 
     return (
-        <SigninFormInner onSubmit={handleSubmit(onSubmit)} onKeyDown={(e) => changeFocus(e, ['email', 'password'], setFocus)}>
-            <TextInput register={register} error={errors.email} type='email' autoComplete='email' required validate>
-                <Icon id='email' name='at-fill' color={errors.email ? theme.colors.secondary : theme.colors.primary} />
-            </TextInput>
-            <TextInput register={register} error={errors.password} type='password' autoComplete='current-password' watch={watch} required>
-                <Icon id='password' name='key-fill' color={errors.password ? theme.colors.secondary : theme.colors.primary} />
-            </TextInput>
-            <Button $type='submit' $bgColor={theme.colors.background} $animColors={[theme.colors.background, theme.colors.secondary]} disabled={isSubmitting}>
-                <Text $color={theme.colors.primary} $heading>{t('signinPage.signin')}</Text>
-            </Button>
+        <SigninFormInner role='form' onSubmit={handleSubmit(onSubmit)} onKeyDown={(e) => changeFocus(e, ['email', 'current-password'], setFocus)}>
+            <FormContext.Provider value={{ register, setFocus, setValue, watch }}>
+                <TextInput type='email' error={errors.email} required validate>
+                    <Icon name='at-fill' color={errors.email ? theme.colors.secondary : theme.colors.primary} />
+                </TextInput>
+                <PasswordInput error={errors.password} name='current-password' required>
+                    <Icon name='key-fill' color={errors.password ? theme.colors.secondary : theme.colors.primary} />
+                </PasswordInput>
+                <Button $type='submit' $bgColor={theme.colors.background} $animColors={[theme.colors.background, theme.colors.secondary]} disabled={isSubmitting}>
+                    <Text $color={theme.colors.primary} $heading>{t('signinPage.signin')}</Text>
+                </Button>
+            </FormContext.Provider>
         </SigninFormInner>
     );
 };

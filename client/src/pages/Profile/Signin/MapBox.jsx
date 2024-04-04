@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/BentoBox';
+import { BentoBox } from '@components/ui/bento';
 
 const MapBox = styled(BentoBox)`
     grid-area: MapBox;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { darkTheme, lightTheme } from '@components/style/themes';
-import BentoBox from '@components/ui/Bento/BentoBox';
+import { BentoBox } from '@components/ui/bento';
 
 const BackgroundDecorator = (Story, context) => {
     return (

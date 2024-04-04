@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import { rotateFromBottom, scaleDown } from '@components/anims';
-import BentoBox from '@components/ui/Bento/BentoBox';
-import { getImageUrl } from '@utils/imageHelpers';
+import { BentoBox } from '@components/ui/bento';
+import { getImageUrl } from '@utils';
 
 const ImageBoxInner = styled(BentoBox)`;
     grid-area: ImageBox;
@@ -27,9 +27,9 @@ const ImageBoxInner = styled(BentoBox)`;
  * @description
  * Styled bento box to display a biker image.
  **/
-const ImageBox = () => {
+const ImageBox = (props) => {
     return (
-        <ImageBoxInner>
+        <ImageBoxInner {...props}>
             <img src={getImageUrl('biker2.png')} alt="A supersport biker" />
         </ImageBoxInner>
     );

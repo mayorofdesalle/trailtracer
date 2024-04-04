@@ -1,17 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import backgroundReducer from '@features/backgroundSlice';
-import gridSizeProviderReducer from '@features/gridSizeProviderSlice';
-import themeReducer from '@features/themeSlice';
+import { backgroundSlice } from '@features';
+import { gridSizeProviderSlice } from '@features';
+import { themeSlice } from '@features';
 
 /**
  * Redux store
  */
 const store = configureStore({
     reducer: {
-        theme: themeReducer,
-        background: backgroundReducer,
-        gridSizeProvider: gridSizeProviderReducer
+        theme: themeSlice,
+        background: backgroundSlice,
+        gridSizeProvider: gridSizeProviderSlice
     },
 });
 

@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import styled, { keyframes, useTheme } from 'styled-components';
 
-import Container from '@components/ui/Container';
-import Icon from '@components/ui/Icon';
-import Text from '@components/ui/Text';
+import { Container } from '@components/ui';
+import { Icon } from '@components/ui';
+import { Text } from '@components/ui';
 
 const orientate = (themeColors) => keyframes`
     0%, 25% {
@@ -35,12 +35,12 @@ const WarningContainer = styled(Container)`
  * @description
  * Component to display a warning message to the user if the content is not optimized for the aspect ratio at that resolution.
  */
-const DisplayWarning = () => {
+const DisplayWarning = (props) => {
     const theme = useTheme();
     const { t } = useTranslation();
 
     return (
-        <WarningContainer>
+        <WarningContainer role='status' {...props}>
             <Icon name='phone-fill' color={theme.colors.primary} />
             <Text $heading $color={theme.colors.secondary} $ratio={1.5}>{t('displayWarning')}</Text>
         </WarningContainer>

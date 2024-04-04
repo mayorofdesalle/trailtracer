@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import Container from '@components/ui/Container';
-import checkWebpFeature from '@utils/checkWebpFeature';
-import { getImageUrl } from '@utils/imageHelpers';
+import { Container } from '@components/ui';
+import { checkWebpFeature } from '@utils';
+import { getImageUrl } from '@utils';
 
-const Image = styled(Container)`
+const ImageContainer = styled(Container)`
     background: url(${({ $image }) => getImageUrl($image)}) repeat;
     opacity: 43%;
 `;
@@ -15,15 +15,15 @@ const Image = styled(Container)`
  * BackgroundImage
  * @description
  * Default background image.
- * It is used as a fallback for webkit browsers, and as fallback otherwise.
+ * Used for mobile, and low GPU tier devices.
  **/
-const BackgroundImage = () => {
+const BackgroundImage = (props) => {
     const preference = useSelector(state => state.theme.preference);
     const fileName = preference ? 'backgrounds/backgroundDark' : 'backgrounds/backgroundLight';
     const isWebpSupported = useMemo(() => { checkWebpFeature('lossless', (feature, isSupported) => isSupported); }, []);
 
     return (
-        <Image $image={isWebpSupported ? `${fileName}.webp` : `${fileName}.png`} />
+        <ImageContainer $image={isWebpSupported ? `${fileName}.webp` : `${fileName}.png`} {...props} />
     );
 };
 

@@ -1,10 +1,10 @@
-import { useContext } from 'react';
-import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import styled, { useTheme } from 'styled-components';
 
-import BentoBox from '@components/ui/Bento/BentoBox';
-import Icon from '@components/ui/Icon';
-import Text from '@components/ui/Text';
-import PageContext from '@context/PageContext';
+import { Icon } from '@components/ui';
+import { Text } from '@components/ui';
+import { BentoBox } from '@components/ui/bento';
+import { useWindowSize } from '@hooks';
 
 const TermsBoxInner = styled(BentoBox)`
     grid-area: TermsBox;
@@ -18,14 +18,14 @@ const TermsBoxInner = styled(BentoBox)`
     }
 `;
 
-const TermsBox = () => {
-    const context = useContext(PageContext);
-    const theme = context.theme;
-    const t = context.t;
-    const largeScreen = context.largeScreen;
+const TermsBox = (props) => {
+    const theme = useTheme();
+    const { t } = useTranslation();
+    const { height, width } = useWindowSize();
+    const largeScreen = width > theme.breakpoints.medium && width / height > 1;
 
     return (
-        <TermsBoxInner $glass>
+        <TermsBoxInner $glass {...props} role='note'>
             {largeScreen && <Icon name='article-fill' color={theme.colors.primary} />}
             <Text $color={theme.colors.text} $ratio={0.9}>
                 {t('signinPage.termsPrefix')} <a href=''>{t('signinPage.terms')}</a> {t('signinPage.termsSuffix')}

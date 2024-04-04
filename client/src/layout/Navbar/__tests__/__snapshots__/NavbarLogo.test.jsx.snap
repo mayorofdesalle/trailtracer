@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavbarLogo > should match snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-beySPh sc-irLvIq zbkUW bndXCL"
+    type="button"
+  />
+</DocumentFragment>
+`;

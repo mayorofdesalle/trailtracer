@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Button from '@components/ui/Button';
+import { Button } from '@components/ui';
 
 const pages = [{ name: 'Home', id: 0 }, { name: 'Features', id: 1 }, { name: 'Features', id: 2 }, { name: 'Features', id: 3 }];
 
