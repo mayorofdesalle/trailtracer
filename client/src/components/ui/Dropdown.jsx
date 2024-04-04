@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { BentoBox } from '@components/ui/bento';
+import BentoBox from './bento/BentoBox';
 
 /**
  * Dropdown

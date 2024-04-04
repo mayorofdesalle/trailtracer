@@ -3,11 +3,11 @@
 exports[`DisplayWarning > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-irLvIq kHwwsn flkHOB"
+    class="sc-guDLey sc-kFCroH kHwwsn bkPqmz"
     role="status"
   >
     <svg
-      class="sc-jTQCzO ldKJNf"
+      class="sc-eDLKkx kBnHHP"
       fill="#435049"
       role="img"
     >
@@ -19,7 +19,7 @@ exports[`DisplayWarning > should match snapshot 1`] = `
       />
     </svg>
     <div
-      class="sc-iBdnpw gJiUWs"
+      class="sc-gLLuof dNuHMN"
     >
       displayWarning
     </div>

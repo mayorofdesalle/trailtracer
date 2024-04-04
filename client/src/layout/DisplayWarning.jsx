@@ -1,9 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styled, { keyframes, useTheme } from 'styled-components';
 
-import { Container } from '@components/ui';
-import { Icon } from '@components/ui';
-import { Text } from '@components/ui';
+import { Container, Icon, Text } from '@components/ui';
 
 const orientate = (themeColors) => keyframes`
     0%, 25% {
