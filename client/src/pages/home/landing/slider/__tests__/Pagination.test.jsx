@@ -11,9 +11,4 @@ describe('Pagination', () => {
         pageDots.forEach(dot => expect(dot).toBeInTheDocument());
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<Pagination />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

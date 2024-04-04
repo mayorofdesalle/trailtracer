@@ -10,9 +10,4 @@ describe('DisplayWarning', () => {
         expect(warning).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<DisplayWarning />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

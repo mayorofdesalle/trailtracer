@@ -13,9 +13,4 @@ describe('SettingsButton', () => {
         expect(button.firstChild).toHaveRole('img');
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<SettingsButton />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

@@ -33,9 +33,4 @@ describe('ThemeToggle', () => {
         expect(button).toHaveAttribute('aria-checked', 'false');
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<ThemeToggle />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

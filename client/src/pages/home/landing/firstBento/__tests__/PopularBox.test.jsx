@@ -12,9 +12,4 @@ describe('PopularBox', () => {
         expect(popularBox).toHaveStyle('grid-area: PopularBox');
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<PopularBox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

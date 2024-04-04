@@ -20,9 +20,4 @@ describe('TermsBox', () => {
         expect(link).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<TermsBox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

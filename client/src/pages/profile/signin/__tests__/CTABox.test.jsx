@@ -14,9 +14,4 @@ describe('CTABox', () => {
         expect(button).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<CTABox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

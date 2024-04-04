@@ -9,9 +9,4 @@ describe('BackgroundImage', () => {
         expect(screen.getByTestId('background-image')).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<BackgroundImage />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

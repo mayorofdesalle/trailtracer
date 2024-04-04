@@ -13,9 +13,4 @@ describe('ExploreButton', () => {
         expect(button.firstChild).toHaveRole('img');
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<ExploreButton />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

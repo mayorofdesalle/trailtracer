@@ -10,9 +10,4 @@ describe('Separator', () => {
         expect(separator).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<Separator />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

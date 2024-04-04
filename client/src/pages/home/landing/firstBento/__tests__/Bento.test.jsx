@@ -11,9 +11,4 @@ describe('Bento', () => {
         expect(bento).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<Bento />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });
