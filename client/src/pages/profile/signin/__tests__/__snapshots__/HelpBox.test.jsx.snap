@@ -1,0 +1,28 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HelpBox > should match snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-hLQSwg jXhJHN sc-beySPh sc-guDLey sc-irLvIq jVdZA cVargU ddLmsq"
+    type="button"
+  >
+    <svg
+      class="sc-jTQCzO ldKJNf"
+      fill="#435049"
+      role="img"
+    >
+      <title>
+        login-box-fill
+      </title>
+      <use
+        href="http://localhost:3000/src/assets/icons.svg#login-box-fill"
+      />
+    </svg>
+    <div
+      class="sc-iBdnpw hKJUwH"
+    >
+      signinPage.help
+    </div>
+  </button>
+</DocumentFragment>
+`;

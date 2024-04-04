@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ExploreButton > should match snapshot 1`] = `
+<DocumentFragment>
+  <form>
+    <button
+      class="sc-dmyCSP sc-eTNRI jDIzmn chmNhj sc-ktwOfi eXUhpo"
+      type="button"
+    >
+      <svg
+        class="sc-beySPh jIMRxr"
+        fill="currentColor"
+        role="img"
+      >
+        <title>
+          menu-search-line
+        </title>
+        <use
+          href="http://localhost:3000/src/assets/icons.svg#menu-search-line"
+        />
+      </svg>
+    </button>
+  </form>
+</DocumentFragment>
+`;
