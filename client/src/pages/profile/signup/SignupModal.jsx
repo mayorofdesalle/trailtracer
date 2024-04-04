@@ -6,8 +6,8 @@ import { glassMorph } from '@components/mixins';
 import { Button, Container, Icon, Text } from '@components/ui';
 import { BentoBox, BentoGrid } from '@components/ui/bento';
 
-import AuthButtons from '@pages/Profile/components/AuthButtons';
-import Separator from '@pages/Profile/components/Separator';
+import AuthButtons from '@pages/profile/components/AuthButtons';
+import Separator from '@pages/profile/components/Separator';
 import SignupForm from './SignupForm';
 
 const SignupBentoGrid = styled(BentoGrid)`

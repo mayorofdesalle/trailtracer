@@ -7,7 +7,7 @@ import { glassMorph } from '@components/mixins';
 import { Button } from '@components/ui';
 import { Container } from '@components/ui';
 import { Text } from '@components/ui';
-import SignupModal from '@pages/Profile/Signup/SignupModal';
+import SignupModal from '@pages/profile/signup/SignupModal';
 
 const StartButtonInner = styled(Button)`
     width: 100%;

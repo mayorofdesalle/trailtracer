@@ -8,7 +8,7 @@ import { randomize } from '@features/backgroundSlice';
 import { useWindowSize } from '@hooks';
 
 import DisplayWarning from './DisplayWarning';
-import Navbar from './Navbar/Navbar';
+import Navbar from './navbar/Navbar';
 const Background = lazy(() => import('./background/Background'));
 
 

@@ -4,8 +4,8 @@ import styled, { useTheme } from 'styled-components';
 import { Container, Text } from '@components/ui';
 import { BentoBox } from '@components/ui/bento';
 
-import Separator from '@pages/Profile//components/Separator';
-import AuthButtons from '@pages/Profile/components/AuthButtons';
+import Separator from '@pages/profile/components/Separator';
+import AuthButtons from '@pages/profile/components/AuthButtons';
 import SigninForm from './SigninForm';
 
 const SigninBoxInner = styled(BentoBox)`
