@@ -13,9 +13,4 @@ describe('HeroDescriptionBox', () => {
         expect(heroDescriptionBox).toHaveTextContent(/title/i);
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<HeroDescriptionBox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

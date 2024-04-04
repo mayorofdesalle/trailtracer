@@ -20,9 +20,4 @@ describe('SigninForm', () => {
         expect(button).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<SigninForm />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

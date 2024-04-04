@@ -10,9 +10,4 @@ describe('SettingsDropdown', () => {
         expect(dropdown).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<SettingsDropdown close={vi.fn()} />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

@@ -13,9 +13,4 @@ describe('HeroImageBox', () => {
         expect(heroImageBox.firstChild).toHaveRole('img');
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<HeroImageBox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

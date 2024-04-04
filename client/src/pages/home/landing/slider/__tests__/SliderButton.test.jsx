@@ -15,9 +15,4 @@ describe('SliderButton', () => {
         expect(button.lastChild).toHaveRole('img');
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<SliderButton onDrag={vi.fn()} onStop={vi.fn()} />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

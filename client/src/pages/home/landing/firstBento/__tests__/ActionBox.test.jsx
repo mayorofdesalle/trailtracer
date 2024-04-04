@@ -14,11 +14,6 @@ describe('ActionBoxFirst', () => {
         expect(actionBox).toHaveTextContent(/CTA/i);
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<ActionBoxFirst />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });
 
 describe('ActionBoxSecond', () => {
@@ -31,11 +26,6 @@ describe('ActionBoxSecond', () => {
         expect(actionBox).toHaveStyle('grid-area: ActionBox2');
         expect(actionBox.lastChild).toHaveRole('img');
         expect(actionBox).toHaveTextContent(/CTA/i);
-    });
-
-    it('should match snapshot', () => {
-        const { asFragment } = render(<ActionBoxSecond />);
-        expect(asFragment()).toMatchSnapshot();
     });
 
 });

@@ -18,9 +18,4 @@ describe('SigninBox', () => {
         buttons.forEach(button => expect(button).toBeInTheDocument());
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<SigninBox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

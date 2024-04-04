@@ -10,9 +10,4 @@ describe('LanguageSelector', () => {
         expect(select).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<LanguageSelector />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

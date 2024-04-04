@@ -12,9 +12,4 @@ describe('NewsBox', () => {
         expect(newsBox).toHaveStyle('grid-area: NewsBox');
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<NewsBox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

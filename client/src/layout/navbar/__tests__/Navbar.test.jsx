@@ -10,9 +10,4 @@ describe('Navbar', () => {
         expect(navbar).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<Navbar />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

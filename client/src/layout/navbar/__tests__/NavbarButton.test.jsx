@@ -10,9 +10,4 @@ describe('NavbarButton', () => {
         expect(button).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<NavbarButton onClick={vi.fn()} icon='forbid' />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

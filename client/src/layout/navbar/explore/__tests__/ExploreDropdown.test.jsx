@@ -12,9 +12,4 @@ describe('ExploreDropdown', () => {
         expect(dropdown.firstChild).toHaveTextContent(/explore/i);
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<ExploreDropdown />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

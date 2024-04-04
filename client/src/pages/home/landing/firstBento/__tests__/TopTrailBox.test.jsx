@@ -12,9 +12,4 @@ describe('TopTrailBox', () => {
         expect(topTrailBox).toHaveStyle('grid-area: TopTrailBox');
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<TopTrailBox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

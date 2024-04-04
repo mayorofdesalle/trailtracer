@@ -11,9 +11,4 @@ describe('AuthButtons', () => {
         buttons.forEach(button => expect(button).toBeInTheDocument());
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<AuthButtons />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

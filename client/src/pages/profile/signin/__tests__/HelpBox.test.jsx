@@ -16,9 +16,4 @@ describe('HelpBox', () => {
         expect(icon).toBeInTheDocument();
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<HelpBox />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });

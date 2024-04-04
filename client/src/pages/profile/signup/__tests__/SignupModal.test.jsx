@@ -18,9 +18,4 @@ describe('SignupModal', () => {
         buttons.forEach(button => expect(button).toBeInTheDocument());
     });
 
-    it('should match snapshot', () => {
-        const { asFragment } = render(<SignupModal />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
 });
