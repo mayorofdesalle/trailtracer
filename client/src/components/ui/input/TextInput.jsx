@@ -25,7 +25,7 @@ import inputRules from './inputRules';
  * @description
  * Default styled text input component.
  */
-const TextInput = ({ children, error, type, name = type, id = type, required, clearable, disabled, validate, ...props }) => {
+const TextInput = ({ children, error, type, name = type, id = type, placeholder = name, required, clearable, disabled, validate, ...props }) => {
     const theme = useTheme();
     const { t } = useTranslation();
     const { register, setFocus, setValue, watch } = useContext(FormContext);
@@ -40,12 +40,12 @@ const TextInput = ({ children, error, type, name = type, id = type, required, cl
 
     return (
         <BaseTextInputContainer>
-            <label htmlFor={id} hidden>{t(`forms.${name}`)}</label>
+            <label htmlFor={id} hidden>{t(`forms.${placeholder}`)}</label>
             {error &&
-                <RTooltip id={id} place='left' openEvents={{ focus: true }} closeEvents={{ blur: true }}>
+                <RTooltip id={id} openEvents={{ focus: true }} closeEvents={{ blur: true }}>
                     <Text>{t(error.message)}</Text>
                 </RTooltip>}
-            <BaseTextInput type={type} id={id} placeholder={t(`forms.${name}`)} autoComplete={name}
+            <BaseTextInput type={type} id={id} placeholder={t(`forms.${placeholder}`)} autoComplete={name}
                 data-tooltip-id={id} $hasLeftIcon={hasIconChildren} $hasRightIcon={clearable}
                 {...register(name, inputRules(name, required, disabled, validate))} {...props} />
             {children}
@@ -62,6 +62,7 @@ TextInput.propTypes = {
     type: PropTypes.string,
     name: PropTypes.string,
     id: PropTypes.string,
+    placeholder: PropTypes.string,
     error: PropTypes.object,
     required: PropTypes.bool,
     clearable: PropTypes.bool,

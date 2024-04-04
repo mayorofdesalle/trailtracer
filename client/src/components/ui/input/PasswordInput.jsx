@@ -22,7 +22,7 @@ import inputRules from './inputRules';
  * @description
  * Default styled password input component.
  */
-const PasswordInput = ({ children, name = 'password', id = 'password', error, required, disabled, validate, ...props }) => {
+const PasswordInput = ({ children, name = 'current-password', id = 'password', error, required, disabled, validate, ...props }) => {
     const theme = useTheme();
     const { t } = useTranslation();
     const { register, setFocus, setValue, watch } = useContext(FormContext);
@@ -38,10 +38,10 @@ const PasswordInput = ({ children, name = 'password', id = 'password', error, re
         <BaseTextInputContainer>
             <label htmlFor={id} hidden>{t(`forms.${name}`)}</label>
             {error &&
-                <RTooltip id={id} place='left' openEvents={{ focus: true }} closeEvents={{ blur: true }}>
+                <RTooltip id={id} openEvents={{ focus: true }} closeEvents={{ blur: true }}>
                     <Text>{t(error.message)}</Text>
                 </RTooltip>}
-            <BaseTextInput type={isHidden ? 'password' : 'text'} name={name} id={id} placeholder={t(`forms.${name}`)} autoComplete={name}
+            <BaseTextInput type={isHidden ? 'password' : 'text'} id={id} placeholder={t(`forms.${name}`)} autoComplete={name}
                 data-tooltip-id={id} $hasLeftIcon={hasIconChildren} $hasRightIcon
                 {...register(name, inputRules(name, required, disabled, validate))} {...props} />
             {children}

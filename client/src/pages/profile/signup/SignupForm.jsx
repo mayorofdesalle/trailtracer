@@ -1,8 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
+import { logger } from '@app';
 import { Button, Container, Icon, Text } from '@components/ui';
 import { PasswordInput, TextInput, changeFocus } from '@components/ui/input';
 import { FormContext } from '@context';
@@ -13,7 +14,6 @@ const SignupFormInner = styled.form`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: fit-content;
     
     & > * {
         margin-top: clamp(1rem, min(3dvw, 3dvh), 3rem);
@@ -56,12 +56,11 @@ const SignupForm = (props) => {
     const theme = useTheme();
     const { t } = useTranslation();
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
     const { register, handleSubmit, setFocus, setValue, watch, formState: { errors } } = useForm({
         defaultValues: useMemo(() => {
             return {
                 email: '',
-                password: ''
+                'new-password': ''
             };
         }, []),
         mode: 'onBlur',
@@ -69,14 +68,20 @@ const SignupForm = (props) => {
         shouldFocusError: true
     });
 
-    const onSubmit = (data) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const onSubmit = useCallback((data) => {
         setIsSubmitting(true);
-        console.log(data);
-    };
+        logger.debug(data);
+    });
+
+    useEffect(() => {
+        setFocus('email');
+    }, []);
 
     return (
-        <FormContext.Provider value={{ register, watch, setFocus, setValue }}>
-            <SignupFormInner role='form' onSubmit={handleSubmit(onSubmit)} onKeyDown={(e) => changeFocus(e, ['email', 'password'], setFocus)} {...props}>
+        <FormContext.Provider value={{ register, setFocus, setValue, watch }}>
+            <SignupFormInner role='form' onSubmit={handleSubmit(onSubmit)} onKeyDown={(e) => changeFocus(e, ['email', 'new-password'], setFocus)} {...props}>
                 <InputContainer>
                     <Text $color={theme.colors.primary} $ratio={0.75}>{t('forms.email')}</Text>
                     <TextInput type='email' error={errors.email} required validate>
@@ -85,8 +90,8 @@ const SignupForm = (props) => {
                 </InputContainer>
                 <InputContainer>
                     <Text $color={theme.colors.primary} $ratio={0.75}>{t('forms.new-password')}</Text>
-                    <PasswordInput error={errors.password} name='new-password' required validate>
-                        <Icon name='key-fill' color={errors.password ? theme.colors.secondary : theme.colors.primary} />
+                    <PasswordInput error={errors['new-password']} name='new-password' required validate>
+                        <Icon name='key-fill' color={errors['new-password'] ? theme.colors.secondary : theme.colors.primary} />
                     </PasswordInput>
                 </InputContainer>
                 <Button $type='submit' $bgColor={theme.colors.primary} disabled={isSubmitting}>

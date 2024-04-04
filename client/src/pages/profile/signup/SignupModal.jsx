@@ -6,8 +6,9 @@ import { glassMorph } from '@components/mixins';
 import { Button, Container, Icon, Text } from '@components/ui';
 import { BentoBox, BentoGrid } from '@components/ui/bento';
 
-import AuthButtons from '@pages/profile/components/AuthButtons';
-import Separator from '@pages/profile/components/Separator';
+import AuthButtons from '../components/AuthButtons';
+import Separator from '../components/Separator';
+import Wrapper from '../components/Wrapper';
 import SignupForm from './SignupForm';
 
 const SignupBentoGrid = styled(BentoGrid)`
@@ -30,8 +31,8 @@ const SignupBentoGrid = styled(BentoGrid)`
 
     /* Medium screens and downwards */
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) or (max-aspect-ratio: 1) {
-        grid-template-columns: auto 1fr auto;
-        grid-template-rows: auto 1fr auto;
+        grid-template-columns: auto 10fr auto;
+        grid-template-rows: 0.25fr 1fr 0.25fr;
     }
 `;
 
@@ -51,18 +52,13 @@ const SignupModalInner = styled(BentoBox)`
     
     & > ${Button} {
         position: absolute;
-        right: clamp(1rem, min(2dvw, 2dvh), 4rem);
-        top: clamp(1rem, min(2dvw, 2dvh), 4rem);
+        right: clamp(0.5rem, min(1dvw, 1dvh), 2rem);
+        top: clamp(0.5rem, min(1dvw, 1dvh), 2rem);
         padding: 0;
-        --size: clamp(1.5rem, min(3dvw, 3dvh), 6rem);
+        --size: clamp(1rem, min(2dvw, 2dvh), 4rem);
         width: var(--size);
         height: var(--size);
     }
-`;
-
-const Wrapper = styled(Container)`
-    height: fit-content;
-    flex-direction: column;
 `;
 
 const SignupModal = ({ close, ...props }) => {

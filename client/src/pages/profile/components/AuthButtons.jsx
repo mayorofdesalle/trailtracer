@@ -8,7 +8,7 @@ const AuthButtonsInner = styled(Container)`
     height: fit-content;
 
     & > ${Button} {
-        --size: clamp(2.5rem, max(3dvw, 3dvh), 5rem);
+        --size: clamp(2rem, max(4dvw, 4dvh), 4rem);
         width: var(--size);
         height: var(--size);
 

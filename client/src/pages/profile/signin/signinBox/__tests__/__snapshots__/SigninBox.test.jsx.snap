@@ -3,10 +3,10 @@
 exports[`SigninBox > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-dmyCSP sc-fHejqy kHwwsn gVwHLx dEGhpD"
+    class="sc-guDLey sc-dmyCSP sc-blmEgr kHwwsn gVwHLx fIEBkl"
   >
     <div
-      class="sc-guDLey sc-blmEgr kHwwsn hYOuTt"
+      class="sc-guDLey sc-brSamD kHwwsn fJKiWp"
     >
       <div
         class="sc-gLLuof kZkuLk"
@@ -20,11 +20,11 @@ exports[`SigninBox > should match snapshot 1`] = `
       </div>
     </div>
     <form
-      class="sc-fmKFGs iMNvzB"
+      class="sc-fHejqy cMecfl"
       role="form"
     >
       <div
-        class="sc-guDLey sc-ktwOfi kHwwsn ecTIsN"
+        class="sc-guDLey sc-hABBmJ kHwwsn jomkDL"
       >
         <label
           for="email"
@@ -34,7 +34,7 @@ exports[`SigninBox > should match snapshot 1`] = `
         </label>
         <input
           autocomplete="email"
-          class="sc-brSamD fskSZa"
+          class="sc-ktwOfi lbIkZd"
           data-tooltip-id="email"
           id="email"
           name="email"
@@ -42,7 +42,7 @@ exports[`SigninBox > should match snapshot 1`] = `
           type="email"
         />
         <svg
-          class="sc-eDLKkx kBnHHP"
+          class="sc-eDLKkx fuXsHX"
           fill="#435049"
           role="img"
         >
@@ -55,7 +55,7 @@ exports[`SigninBox > should match snapshot 1`] = `
         </svg>
       </div>
       <div
-        class="sc-guDLey sc-ktwOfi kHwwsn ecTIsN"
+        class="sc-guDLey sc-hABBmJ kHwwsn jomkDL"
       >
         <label
           for="password"
@@ -65,7 +65,7 @@ exports[`SigninBox > should match snapshot 1`] = `
         </label>
         <input
           autocomplete="current-password"
-          class="sc-brSamD iAHoYb"
+          class="sc-ktwOfi kXHIUs"
           data-tooltip-id="password"
           id="password"
           name="current-password"
@@ -73,7 +73,7 @@ exports[`SigninBox > should match snapshot 1`] = `
           type="password"
         />
         <svg
-          class="sc-eDLKkx kBnHHP"
+          class="sc-eDLKkx fuXsHX"
           fill="#435049"
           role="img"
         >
@@ -115,14 +115,14 @@ exports[`SigninBox > should match snapshot 1`] = `
       />
     </div>
     <div
-      class="sc-guDLey sc-eTNRI kHwwsn dYrnpV"
+      class="sc-guDLey sc-eTNRI kHwwsn bwweEz"
     >
       <button
         class="sc-beySPh nsmIf"
         type="button"
       >
         <svg
-          class="sc-eDLKkx kBnHHP"
+          class="sc-eDLKkx fuXsHX"
           fill="currentColor"
           role="img"
         >
@@ -139,7 +139,7 @@ exports[`SigninBox > should match snapshot 1`] = `
         type="button"
       >
         <svg
-          class="sc-eDLKkx kBnHHP"
+          class="sc-eDLKkx fuXsHX"
           fill="currentColor"
           role="img"
         >
@@ -156,7 +156,7 @@ exports[`SigninBox > should match snapshot 1`] = `
         type="button"
       >
         <svg
-          class="sc-eDLKkx kBnHHP"
+          class="sc-eDLKkx fuXsHX"
           fill="currentColor"
           role="img"
         >

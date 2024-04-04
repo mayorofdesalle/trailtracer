@@ -1,11 +1,7 @@
 import pino from 'pino';
 
 const logger = pino({
-    prettyPrint: {
-        colorize: true,
-        translateTime: true,
-        ignore: 'pid,hostname',
-    },
+    level: import.meta.env.DEV ? 'debug' : 'info',
 });
 
 export default logger;

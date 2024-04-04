@@ -1,8 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
+import { logger } from '@app';
 import { Button, Container, Icon, Text } from '@components/ui';
 import { PasswordInput, TextInput, changeFocus } from '@components/ui/input';
 import { FormContext } from '@context';
@@ -13,7 +14,6 @@ const SigninFormInner = styled.form`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: fit-content;
     
     & > * {
         margin-top: clamp(1rem, min(3dvw, 3dvh), 3rem);
@@ -34,7 +34,7 @@ const SigninFormInner = styled.form`
  * @description
  * Form to sign in with email and password.
  * **/
-const SigninForm = () => {
+const SigninForm = (props) => {
     const theme = useTheme();
     const { t } = useTranslation();
 
@@ -52,25 +52,25 @@ const SigninForm = () => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const onSubmit = (data) => {
+    const onSubmit = useCallback((data) => {
         setIsSubmitting(true);
-        console.log(data);
-    };
+        logger.debug(data);
+    });
 
     return (
-        <SigninFormInner role='form' onSubmit={handleSubmit(onSubmit)} onKeyDown={(e) => changeFocus(e, ['email', 'current-password'], setFocus)}>
-            <FormContext.Provider value={{ register, setFocus, setValue, watch }}>
+        <FormContext.Provider value={{ register, setFocus, setValue, watch }}>
+            <SigninFormInner role='form' onSubmit={handleSubmit(onSubmit)} onKeyDown={(e) => changeFocus(e, ['email', 'current-password'], setFocus)} {...props}>
                 <TextInput type='email' error={errors.email} required validate>
                     <Icon name='at-fill' color={errors.email ? theme.colors.secondary : theme.colors.primary} />
                 </TextInput>
-                <PasswordInput error={errors.password} name='current-password' required>
+                <PasswordInput error={errors.password} required>
                     <Icon name='key-fill' color={errors.password ? theme.colors.secondary : theme.colors.primary} />
                 </PasswordInput>
                 <Button $type='submit' $bgColor={theme.colors.background} $animColors={[theme.colors.background, theme.colors.secondary]} disabled={isSubmitting}>
                     <Text $color={theme.colors.primary} $heading>{t('signinPage.signin')}</Text>
                 </Button>
-            </FormContext.Provider>
-        </SigninFormInner>
+            </SigninFormInner>
+        </FormContext.Provider>
     );
 };
 
