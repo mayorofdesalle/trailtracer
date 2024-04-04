@@ -4,7 +4,7 @@ exports[`ExploreButton > should match snapshot 1`] = `
 <DocumentFragment>
   <form>
     <button
-      class="sc-dmyCSP sc-eTNRI jDIzmn chmNhj sc-ktwOfi eXUhpo"
+      class="sc-guDLey sc-eTNRI hPhGtF chmNhj sc-ktwOfi eXUhpo"
       type="button"
     >
       <svg

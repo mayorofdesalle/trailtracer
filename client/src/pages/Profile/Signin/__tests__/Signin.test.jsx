@@ -6,7 +6,7 @@ describe('Signin', () => {
 
     it('should render correctly', () => {
         render(<Signin />);
-        const signin = screen.getByRole('main');
+        const signin = screen.getByRole('grid');
 
         expect(signin).toBeInTheDocument();
     });

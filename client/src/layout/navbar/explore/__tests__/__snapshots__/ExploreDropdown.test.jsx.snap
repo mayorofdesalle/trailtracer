@@ -3,11 +3,11 @@
 exports[`ExploreDropdown > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-dmyCSP sc-eDLKkx sc-irLvIq kHwwsn fkKYEp dyulWN JebkV"
+    class="sc-guDLey sc-dmyCSP sc-hLQSwg sc-kFCroH kHwwsn fkKYEp lgqhfG bcZcDb"
     tabindex="0"
   >
     <div
-      class="sc-iBdnpw icncPb"
+      class="sc-gLLuof dcSHkq"
     >
       forms.explore
     </div>

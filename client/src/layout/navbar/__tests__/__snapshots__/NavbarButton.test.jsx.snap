@@ -3,11 +3,11 @@
 exports[`NavbarButton > should match snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="sc-beySPh sc-irLvIq zbkUW cFbOXe"
+    class="sc-beySPh sc-kFCroH zbkUW kgqzMY"
     type="button"
   >
     <svg
-      class="sc-jTQCzO ldKJNf"
+      class="sc-eDLKkx kBnHHP"
       fill="currentColor"
       role="img"
     >

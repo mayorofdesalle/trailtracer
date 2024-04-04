@@ -3,7 +3,7 @@
 exports[`SignupModal > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-hLQSwg sc-blmEgr kHwwsn la-dcoO IbSiZ"
+    class="sc-guDLey sc-kFCroH sc-blmEgr kHwwsn cZKACD IbSiZ"
     role="grid"
   >
     <div
@@ -15,7 +15,7 @@ exports[`SignupModal > should match snapshot 1`] = `
         type="button"
       >
         <svg
-          class="sc-jTQCzO ldKJNf"
+          class="sc-eDLKkx kBnHHP"
           fill="currentColor"
           role="img"
         >
@@ -31,12 +31,12 @@ exports[`SignupModal > should match snapshot 1`] = `
         class="sc-guDLey sc-dJGMql kHwwsn kFqbDj"
       >
         <div
-          class="sc-iBdnpw bOCNiR"
+          class="sc-gLLuof hnPDDY"
         >
           signupModal.title
         </div>
         <div
-          class="sc-iBdnpw dhzxuB"
+          class="sc-gLLuof fyoZns"
         >
           signupModal.subtitle
         </div>
@@ -46,10 +46,10 @@ exports[`SignupModal > should match snapshot 1`] = `
         role="form"
       >
         <div
-          class="sc-guDLey sc-fHejqy kHwwsn fvnzAz"
+          class="sc-guDLey sc-fHejqy kHwwsn jvnvBG"
         >
           <div
-            class="sc-iBdnpw cZTiOz"
+            class="sc-gLLuof jmevau"
           >
             forms.email
           </div>
@@ -72,7 +72,7 @@ exports[`SignupModal > should match snapshot 1`] = `
               type="email"
             />
             <svg
-              class="sc-jTQCzO ldKJNf"
+              class="sc-eDLKkx kBnHHP"
               fill="#435049"
               role="img"
             >
@@ -86,10 +86,10 @@ exports[`SignupModal > should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="sc-guDLey sc-fHejqy kHwwsn fvnzAz"
+          class="sc-guDLey sc-fHejqy kHwwsn jvnvBG"
         >
           <div
-            class="sc-iBdnpw cZTiOz"
+            class="sc-gLLuof jmevau"
           >
             forms.new-password
           </div>
@@ -112,7 +112,7 @@ exports[`SignupModal > should match snapshot 1`] = `
               type="password"
             />
             <svg
-              class="sc-jTQCzO ldKJNf"
+              class="sc-eDLKkx kBnHHP"
               fill="#435049"
               role="img"
             >
@@ -130,14 +130,14 @@ exports[`SignupModal > should match snapshot 1`] = `
           type="submit"
         >
           <div
-            class="sc-iBdnpw ghKuDe"
+            class="sc-gLLuof ldUHqL"
           >
             forms.continue
           </div>
         </button>
       </form>
       <div
-        class="sc-guDLey sc-eTNRI kHwwsn biYvKr"
+        class="sc-guDLey sc-eTNRI kHwwsn jVeJPO"
         role="separator"
       >
         <hr
@@ -145,7 +145,7 @@ exports[`SignupModal > should match snapshot 1`] = `
           role="none"
         />
         <div
-          class="sc-iBdnpw dhzxuB"
+          class="sc-gLLuof fyoZns"
         >
           signinPage.auths
         </div>
@@ -162,7 +162,7 @@ exports[`SignupModal > should match snapshot 1`] = `
           type="button"
         >
           <svg
-            class="sc-jTQCzO ldKJNf"
+            class="sc-eDLKkx kBnHHP"
             fill="currentColor"
             role="img"
           >
@@ -179,7 +179,7 @@ exports[`SignupModal > should match snapshot 1`] = `
           type="button"
         >
           <svg
-            class="sc-jTQCzO ldKJNf"
+            class="sc-eDLKkx kBnHHP"
             fill="currentColor"
             role="img"
           >
@@ -196,7 +196,7 @@ exports[`SignupModal > should match snapshot 1`] = `
           type="button"
         >
           <svg
-            class="sc-jTQCzO ldKJNf"
+            class="sc-eDLKkx kBnHHP"
             fill="currentColor"
             role="img"
           >

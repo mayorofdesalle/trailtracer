@@ -3,7 +3,7 @@
 exports[`BackgroundImage > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-irLvIq kHwwsn iOYwTJ"
+    class="sc-guDLey sc-kFCroH kHwwsn jtmoiL"
   />
 </DocumentFragment>
 `;

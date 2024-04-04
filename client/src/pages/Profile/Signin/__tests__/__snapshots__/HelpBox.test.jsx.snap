@@ -3,11 +3,11 @@
 exports[`HelpBox > should match snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="sc-hLQSwg jXhJHN sc-beySPh sc-guDLey sc-irLvIq jVdZA cVargU ddLmsq"
+    class="sc-beySPh zbkUW sc-guDLey sc-dmyCSP sc-irLvIq kHwwsn dHdhmG ddLmsq"
     type="button"
   >
     <svg
-      class="sc-jTQCzO ldKJNf"
+      class="sc-eDLKkx kBnHHP"
       fill="#435049"
       role="img"
     >
@@ -19,7 +19,7 @@ exports[`HelpBox > should match snapshot 1`] = `
       />
     </svg>
     <div
-      class="sc-iBdnpw hKJUwH"
+      class="sc-gLLuof duvPCK"
     >
       signinPage.help
     </div>

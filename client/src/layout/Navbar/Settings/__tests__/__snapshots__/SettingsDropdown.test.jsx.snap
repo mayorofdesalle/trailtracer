@@ -3,19 +3,19 @@
 exports[`SettingsDropdown > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-dmyCSP sc-eDLKkx sc-fHejqy kHwwsn fkKYEp dyulWN dYuxsc"
+    class="sc-guDLey sc-dmyCSP sc-hLQSwg sc-fmKFGs kHwwsn fkKYEp lgqhfG jmMOyH"
     tabindex="0"
   >
     <div
-      class="sc-guDLey sc-hABBmJ kHwwsn eULopu"
+      class="sc-guDLey sc-ktwOfi kHwwsn foUNKg"
     >
       <div
-        class="sc-iBdnpw icncPb"
+        class="sc-gLLuof dcSHkq"
       >
         forms.theme
       </div>
       <div
-        class="sc-guDLey sc-fmKFGs kHwwsn qBqYE"
+        class="sc-guDLey sc-hABBmJ kHwwsn fOpcPM"
       >
         <button
           aria-checked="false"
@@ -24,7 +24,7 @@ exports[`SettingsDropdown > should match snapshot 1`] = `
           type="button"
         >
           <svg
-            class="sc-jTQCzO ldKJNf"
+            class="sc-eDLKkx kBnHHP"
             fill="#435049"
             role="img"
           >
@@ -39,15 +39,15 @@ exports[`SettingsDropdown > should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="sc-guDLey sc-ktwOfi kHwwsn OlGXF"
+      class="sc-guDLey sc-brSamD kHwwsn euRBwi"
     >
       <div
-        class="sc-iBdnpw icncPb"
+        class="sc-gLLuof dcSHkq"
       >
         forms.language
       </div>
       <div
-        class="sc-eTNRI sc-brSamD fhUsxc gRkruL css-b62m3t-container"
+        class="sc-csKJxZ sc-eTNRI jxMgKP hsvJbM css-b62m3t-container"
       >
         <span
           class="css-1f43avz-a11yText-A11yText"

@@ -7,12 +7,12 @@ exports[`CTABox > should match snapshot 1`] = `
     role="complementary"
   >
     <div
-      class="sc-iBdnpw dNnYEi"
+      class="sc-gLLuof kEDizj"
     >
       signinPage.signupTitle
     </div>
     <div
-      class="sc-iBdnpw dhzxuB explanation"
+      class="sc-gLLuof fyoZns explanation"
     >
       signinPage.explanation
     </div>
@@ -21,7 +21,7 @@ exports[`CTABox > should match snapshot 1`] = `
       type="button"
     >
       <div
-        class="sc-iBdnpw eFPdJJ"
+        class="sc-gLLuof jqFQvo"
       >
         signinPage.signup
       </div>

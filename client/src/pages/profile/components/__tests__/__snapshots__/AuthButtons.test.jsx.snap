@@ -3,14 +3,14 @@
 exports[`AuthButtons > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-irLvIq kHwwsn bdPjGM"
+    class="sc-guDLey sc-kFCroH kHwwsn dXAyDq"
   >
     <button
       class="sc-beySPh zbkUW"
       type="button"
     >
       <svg
-        class="sc-jTQCzO ldKJNf"
+        class="sc-eDLKkx kBnHHP"
         fill="currentColor"
         role="img"
       >
@@ -27,7 +27,7 @@ exports[`AuthButtons > should match snapshot 1`] = `
       type="button"
     >
       <svg
-        class="sc-jTQCzO ldKJNf"
+        class="sc-eDLKkx kBnHHP"
         fill="currentColor"
         role="img"
       >
@@ -44,7 +44,7 @@ exports[`AuthButtons > should match snapshot 1`] = `
       type="button"
     >
       <svg
-        class="sc-jTQCzO ldKJNf"
+        class="sc-eDLKkx kBnHHP"
         fill="currentColor"
         role="img"
       >

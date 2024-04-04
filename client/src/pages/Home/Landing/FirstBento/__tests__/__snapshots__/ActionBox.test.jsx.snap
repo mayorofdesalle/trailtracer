@@ -6,11 +6,11 @@ exports[`ActionBoxFirst > should match snapshot 1`] = `
     class="sc-guDLey sc-dmyCSP sc-irLvIq kHwwsn gVwHLx kBAJVk"
   >
     <div
-      class="sc-kFCroH gxDVxW left"
+      class="sc-jsEeTM kWwguh left"
       role="img"
     />
     <div
-      class="sc-iBdnpw imTVdd"
+      class="sc-gLLuof cFAykQ"
     >
       landingPage.CTA1
     </div>
@@ -24,12 +24,12 @@ exports[`ActionBoxSecond > should match snapshot 1`] = `
     class="sc-guDLey sc-dmyCSP sc-irLvIq kHwwsn jPSObU diGZYn"
   >
     <div
-      class="sc-iBdnpw cdjopi"
+      class="sc-gLLuof dmaRej"
     >
       landingPage.CTA2
     </div>
     <div
-      class="sc-kFCroH fFsaJF right"
+      class="sc-jsEeTM bBWmcy right"
       role="img"
     />
   </div>

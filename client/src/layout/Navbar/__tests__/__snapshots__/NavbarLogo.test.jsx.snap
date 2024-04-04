@@ -3,7 +3,7 @@
 exports[`NavbarLogo > should match snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="sc-beySPh sc-irLvIq zbkUW bndXCL"
+    class="sc-beySPh sc-kFCroH zbkUW dBMJkV"
     type="button"
   />
 </DocumentFragment>

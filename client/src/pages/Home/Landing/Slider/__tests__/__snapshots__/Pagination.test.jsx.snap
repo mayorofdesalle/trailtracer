@@ -3,19 +3,19 @@
 exports[`Pagination > should match snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="sc-beySPh sc-irLvIq zbkUW kNKvsb"
+    class="sc-beySPh sc-kFCroH zbkUW lhGYt"
     type="button"
   />
   <button
-    class="sc-beySPh sc-irLvIq zbkUW kNKvsb"
+    class="sc-beySPh sc-kFCroH zbkUW lhGYt"
     type="button"
   />
   <button
-    class="sc-beySPh sc-irLvIq zbkUW kNKvsb"
+    class="sc-beySPh sc-kFCroH zbkUW lhGYt"
     type="button"
   />
   <button
-    class="sc-beySPh sc-irLvIq zbkUW kNKvsb"
+    class="sc-beySPh sc-kFCroH zbkUW lhGYt"
     type="button"
   />
 </DocumentFragment>

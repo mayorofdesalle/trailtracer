@@ -3,19 +3,19 @@
 exports[`SignupForm > should match snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-brSamD kCWmXs"
+    class="sc-eTNRI kZqNyz"
     role="form"
   >
     <div
-      class="sc-guDLey sc-ktwOfi kHwwsn cxJKdu"
+      class="sc-guDLey sc-brSamD kHwwsn hxA-Dbk"
     >
       <div
-        class="sc-iBdnpw cZTiOz"
+        class="sc-gLLuof jmevau"
       >
         forms.email
       </div>
       <div
-        class="sc-guDLey sc-csKJxZ kHwwsn eYlgcS"
+        class="sc-guDLey sc-irLvIq kHwwsn bHzjpc"
       >
         <label
           for="email"
@@ -25,7 +25,7 @@ exports[`SignupForm > should match snapshot 1`] = `
         </label>
         <input
           autocomplete="email"
-          class="sc-irLvIq lrEAM"
+          class="sc-kFCroH kdoZoe"
           data-tooltip-id="email"
           id="email"
           name="email"
@@ -33,7 +33,7 @@ exports[`SignupForm > should match snapshot 1`] = `
           type="email"
         />
         <svg
-          class="sc-jTQCzO ldKJNf"
+          class="sc-eDLKkx kBnHHP"
           fill="#435049"
           role="img"
         >
@@ -47,15 +47,15 @@ exports[`SignupForm > should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="sc-guDLey sc-ktwOfi kHwwsn cxJKdu"
+      class="sc-guDLey sc-brSamD kHwwsn hxA-Dbk"
     >
       <div
-        class="sc-iBdnpw cZTiOz"
+        class="sc-gLLuof jmevau"
       >
         forms.new-password
       </div>
       <div
-        class="sc-guDLey sc-csKJxZ kHwwsn eYlgcS"
+        class="sc-guDLey sc-irLvIq kHwwsn bHzjpc"
       >
         <label
           for="password"
@@ -65,7 +65,7 @@ exports[`SignupForm > should match snapshot 1`] = `
         </label>
         <input
           autocomplete="new-password"
-          class="sc-irLvIq jCWhBV"
+          class="sc-kFCroH gCiziP"
           data-tooltip-id="password"
           id="password"
           name="new-password"
@@ -73,7 +73,7 @@ exports[`SignupForm > should match snapshot 1`] = `
           type="password"
         />
         <svg
-          class="sc-jTQCzO ldKJNf"
+          class="sc-eDLKkx kBnHHP"
           fill="#435049"
           role="img"
         >
@@ -91,7 +91,7 @@ exports[`SignupForm > should match snapshot 1`] = `
       type="submit"
     >
       <div
-        class="sc-iBdnpw ghKuDe"
+        class="sc-gLLuof ldUHqL"
       >
         forms.continue
       </div>

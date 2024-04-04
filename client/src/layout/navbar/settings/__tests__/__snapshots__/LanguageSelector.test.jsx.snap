@@ -3,15 +3,15 @@
 exports[`LanguageSelector > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-ktwOfi kHwwsn OlGXF"
+    class="sc-guDLey sc-brSamD kHwwsn euRBwi"
   >
     <div
-      class="sc-iBdnpw icncPb"
+      class="sc-gLLuof dcSHkq"
     >
       forms.language
     </div>
     <div
-      class="sc-eTNRI sc-brSamD fhUsxc gRkruL css-b62m3t-container"
+      class="sc-csKJxZ sc-eTNRI jxMgKP hsvJbM css-b62m3t-container"
     >
       <span
         class="css-1f43avz-a11yText-A11yText"

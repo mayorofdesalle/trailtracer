@@ -3,20 +3,20 @@
 exports[`Separator > should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-guDLey sc-csKJxZ kHwwsn lmZwby"
+    class="sc-guDLey sc-irLvIq kHwwsn jDqJij"
     role="separator"
   >
     <hr
-      class="sc-irLvIq hHRSQk"
+      class="sc-kFCroH bIVWxK"
       role="none"
     />
     <div
-      class="sc-iBdnpw dhzxuB"
+      class="sc-gLLuof fyoZns"
     >
       signinPage.auths
     </div>
     <hr
-      class="sc-irLvIq hHRSQk"
+      class="sc-kFCroH bIVWxK"
       role="none"
     />
   </div>

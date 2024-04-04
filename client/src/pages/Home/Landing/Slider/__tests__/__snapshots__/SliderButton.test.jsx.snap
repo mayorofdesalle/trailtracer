@@ -3,12 +3,12 @@
 exports[`SliderButton > should match snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="sc-beySPh sc-irLvIq zbkUW fEWcSo react-draggable"
+    class="sc-beySPh sc-kFCroH zbkUW drxZIe react-draggable"
     style="transform: translate(undefinedpx,0px);"
     type="button"
   >
     <svg
-      class="sc-jTQCzO ldKJNf"
+      class="sc-eDLKkx kBnHHP"
       fill="currentColor"
       role="img"
     >
@@ -20,7 +20,7 @@ exports[`SliderButton > should match snapshot 1`] = `
       />
     </svg>
     <svg
-      class="sc-jTQCzO ldKJNf"
+      class="sc-eDLKkx kBnHHP"
       fill="currentColor"
       role="img"
     >
