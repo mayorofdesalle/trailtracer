@@ -2,8 +2,7 @@ import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
-import { Dropdown } from '@components/ui';
-import { Text } from '@components/ui';
+import { Dropdown, Text } from '@components/ui';
 
 const ExploreDropdownInner = styled(Dropdown)`
     height: 200%;

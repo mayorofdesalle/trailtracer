@@ -1,10 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
+import { Button, Icon, Text } from '@components/ui';
 import { BentoBox } from '@components/ui/bento';
-import { Button } from '@components/ui';
-import { Icon } from '@components/ui';
-import { Text } from '@components/ui';
 
 const HelpBoxInner = styled(BentoBox)`
     grid-area: HelpBox;

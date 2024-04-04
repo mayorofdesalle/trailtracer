@@ -3,12 +3,8 @@ import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
 import { glassMorph } from '@components/mixins';
-import { Button } from '@components/ui';
-import { Container } from '@components/ui';
-import { Icon } from '@components/ui';
-import { Text } from '@components/ui';
-import { BentoBox } from '@components/ui/bento';
-import { BentoGrid } from '@components/ui/bento';
+import { Button, Container, Icon, Text } from '@components/ui';
+import { BentoBox, BentoGrid } from '@components/ui/bento';
 
 import AuthButtons from '@pages/Profile/components/AuthButtons';
 import Separator from '@pages/Profile/components/Separator';

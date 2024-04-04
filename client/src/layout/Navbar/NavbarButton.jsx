@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import styled from 'styled-components';
 
-import { Button } from '@components/ui';
-import { Icon } from '@components/ui';
+import { Button, Icon } from '@components/ui';
 import { useHover } from '@hooks';
 
 const NavbarButtonInner = styled(Button)`

@@ -2,9 +2,7 @@ import styled, { useTheme } from 'styled-components';
 
 import { BentoBox } from '@components/ui/bento';
 
-import GridSizeProvider from '../GridSizeProvider';
 import BentoGrid from './BentoGrid';
-
 
 const Box1 = styled(BentoBox)`
     grid-area: Box1;
@@ -41,8 +39,6 @@ const Bento = () => {
             <Box3 $glass />
             <Box4 $glass />
             <Box5 $glass />
-            <GridSizeProvider gridArea='Slider' />
-            <GridSizeProvider gridArea='StartButton' />
         </BentoGrid>
     );
 };

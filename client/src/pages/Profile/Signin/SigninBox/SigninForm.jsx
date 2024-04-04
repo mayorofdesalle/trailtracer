@@ -3,13 +3,8 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
-import { Button } from '@components/ui';
-import { Container } from '@components/ui';
-import { Icon } from '@components/ui';
-import { Text } from '@components/ui';
-import { PasswordInput } from '@components/ui/input';
-import { TextInput } from '@components/ui/input';
-import changeFocus from '@components/ui/input/changeFocus';
+import { Button, Container, Icon, Text } from '@components/ui';
+import { PasswordInput, TextInput, changeFocus } from '@components/ui/input';
 import { FormContext } from '@context';
 
 const SigninFormInner = styled.form`

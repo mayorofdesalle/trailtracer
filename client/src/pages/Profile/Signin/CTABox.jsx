@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
 import { slideFromBottom } from '@components/anims';
-import { Button } from '@components/ui';
-import { Text } from '@components/ui';
+import { Button, Text } from '@components/ui';
 import { BentoBox } from '@components/ui/bento';
 import { pseudoBentoArrowTop } from '@components/ui/bento/mixins';
 import { useWindowSize } from '@hooks';

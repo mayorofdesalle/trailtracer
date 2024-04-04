@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import Container from '../Container';
 import Button from '../Button';
+import Container from '../Container';
 
 export const BaseTextInput = styled.input`
     width: 100%;

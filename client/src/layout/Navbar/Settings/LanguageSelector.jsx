@@ -5,10 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { components } from 'react-select';
 import styled from 'styled-components';
 
-import { Container } from '@components/ui';
-import { Icon } from '@components/ui';
+import { Container, Icon, Text } from '@components/ui';
 import { R_Select } from '@components/ui/input';
-import { Text } from '@components/ui';
 
 const { Option, SingleValue } = components;
 

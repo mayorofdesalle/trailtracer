@@ -1,13 +1,10 @@
-import { useEffect, useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import styled, { useTheme } from 'styled-components';
 
+import { Button, Container, Icon, Text } from '@components/ui';
 import { toggle } from '@features/themeSlice';
-import { Container } from '@components/ui';
-import { Button } from '@components/ui';
-import { Text } from '@components/ui';
-import { Icon } from '@components/ui';
 
 const ThemeToggleContainer = styled(Container)`
     height: fit-content;

@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import { Container } from '@components/ui';
-import { checkWebpFeature } from '@utils';
-import { getImageUrl } from '@utils';
+import { checkWebpFeature, getImageUrl } from '@utils';
 
 const ImageContainer = styled(Container)`
     background: url(${({ $image }) => getImageUrl($image)}) repeat;

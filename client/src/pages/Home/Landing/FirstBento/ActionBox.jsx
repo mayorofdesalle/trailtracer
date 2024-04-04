@@ -2,8 +2,7 @@ import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
 import { slideFromLeft, slideFromRight } from '@components/anims';
-import { Text } from '@components/ui';
-import { Vector } from '@components/ui';
+import { Text, Vector } from '@components/ui';
 import { BentoBox } from '@components/ui/bento';
 import { useWindowSize } from '@hooks';
 

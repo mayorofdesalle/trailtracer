@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
+import { Container, Text } from '@components/ui';
 import { BentoBox } from '@components/ui/bento';
-import { Container } from '@components/ui';
-import { Text } from '@components/ui';
 
 import Separator from '@pages/Profile//components/Separator';
 import AuthButtons from '@pages/Profile/components/AuthButtons';

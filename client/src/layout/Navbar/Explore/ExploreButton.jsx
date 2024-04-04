@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styled, { css, useTheme } from 'styled-components';
 
 import Icon from '@/components/ui/Icon';
-import TextInput from '@/components/ui/input/TextInput';
+import { TextInput } from '@/components/ui/input';
 import NavbarButton from '@/layout/navbar/NavbarButton';
 import { FormContext } from '@context';
 

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 import { BentoBox } from '@components/ui/bento';
 import { set } from '@features/gridSizeProviderSlice';
 import { useResize } from '@hooks';
-import styled from 'styled-components';
 
 const GridSizeProviderInner = styled(BentoBox)`
     grid-area: ${({ $gridArea }) => $gridArea};

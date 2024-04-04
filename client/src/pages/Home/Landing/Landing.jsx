@@ -2,8 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
 
-import { useResize } from '@hooks';
-import { useWindowSize } from '@hooks';
+import { useResize, useWindowSize } from '@hooks';
 
 import FirstBento from './firstBento/Bento';
 import FourthBento from './fourthBento/Bento';

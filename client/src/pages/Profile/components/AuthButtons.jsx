@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Button } from '@components/ui';
-import { Container } from '@components/ui';
-import { Icon } from '@components/ui';
+import { Button, Container, Icon } from '@components/ui';
 
 const AuthButtonsInner = styled(Container)`
     justify-content: space-around;

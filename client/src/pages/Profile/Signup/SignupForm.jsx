@@ -1,12 +1,11 @@
 import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import styled, { css, useTheme } from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 
 import { Button, Container, Icon, Text } from '@components/ui';
+import { PasswordInput, TextInput, changeFocus } from '@components/ui/input';
 import { FormContext } from '@context';
-import { TextInput, PasswordInput } from '@components/ui/input';
-import changeFocus from '@components/ui/input/changeFocus';
 
 const SignupFormInner = styled.form`
     position: relative;

@@ -5,7 +5,6 @@ import { useTheme } from 'styled-components';
 
 import { FormContext } from '@context';
 
-import Container from '../Container';
 import Button from '../Button';
 import Icon from '../Icon';
 import RTooltip from '../R_Tooltip';

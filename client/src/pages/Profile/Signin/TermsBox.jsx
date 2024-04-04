@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styled, { useTheme } from 'styled-components';
 
-import { Icon } from '@components/ui';
-import { Text } from '@components/ui';
+import { Icon, Text } from '@components/ui';
 import { BentoBox } from '@components/ui/bento';
 import { useWindowSize } from '@hooks';
 

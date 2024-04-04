@@ -1,9 +1,5 @@
 import backgroundSlice from './backgroundSlice';
-import themeSlice from './themeSlice';
 import gridSizeProviderSlice from './gridSizeProviderSlice';
+import themeSlice from './themeSlice';
 
-export {
-    backgroundSlice,
-    themeSlice,
-    gridSizeProviderSlice
-}
+export { backgroundSlice, gridSizeProviderSlice, themeSlice };

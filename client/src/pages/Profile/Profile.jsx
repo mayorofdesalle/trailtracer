@@ -1,4 +1,4 @@
-import Page from '@layout/Page';
+import { Page } from '@layout';
 
 import Signin from './signin/Signin';
 
